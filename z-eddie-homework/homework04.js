@@ -195,22 +195,72 @@ Expected Result:
 false
 
 */
+/*
 console.log ('\n--- TASK 10 ---'); 
 const catNames = ['Garfield', 'Tom', 'Sylvester', 'Azrael']
 console.log (catNames.sort());
 console.log( catNames.includes('Garfield') && catNames.includes('Felix') ? true : false); 
-
+*/
 
 
 /* TASK 11 
-*/
-console.log ('\n--- TASK 11 ---'); 
+Requirement:
+-Create an array that stores numbers below
+10.5, 20.75, 70, 80, 15.75
 
+THEN:
+-Output the entire array
+-Ouput each element
+
+Expected Result:
+[ 10.5, 20.75, 70, 80, 15.75 ]
+10.5
+20.75
+70
+80
+15.75
+
+*/
+/*
+console.log ('\n--- TASK 11 ---'); 
+const arr11= [10.5, 20.75, 70, 80, 15.75]
+console.log (arr11);
+
+for (i = 0; i < arr11.length; i++) {
+    console.log(`${arr11[i]}`)
+}
+*/
 
 
 /* TASK 12 
+Requirement:
+-Create an array that stores objects below.
+Pen, notebook, Book, paper, bag, pencil, Ruler
+
+THEN:
+-Output the entire array.
+-Output how many elements starts with 'B' or 'P', ignoring cases.
+-Output how many elements has 'book' or 'pen' partial strings, ignoring cases.
+
+Expected Result:
+['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler' ]
+Elements starting with 'B' or 'P' = 5
+Elements having 'book' or 'pen' = 4 
+
 */
 console.log ('\n--- TASK 12 ---'); 
+const arr12 = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
+let bpCounter = 0; 
+let bookPenCounter = 0; 
+
+for (i = 0; i < arr12.length; i++){
+    arr12[i][0].toUpperCase() === 'B' || arr12[i][0].toUpperCase() === 'P' ? bpCounter++ : ''; 
+    arr12[i].toLocaleLowerCase().includes('book') || arr12[i].toLocaleLowerCase().includes('pen') ? bookPenCounter++ : '';
+}
+
+console.log (arr12);
+console.log(`Elemets starting with 'B' or 'P' = ${bpCounter}`); 
+console.log(`Elemets starting with 'book' or 'pen' = ${bookPenCounter}`); 
 
 
 
