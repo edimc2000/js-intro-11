@@ -285,7 +285,7 @@ Elements that are 10 = 2
 */
 console.log ('\n--- TASK 13 ---'); 
 const arr13 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
-let more10 = 0, less10 = 0, val10 = 0, i=0; 
+let more10 = 0, less10 = 0, val10 = 0, i = 0; 
 
 while (i < arr13.length){
     arr13[i] > 10 ? more10++ : arr13[i] < 10 ? less10++ : val10++ ; 
