@@ -248,6 +248,7 @@ Elements starting with 'B' or 'P' = 5
 Elements having 'book' or 'pen' = 4 
 
 */
+/*
 console.log ('\n--- TASK 12 ---'); 
 const arr12 = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
 let bpCounter = 0; 
@@ -261,12 +262,40 @@ for (i = 0; i < arr12.length; i++){
 console.log (arr12);
 console.log(`Elemets starting with 'B' or 'P' = ${bpCounter}`); 
 console.log(`Elemets starting with 'book' or 'pen' = ${bookPenCounter}`); 
-
+*/
 
 
 /* TASK 13 
+Requirement:
+-Create an array that stores numbers below.
+3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78
+
+THEN:
+-Output the entire array
+-Output how many elements are more than 10
+-Output how many elements are less than 10
+-Output how many elements are 10
+
+Expected Result:
+[ 3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78 ]
+Elements that are more than 10 = 5
+Elements that are less than 10 = 4
+Elements that are 10 = 2
+
 */
 console.log ('\n--- TASK 13 ---'); 
+const arr13 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
+let more10 = 0, less10 = 0, val10 = 0, i=0; 
+
+while (i < arr13.length){
+    arr13[i] > 10 ? more10++ : arr13[i] < 10 ? less10++ : val10++ ; 
+    i++; 
+}
+
+console.log(arr13); 
+console.log(`Elements that are more than 10 = ${more10}`); 
+console.log(`Elements that are less than 10 = ${less10}`); 
+console.log(`Elements that are 10 = ${val10}`); 
 
 
 
