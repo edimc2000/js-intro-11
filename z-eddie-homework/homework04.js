@@ -283,6 +283,7 @@ Elements that are less than 10 = 4
 Elements that are 10 = 2
 
 */
+/*
 console.log ('\n--- TASK 13 ---'); 
 const arr13 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
 let more10 = 0, less10 = 0, val10 = 0, i = 0; 
@@ -297,11 +298,37 @@ console.log(`Elements that are more than 10 = ${more10}`);
 console.log(`Elements that are less than 10 = ${less10}`); 
 console.log(`Elements that are 10 = ${val10}`); 
 
-
+*/
 
 /* TASK 14 
+Requirement:
+-Create 2 arrays that stores numbers below.
+First array-> 		[ 5, 8, 13, 1, 2 ]
+Second array -> 	[ 9, 3, 67, 1, 0 ]
+
+THEN:
+-Output both arrays
+–Then, create a new array that will take the greatest value of same index from first 2 arrays and output the third array as well.
+
+Expected Result:
+1st array is =  [ 5, 8, 13, 1, 2 ]
+2nd array is = [ 9, 3, 67, 1, 0 ]
+3rd array is =  [ 9, 8, 67, 1, 2 ]
+
+
 */
 console.log ('\n--- TASK 14 ---'); 
+const arr141 = [ 5, 8, 13, 1, 2 ];
+const arr142 = [ 9, 3, 67, 1, 0 ]; 
+let arr143 = []; 
+
+for (i = 0; i < arr141.length; i++) {
+    arr143.push( Math.max(arr141[i], arr142[i]) ) 
+}
+
+console.log (arr141); 
+console.log (arr142); 
+console.log (arr143); 
 
 
 
