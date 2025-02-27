@@ -317,6 +317,7 @@ Expected Result:
 
 
 */
+/*
 console.log ('\n--- TASK 14 ---'); 
 const arr141 = [ 5, 8, 13, 1, 2 ];
 const arr142 = [ 9, 3, 67, 1, 0 ]; 
@@ -326,12 +327,10 @@ for (i = 0; i < arr141.length; i++) {
     arr143.push( Math.max(arr141[i], arr142[i]) ) 
 }
 
-console.log (arr141); 
-console.log (arr142); 
-console.log (arr143); 
-
-
-
+console.log (`1st array is = ${arr141}`); 
+console.log (`2nd array is = ${arr142}`); 
+console.log (`3rd array is = ${arr143}`); 
+*/
 
 /* TASK 15 
 */
