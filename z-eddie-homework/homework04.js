@@ -147,24 +147,58 @@ Expected Result:
 [ 'Argentina', 'Germany', 'Romania', 'Ukraine' ]
 
 */
-console.log ('\n--- TASK 8 ---'); 
-const countries = ['Germany', 'Argentina', 'Ukraine', 'Romania'];
+// console.log ('\n--- TASK 8 ---'); 
+// const countries = ['Germany', 'Argentina', 'Ukraine', 'Romania'];
 
-console.log (countries); 
-console.log ([...countries].sort());
+// console.log (countries); 
+// console.log ([...countries].sort());
 
 
 
 
 /* TASK 9 
+Requirement:
+-Create a String array that stores cartoon dogs below
+Scooby Doo, Snoopy, Blue, Pluto, Dino, Sparky 
+
+THEN:
+-Output the entire array
+-Then, check if the array has Pluto element
+	if it has Pluto, then output true
+	if it does not have Pluto, output false
+
+Expected Result:
+[ 'Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky' ]
+true
+
 */
+/*
 console.log ('\n--- TASK 9 ---'); 
-
-
+const dogNames = ['Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky']
+console.log (dogNames);
+console.log(dogNames.includes('Pluto') ? true : false); 
+*/
 
 /* TASK 10 
+Requirement:
+-Create an array that stores cartoon cats below.
+Garfield, Tom, Sylvester, Azrael
+
+THEN:
+-Output the entire array sorted lexicographically
+-Then, check if the array has both Garfield and Felix
+	if it has both, then output true
+	if it does not have both, output false
+
+Expected Result:
+[ 'Azrael', 'Garfield', 'Sylvester', 'Tom' ]
+false
+
 */
 console.log ('\n--- TASK 10 ---'); 
+const catNames = ['Garfield', 'Tom', 'Sylvester', 'Azrael']
+console.log (catNames.sort());
+console.log( catNames.includes('Garfield') && catNames.includes('Felix') ? true : false); 
 
 
 
