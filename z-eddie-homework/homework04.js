@@ -348,6 +348,7 @@ firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
 firstDuplicate([ 1, 2, 3])			-> -1
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 */
+/*
 console.log ('\n--- TASK 15 ---'); 
 let firstDupe = ''; 
 const firstDuplicate = arr => {
@@ -368,20 +369,86 @@ console.log (`firstDuplicate ( [ 5, '5', 3, 7, 4 ] ) )              ->`, firstDu
 console.log (`firstDuplicate ( [ 123, 'abc', '123', 3, 'abc' ] ) )) ->`, firstDuplicate ( [ 123, 'abc', '123', 3, 'abc' ] ) )
 console.log (`firstDuplicate ( [ 1, 2, 3  ] ) )                     ->`, firstDuplicate ( [ 1, 2, 3  ] ) )
 console.log (`firstDuplicate( [ 'foo', 'abc', '123', 'bar'   ] ) )  ->`, firstDuplicate ( [ 'foo', 'abc', '123', 'bar'   ] ) )
-
+*/
 
 /* TASK 16 
+Requirement:
+Write a function named as getDuplicates() which takes an array argument 
+and returns all the duplicated elements in the array when invoked.
+
+NOTE: Make your code dynamic that works for any array and return empty array 
+if there are no duplicates in the array. For two elements to be considered as duplicated, 
+value and data types of the elements must be same.
+
+Examples:
+getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])		-> [ 0, -7 ]
+getDuplicates([ 1, 2, 5, 0, 7 ])			-> [ ]
+getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])	-> [ 'foo', 'a’ ]
+getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
+
 */
+/*
 console.log ('\n--- TASK 16 ---'); 
+let container16;
 
+const getDuplicates = arr => {
+    arr.sort();
+    container16 = [];
+    for (index = 0; index < arr.length; index++ ) {
+        if (arr[index-1] === arr[index]) {
+            container16.includes(arr[index]) ? '' : container16.push(arr[index]); 
+        }
+    }
+    return container16
+}
 
-
+console.log(`getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0])               ->`, getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0]));
+console.log(`getDuplicates([ 1, 2, 5, 0, 7 ])                                   ->`,  getDuplicates([ 1, 2, 5, 0, 7 ]) );
+console.log(`getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])    ->`, getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]) ); 
+console.log(`getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])                    ->`, getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]) ); 
+*/
 
 /* TASK 17 
+Requirement:
+Write a function named as reverseStringWords() 
+which takes a string as an argument and 
+returns string back with each word separately reversed when invoked.
+
+NOTE: Make your code dynamic that works for any string. 
+Make sure you consider extra spaces before and after words in the given string.
+
+Examples:
+reverseStringWords("Hello World") 		-> "olleH dlroW"
+reverseStringWords("I like JavaScript") 	-> "I ekil tpircSavaJ"
+reverseStringWords("Hello") 		-> "olleH"
+reverseStringWords("") 			-> ""
+reverseStringWords("    ") 		-> ""
+
+
 */
+/*
 console.log ('\n--- TASK 17 ---'); 
+let container17, container172; 
 
+const reverseStringWords = string => {
+    container172 = []
+    let arr17 = string.split(' ')
+    for (i = 0; i <arr17.length; i++) {
+        container17 = []
+        for (j = arr17[i].length-1; j >=0 ; j--) {
+            container17.push(arr17[i][j])
+        }
+        container172.push(container17.join(''))
+    }
+    return container172.join(' ')
+}; 
 
+console.log ('reverseStringWords("Hello World")        ->', reverseStringWords("Hello World")); 
+console.log ('reverseStringWords("I like JavaScript")  ->', reverseStringWords("I like JavaScript") ); 
+console.log ('reverseStringWords("Hello")              ->', reverseStringWords("Hello")  ); 
+console.log ('reverseStringWords("")                   ->', reverseStringWords("") 	); 
+console.log ('reverseStringWords("    ")               ->', reverseStringWords("    ")); 
+*/
 
 
 /* TASK 18 
