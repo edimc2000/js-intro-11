@@ -147,12 +147,13 @@ Expected Result:
 [ 'Argentina', 'Germany', 'Romania', 'Ukraine' ]
 
 */
-// console.log ('\n--- TASK 8 ---'); 
-// const countries = ['Germany', 'Argentina', 'Ukraine', 'Romania'];
+/*
+console.log ('\n--- TASK 8 ---'); 
+const countries = ['Germany', 'Argentina', 'Ukraine', 'Romania'];
 
-// console.log (countries); 
-// console.log ([...countries].sort());
-
+console.log (countries); 
+console.log ([...countries].sort());
+*/
 
 
 
@@ -333,10 +334,40 @@ console.log (`3rd array is = ${arr143}`);
 */
 
 /* TASK 15 
+Requirement:
+Write a function named as firstDuplicate() which takes an array argument and 
+returns the first duplicated number in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return -1 if there are no duplicates in the array. 
+For two elements to be considered as duplicated, value and data types of the elements must be same.
+
+Examples:
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 3
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])		-> 5
+firstDuplicate([ 5, '5', 3, 7, 4 ])		-> -1
+firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
+firstDuplicate([ 1, 2, 3])			-> -1
+firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 */
 console.log ('\n--- TASK 15 ---'); 
+let firstDupe = ''; 
+const firstDuplicate = arr => {
+    for(i = 0; i < arr.length; i++) {
+        if ( arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i]) ) {
+            firstDupe =  -1;
+        } else {
+            firstDupe =  arr[i]; 
+            break;  
+        } 
+    } 
+    return firstDupe;  
+}
 
-
+console.log (`firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] )             ->`, firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] ) )
+console.log (`firstDuplicate ( [ 5, 7, 7, 0, 5, 10 ] ) )            ->`, firstDuplicate ( [ 5, 7, 7, 0, 5, 10 ] ) )
+console.log (`firstDuplicate ( [ 5, '5', 3, 7, 4 ] ) )              ->`, firstDuplicate ( [ 5, '5', 3, 7, 4 ] ) )
+console.log (`firstDuplicate ( [ 123, 'abc', '123', 3, 'abc' ] ) )) ->`, firstDuplicate ( [ 123, 'abc', '123', 3, 'abc' ] ) )
+console.log (`firstDuplicate ( [ 1, 2, 3  ] ) )                     ->`, firstDuplicate ( [ 1, 2, 3  ] ) )
+console.log (`firstDuplicate( [ 'foo', 'abc', '123', 'bar'   ] ) )  ->`, firstDuplicate ( [ 'foo', 'abc', '123', 'bar'   ] ) )
 
 
 /* TASK 16 
