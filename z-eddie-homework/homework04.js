@@ -452,8 +452,36 @@ console.log ('reverseStringWords("    ")               ->', reverseStringWords("
 
 
 /* TASK 18 
+Requirement:
+Write a function named as getEvens() which takes 2 number arguments and 
+returns all the even numbers as an array stored from smallest even number 
+to greatest even number when invoked.
+NOTE: Make your code dynamic that works for any numbers and return empty array
+if there are no even numbers in the range of given 2 numbers. 
+Assume you will not be given negative numbers.
+
+Examples:
+getEvens(2, 7)	-> [ 2, 4, 6 ]
+getEvens(17, 5)	-> [ 6, 8, 10, 12, 14, 16 ]
+getEvens(4, 4)	-> [ 4 ]
+getEvens(3, 3)	-> [ ]
+
 */
 console.log ('\n--- TASK 18 ---'); 
+let store18; 
+
+const getEvens = (num181, num182) => {
+    store18 = []; 
+    for ( i = Math.min(num181, num182); i <= Math.max(num181, num182); i++ ) {
+        i % 2 === 0 ? store18.push(i): ''; 
+    }
+    return store18; 
+}
+
+console.log ('getEvens(2, 7)   -> ', getEvens(2, 7)); 
+console.log ('getEvens(17, 5)  -> ', getEvens(17, 5)); 
+console.log ('getEvens(4, 4)   -> ', getEvens(4, 4)); 
+console.log ('getEvens(3, 3)   -> ', getEvens(3, 3)); 
 
 
 
