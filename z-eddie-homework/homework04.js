@@ -552,7 +552,7 @@ const fizzBuzz = (num201, num202) => {
         : container20.push(i)
     }
     return container20.join(' | ')
-}
+};
 
 console.log ('fizzBuzz(13, 18) -> ', fizzBuzz(13, 18)); 
 console.log ('fizzBuzz(12,  5) -> ', fizzBuzz(12,  5)); 
