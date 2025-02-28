@@ -473,7 +473,7 @@ let store18;
 const getEvens = (num181, num182) => {
     store18 = []; 
     for ( i = Math.min(num181, num182); i <= Math.max(num181, num182); i++ ) {
-        i % 2 === 0 ? store18.push(i): ''; 
+        if (i % 2 === 0) store18.push(i); 
     }
     return store18; 
 }
