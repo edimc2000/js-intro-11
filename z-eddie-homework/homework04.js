@@ -467,6 +467,7 @@ getEvens(4, 4)	-> [ 4 ]
 getEvens(3, 3)	-> [ ]
 
 */
+/*
 console.log ('\n--- TASK 18 ---'); 
 let store18; 
 
@@ -482,19 +483,79 @@ console.log ('getEvens(2, 7)   -> ', getEvens(2, 7));
 console.log ('getEvens(17, 5)  -> ', getEvens(17, 5)); 
 console.log ('getEvens(4, 4)   -> ', getEvens(4, 4)); 
 console.log ('getEvens(3, 3)   -> ', getEvens(3, 3)); 
-
+*/
 
 
 
 /* TASK 19 
+Write a function named as getMultipleOf5() which takes 2 number arguments and 
+returns all the numbers divisible by 5 as an array stored from first found match 
+to last found match when invoked.
+NOTE: Make your code dynamic that works for any numbers and return empty array 
+if there are no numbers divisible by 5 in the range of given 2 numbers. 
+Assume you will not be given negative numbers.
+
+Examples:
+getMultipleOf5(3, 17)	-> [ 5, 10, 15]
+getMultipleOf5(23, 5)	-> [ 20, 15, 10, 5 ]
+getMultipleOf5(5, 5)	-> [ 5 ]
+getMultipleOf5(2, 4)	-> [ ]
+
 */
+/*
 console.log ('\n--- TASK 19 ---'); 
-
-
+let container19; 
+const getMultipleOf5 = (num191, num192) => {
+    container19 = []; 
+    for (i = Math.min(num191, num192); i <= Math.max(num191, num192); i++) {
+        if (i % 5 === 0 ) container19.push(i) ; 
+    }
+    return container19
+}
+console.log('getMultipleOf5(3, 17) -> ', getMultipleOf5(3, 17));
+console.log('getMultipleOf5(23, 5) -> ', getMultipleOf5(23, 5));
+console.log('getMultipleOf5(5, 5)  -> ', getMultipleOf5(5, 5));
+console.log('getMultipleOf5(2, 4)  -> ', getMultipleOf5(2, 4) );
+*/
 
 
 /* TASK 20 
+Requirement:
+Write a function named as fizzBuzz() which takes 2 number arguments and 
+returns a string composed with below requirements when invoked.
+ - You need to find all the numbers within the range of given 2 numbers (both inclusive) 
+   and store them in a string from smallest to greatest number with a ' | ' separator for each number.
+ - You will need to convert numbers divisible by 3 to 'Fizz'
+ - You will need to convert numbers divisible by 5 to 'Buzz'
+ - You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
+The rest will stay the same.
+NOTE: Make your code dynamic that works for any numbers.
+Assume you will not be given negative numbers.
+
+Examples:
+fizzBuzz(13, 18)	-> "13 | 14 | FizzBuzz | 16 | 17 | Fizz" 
+fizzBuzz(12, 5)	-> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
+fizzBuzz(5, 5)	-> "Buzz"
+fizzBuzz(9, 6)	-> "Fizz | 7 | 8 | Fizz"
+
+
 */
 console.log ('\n--- TASK 20 ---'); 
+let container20; 
 
+const fizzBuzz = (num201, num202) => {
+    container20 = []; 
+    for (i = Math.min(num201, num202); i <= Math.max(num201, num202); i++) {
+        i % 3 === 0 && i % 5 === 0 ? container20.push('FizzBuzz') 
+        : i % 3 === 0 ? container20.push('Fizz')
+        : i % 5 === 0 ? container20.push('Buzz')
+        : container20.push(i)
+    }
+    return container20.join(' | ')
+}
+
+console.log ('fizzBuzz(13, 18) -> ', fizzBuzz(13, 18)); 
+console.log ('fizzBuzz(12,  5) -> ', fizzBuzz(12,  5)); 
+console.log ('fizzBuzz( 5,  5) -> ', fizzBuzz( 5,  5)); 
+console.log ('fizzBuzz( 9,  6) -> ', fizzBuzz( 9,  6)); 
 
