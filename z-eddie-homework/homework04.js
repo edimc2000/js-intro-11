@@ -311,7 +311,7 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 console.log ('\n--- TASK 15 ---'); 
 let firstDupe = ''; 
 const firstDuplicate = arr => {
-    for(i = 0; i < arr.length; i++) {
+    for(let i = 0; i < arr.length; i++) {
         if ( arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i]) ) {
             firstDupe =  -1;
         } else {
