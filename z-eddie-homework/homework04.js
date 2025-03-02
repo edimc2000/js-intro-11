@@ -5,7 +5,7 @@ Expected Output: 7 14 21  ... 91 98
 */
 
 console.log ('\n--- TASK 1 ---'); 
-for (i = 1; i <= 100; i++){
+for (let i = 1; i <= 100; i++){
     if (i % 7 === 0) console.log (i);
 }
 
@@ -17,7 +17,7 @@ Expected Output: 6 12 18 ... 36 42 48
 */
 
 console.log ('\n--- TASK 2 ---'); 
-for (i = 1; i <= 50; i++){
+for (let i = 1; i <= 50; i++){
     if (i % 2 === 0 && i % 3 === 0 ) console.log (i);
 }
 
@@ -29,7 +29,7 @@ Expected Output: 100 95 90 85 ... 60 55 50
 */
 
 console.log ('\n--- TASK 3 ---'); 
-for (i = 100; i >= 50; i--){
+for (let i = 100; i >= 50; i--){
     if (i % 5 === 0) console.log (i);
 }
 
@@ -49,7 +49,7 @@ The square of 7 is =  49
 */
 
 console.log ('\n--- TASK 4 ---'); 
-for (i = 0; i <= 7; i++){
+for (let i = 0; i <= 7; i++){
     console.log (`The square of ${i} is = ${i**2}`);
 }
 
@@ -65,7 +65,7 @@ Expected Output:
 
 console.log ('\n--- TASK 5 ---'); 
 let sum5 = 0; 
-for (i = 1; i <= 10; i++){
+for (let i = 1; i <= 10; i++){
     sum5 += i; 
 }
 console.log (sum5);
@@ -86,7 +86,7 @@ For example:
 console.log ('\n--- TASK 6 ---'); 
 let randomNum6 = Math.floor (Math.random() * ( 10 -1 + 1 ) + 1)
 let factorial = 1;  
-for (i = randomNum6; i >= 1; i--) {
+for (let i = randomNum6; i >= 1; i--) {
     factorial *= i; 
 }
 console.log (`${randomNum6}! = ${factorial}`);
@@ -197,7 +197,7 @@ console.log ('\n--- TASK 11 ---');
 const arr11= [10.5, 20.75, 70, 80, 15.75];
 console.log (arr11);
 
-for (i = 0; i < arr11.length; i++) {
+for (let i = 0; i < arr11.length; i++) {
     console.log(`${arr11[i]}`);
 }
 
@@ -220,7 +220,7 @@ const arr12 = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
 let bpCounter = 0; 
 let bookPenCounter = 0; 
 
-for (i = 0; i < arr12.length; i++){
+for (let i = 0; i < arr12.length; i++){
     arr12[i][0].toUpperCase() === 'B' || arr12[i][0].toUpperCase() === 'P' ? bpCounter++ : ''; 
     arr12[i].toLocaleLowerCase().includes('book') || arr12[i].toLocaleLowerCase().includes('pen') ? bookPenCounter++ : '';
 }
@@ -284,7 +284,7 @@ const arr141 = [ 5, 8, 13, 1, 2 ];
 const arr142 = [ 9, 3, 67, 1, 0 ]; 
 let arr143 = []; 
 
-for (i = 0; i < arr141.length; i++) {
+for (let i = 0; i < arr141.length; i++) {
     arr143.push( Math.max(arr141[i], arr142[i]) ) 
 }
 
@@ -349,7 +349,7 @@ let container16;
 const getDuplicates = arr => {
     arr.sort();
     container16 = [];
-    for (index = 0; index < arr.length; index++ ) {
+    for (let index = 0; index < arr.length; index++ ) {
         if (arr[index-1] === arr[index]) {
             container16.includes(arr[index]) ? '' : container16.push(arr[index]); 
         }
@@ -385,9 +385,9 @@ let container172;
 const reverseStringWords = string => {
     container172 = [];
     let arr17 = string.split(' ');
-    for (i = 0; i <arr17.length; i++) {
+    for (let i = 0; i <arr17.length; i++) {
         container17 = [];
-        for (j = arr17[i].length-1; j >=0 ; j--) {
+        for (let j = arr17[i].length-1; j >=0 ; j--) {
             container17.push(arr17[i][j].trim());
         }
         container172.push(container17.join(''));
@@ -422,7 +422,7 @@ console.log ('\n--- TASK 18 ---');
 let arr18; 
 const getEvens = (num181, num182) => {
     arr18 = []; 
-    for ( i = Math.min(num181, num182); i <= Math.max(num181, num182); i++ ) {
+    for ( let i = Math.min(num181, num182); i <= Math.max(num181, num182); i++ ) {
         if (i % 2 === 0) arr18.push(i); 
     }
     return arr18; 
@@ -452,7 +452,7 @@ console.log ('\n--- TASK 19 ---');
 let arr19; 
 const getMultipleOf5 = (num191, num192) => {
     arr19 = []; 
-    for (i = Math.min(num191, num192); i <= Math.max(num191, num192); i++) {
+    for (let i = Math.min(num191, num192); i <= Math.max(num191, num192); i++) {
         if (i % 5 === 0 ) arr19.push(i); 
     }
     return arr19;
@@ -485,7 +485,7 @@ console.log ('\n--- TASK 20 ---');
 let container20; 
 const fizzBuzz = (num201, num202) => {
     container20 = []; 
-    for (i = Math.min(num201, num202); i <= Math.max(num201, num202); i++) {
+    for (let i = Math.min(num201, num202); i <= Math.max(num201, num202); i++) {
         i % 3 === 0 && i % 5 === 0 ? container20.push('FizzBuzz') 
         : i % 3 === 0 ? container20.push('Fizz')
         : i % 5 === 0 ? container20.push('Buzz')
