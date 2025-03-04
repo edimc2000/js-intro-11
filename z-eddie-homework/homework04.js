@@ -282,7 +282,7 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 
 console.log ('\n--- TASK 15 ---'); 
 const firstDuplicate = arr =>{
-    arrForDuplicates = arr.filter(element => arr.indexOf(element) !== arr.lastIndexOf(element))
+    let arrForDuplicates = arr.filter(element => arr.indexOf(element) !== arr.lastIndexOf(element))
     return arrForDuplicates.length !== 0 ? arrForDuplicates[0] : -1;
 }
 console.log (`firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] )             -> `, firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] ) );
@@ -308,18 +308,7 @@ getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
 */
 
 console.log ('\n--- TASK 16 ---'); 
-let container16;
-const getDuplicates = arr => {
-    arr.sort();
-    container16 = [];
-    for (let index = 0; index < arr.length; index++ ) {
-        if (arr[index-1] === arr[index]) {
-            container16.includes(arr[index]) ? '' : container16.push(arr[index]); 
-        }
-    }
-    return container16; 
-}
-
+const getDuplicates = arr => [...new Set( arr.filter(element => arr.indexOf(element) !== arr.lastIndexOf(element)) )]
 console.log(`getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0])                   -> `, getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0]));
 console.log(`getDuplicates([ 1, 2, 5, 0, 7 ])                                   -> `, getDuplicates([ 1, 2, 5, 0, 7 ]) );
 console.log(`getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])    -> `, getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]) ); 
