@@ -396,7 +396,7 @@ const getMultipleOf5 = (num191, num192) => {
     for (let i = Math.min(num191, num192); i <= Math.max(num191, num192); i++) {
         if (i % 5 === 0 ) arr19.push(i); 
     }
-    return arr19;
+    return num191 < num192 ? arr19 : arr19.reverse() ;
 }
 console.log('getMultipleOf5(3, 17) -> ', getMultipleOf5(3, 17));
 console.log('getMultipleOf5(23, 5) -> ', getMultipleOf5(23, 5));
