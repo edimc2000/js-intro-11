@@ -177,7 +177,7 @@ const catNames = ['Garfield', 'Tom', 'Sylvester', 'Azrael'];
 console.log (catNames.sort());
 console.log( catNames.includes('Garfield') && catNames.includes('Felix') ? true : false); 
 
-/* TASK 11 
+/* TASK 11 (improved using methods)
 Requirement:
 -Create an array that stores numbers below
 10.5, 20.75, 70, 80, 15.75
@@ -196,10 +196,7 @@ Expected Result:
 console.log ('\n--- TASK 11 ---'); 
 const arr11= [10.5, 20.75, 70, 80, 15.75];
 console.log (arr11);
-
-for (let i = 0; i < arr11.length; i++) {
-    console.log(`${arr11[i]}`);
-}
+arr11.forEach(element => console.log(element))
 
 /* TASK 12 
 Requirement:
@@ -217,17 +214,10 @@ Elements having 'book' or 'pen' = 4
 
 console.log ('\n--- TASK 12 ---'); 
 const arr12 = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
-let bpCounter = 0; 
-let bookPenCounter = 0; 
-
-for (let i = 0; i < arr12.length; i++){
-    arr12[i][0].toUpperCase() === 'B' || arr12[i][0].toUpperCase() === 'P' ? bpCounter++ : ''; 
-    arr12[i].toLocaleLowerCase().includes('book') || arr12[i].toLocaleLowerCase().includes('pen') ? bookPenCounter++ : '';
-}
-
 console.log (arr12);
-console.log(`Elemets starting with 'B' or 'P' = ${bpCounter}`); 
-console.log(`Elemets starting with 'book' or 'pen' = ${bookPenCounter}`); 
+console.log(`Elemets starting with 'B' or 'P' =`, arr12.filter(element => element[0].toUpperCase() === 'B' || element[0].toUpperCase() === 'P').length );     
+
+console.log(`Elemets starting with 'book' or 'pen' =`, arr12.filter(element => element.toLowerCase().includes('book') || element.toLowerCase().includes('pen')).length); 
 
 
 /* TASK 13 
@@ -248,20 +238,10 @@ Elements that are 10 = 2
 
 console.log ('\n--- TASK 13 ---'); 
 const arr13 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
-let more10 = 0; 
-let less10 = 0;
-let val10 = 0; 
-let counter13 = 0; 
-
-while (counter13 < arr13.length){
-    arr13[counter13] > 10 ? more10++ : arr13[counter13] < 10 ? less10++ : val10++ ; 
-    counter13++; 
-}
-
-console.log(arr13); 
-console.log(`Elements that are more than 10 = ${more10}`); 
-console.log(`Elements that are less than 10 = ${less10}`); 
-console.log(`Elements that are 10 = ${val10}`); 
+console.log(arr13)
+console.log(`Elements that are more than 10 = `, arr13.filter(element=> element >10 ).length); 
+console.log(`Elements that are less than 10 = `, arr13.filter(element => element<10).length); 
+console.log(`Elements that are 10 = `, arr13.filter(element=> element===10).length); 
 
 
 
@@ -282,16 +262,9 @@ Expected Result:
 console.log ('\n--- TASK 14 ---'); 
 const arr141 = [ 5, 8, 13, 1, 2 ];
 const arr142 = [ 9, 3, 67, 1, 0 ]; 
-let arr143 = []; 
-
-for (let i = 0; i < arr141.length; i++) {
-    arr143.push( Math.max(arr141[i], arr142[i]) ) 
-}
-
 console.log (`1st array is =`, arr141); 
 console.log (`2nd array is =`, arr142); 
-console.log (`3rd array is =`, arr143); 
-
+console.log (`3rd array is =`, arr141.map( (element, index) =>  Math.max( element, arr142[index] ) ) ); 
 
 /* TASK 15 
 Requirement:
