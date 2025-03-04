@@ -216,7 +216,6 @@ console.log ('\n--- TASK 12 ---');
 const arr12 = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
 console.log (arr12);
 console.log(`Elemets starting with 'B' or 'P' =`, arr12.filter(element => element[0].toUpperCase() === 'B' || element[0].toUpperCase() === 'P').length );     
-
 console.log(`Elemets starting with 'book' or 'pen' =`, arr12.filter(element => element.toLowerCase().includes('book') || element.toLowerCase().includes('pen')).length); 
 
 
@@ -239,9 +238,9 @@ Elements that are 10 = 2
 console.log ('\n--- TASK 13 ---'); 
 const arr13 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
 console.log(arr13)
-console.log(`Elements that are more than 10 = `, arr13.filter(element=> element >10 ).length); 
-console.log(`Elements that are less than 10 = `, arr13.filter(element => element<10).length); 
-console.log(`Elements that are 10 = `, arr13.filter(element=> element===10).length); 
+console.log(`Elements that are more than 10 = `, arr13.filter(element => element > 10 ).length); 
+console.log(`Elements that are less than 10 = `, arr13.filter(element => element < 10).length); 
+console.log(`Elements that are 10 = `, arr13.filter(element => element === 10).length); 
 
 
 
@@ -282,19 +281,10 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 */
 
 console.log ('\n--- TASK 15 ---'); 
-let firstDupe = ''; 
-const firstDuplicate = arr => {
-    for(let i = 0; i < arr.length; i++) {
-        if ( arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i]) ) {
-            firstDupe =  -1;
-        } else {
-            firstDupe =  arr[i]; 
-            break;  
-        } 
-    } 
-    return firstDupe;  
+const firstDuplicate = arr =>{
+    arrForDuplicates = arr.filter(element => arr.indexOf(element) !== arr.lastIndexOf(element))
+    return arrForDuplicates.length !== 0 ? arrForDuplicates[0] : -1;
 }
-
 console.log (`firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] )             -> `, firstDuplicate ( [ 3, 7, 10, 0, 3, 10 ] ) );
 console.log (`firstDuplicate ( [ 5, 7, 7, 0, 5, 10 ] ) )            -> `, firstDuplicate ( [ 5, 7, 7, 0, 5, 10 ] ) );
 console.log (`firstDuplicate ( [ 5, '5', 3, 7, 4 ] ) )              -> `, firstDuplicate ( [ 5, '5', 3, 7, 4 ] ) );
