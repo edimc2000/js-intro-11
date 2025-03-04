@@ -331,22 +331,11 @@ reverseStringWords("    ") 		-> ""
 */
 
 console.log ('\n--- TASK 17 ---'); 
-let container17; 
-let container172; 
-
-const reverseStringWords = string => {
-    container172 = [];
-    let arr17 = string.split(' ');
-    for (let i = 0; i <arr17.length; i++) {
-        container17 = [];
-        for (let j = arr17[i].length-1; j >=0 ; j--) {
-            container17.push(arr17[i][j].trim());
-        }
-        container172.push(container17.join(''));
-    }
-    return container172.join(' ');
-}; 
-
+const reverseStringWords = string => { 
+    stringDivide = string.split(' ');
+    let reversedString = stringDivide.map( element => element.split('').reverse().join('') );
+    return reversedString.join(' ');
+}
 console.log ('reverseStringWords("Hello World")        -> ', reverseStringWords("Hello World")); 
 console.log ('reverseStringWords("I like JavaScript")  -> ', reverseStringWords("I like JavaScript") ); 
 console.log ('reverseStringWords("Hello")              -> ', reverseStringWords("Hello")  ); 
