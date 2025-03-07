@@ -345,11 +345,13 @@ console.log('findClosestTo10([0, -1, -2])               -> ', findClosestTo10([0
 
 /* TASK 14
 Requirement: 
-Write a function named as isEmailValid() which takes a string email as an argument and returns true if the email is valid or returns false otherwise when invoked.
+Write a function named as isEmailValid() which takes a string email as an argument 
+and returns true if the email is valid or returns false otherwise when invoked.
 
 NOTE: A VALID EMAIL:
-should NOT have any space.
-should not have more than one “@” character.
+should NOT have any space. 
+should not have more than one “@” character.  
+
 should be in the given format <2+chars>@<2+chars>.<2+chars> meaning
 There should be at least characters before @ character.
 There should be at least 2 characters between @ and . Characters.
@@ -367,6 +369,24 @@ isEmailValid("johndoe@gmail.com") 		-> true
 
 */
 console.log ('\n--- TASK 14 ---'); 
+const isEmailValid = string => {
+    let checkNoSpaces =  !(string.includes(' ')); 
+    let checkOneAtSign = string.includes('@') && string.indexOf('@') === string.lastIndexOf('@'); 
+    let check2CharsEmail = string.split('@')[0].length > 1; 
+    let check2CharsAfter = string.slice(string.indexOf('@')+1, string.lastIndexOf('.')).length > 1; 
+    let checkTopLevel = string.slice(string.lastIndexOf('.')).length > 1;
+
+    return  checkNoSpaces && checkOneAtSign && check2CharsEmail && check2CharsAfter && checkTopLevel;
+}
+console.log ('isEmailValid("  ")                 ->', isEmailValid("  ") 	);
+console.log ('isEmailValid("@gmail.com")         ->', isEmailValid("@gmail.com") 	);
+console.log ('isEmailValid("johndoe@yahoo")      ->', isEmailValid("johndoe@yahoo") 	);
+console.log ('isEmailValid("johndoe@.com")       ->', isEmailValid("johndoe@.com") 	);
+console.log ('isEmailValid("a@outlook.com")      ->', isEmailValid("a@outlook.com") 	);
+console.log ('isEmailValid("johndoe@a.com")      ->', isEmailValid("johndoe@a.com") 	);
+console.log ('isEmailValid("johndoe@@gmail.com") ->', isEmailValid("johndoe@@gmail.com") 	);
+console.log ('isEmailValid("johndoe@gmail.com")  ->', isEmailValid("johndoe@gmail.com") 	);
+
 
 /* TASK 15
 Requirement: 
