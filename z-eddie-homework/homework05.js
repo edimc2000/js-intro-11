@@ -151,6 +151,7 @@ isPalindrome("A")           -> true
 isPalindrome("")            -> true
 
 */
+/*
 console.log ('\n--- TASK 7 ---'); 
 
 const isPalindrome = (string) => {
@@ -167,21 +168,28 @@ console.log('isPalindrome("ab  a")       -> ', isPalindrome("ab  a") );
 console.log('isPalindrome("123454321")   -> ', isPalindrome("123454321") );
 console.log('isPalindrome("A")           -> ', isPalindrome("A") );
 console.log('isPalindrome("")            -> ', isPalindrome("") );
-
+*/
 /* TASK 8
 Requirement: 
-Write a function named as countMultipleWords() which takes an array as an argument and returns the count of the elements that has multiple words when invoked.
+Write a function named as countMultipleWords() which takes an array as an argument and 
+returns the count of the elements that has multiple words when invoked.
 
 NOTE: Be careful about the extra whitespaces before and after the array element.
 Examples:
-countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ]) 		-> 1
-countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ]) 		-> 0
+countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])        -> 1
+countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])        -> 0
 countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) 	-> 4
-countMultipleWords([ ]) 					-> 0
+countMultipleWords([ ])                                                 -> 0
 
 
 */
 console.log ('\n--- TASK 8 ---'); 
+const countMultipleWords = (arr) => arr.reduce ((acc, curr) => curr.trim().split(' ').length > 1 ? acc + 1 : acc , 0);
+
+console.log('countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])       -> ', countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ]));
+console.log('countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])       -> ', countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ]));
+console.log('countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) -> ', countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
+console.log('countMultipleWords([ ]))                                               -> ', countMultipleWords([ ]));
 
 /* TASK 9
 Requirement: 
