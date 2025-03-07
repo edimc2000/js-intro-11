@@ -328,6 +328,7 @@ findClosestTo10([10, -13, 8, 12, 15, -20]) -> 8
 findClosestTo10([0, -1, -2])               -> 0
 
 */
+/*
 console.log ('\n--- TASK 13 ---'); 
 const findClosestTo10 = (arr) => {
     let distanceFrom10 = arr.map(element => Math.abs(10 - element));
@@ -341,7 +342,7 @@ const findClosestTo10 = (arr) => {
 console.log('findClosestTo10([10, -13, 5, 70, 15, 57])  -> ', findClosestTo10([10, -13, 5, 70, 15, 57]) ); 
 console.log('findClosestTo10([10, -13, 8, 12, 15, -20]) -> ', findClosestTo10([10, -13, 8, 12, 15, -20]) ); 
 console.log('findClosestTo10([0, -1, -2])               -> ', findClosestTo10([0, -1, -2])   ); 
-
+*/
 
 /* TASK 14
 Requirement: 
@@ -358,16 +359,17 @@ There should be at least 2 characters between @ and . Characters.
 There should be at least 2 characters after the . character.
 
 Examples:
-isEmailValid("") 			-> false
-isEmailValid("@gmail.com") 		-> false
+isEmailValid("") 			        -> false
+isEmailValid("@gmail.com") 		    -> false
 isEmailValid("johndoe@yahoo") 		-> false
 isEmailValid("johndoe@.com") 		-> false
 isEmailValid("a@outlook.com") 		-> false
 isEmailValid("johndoe@a.com") 		-> false
 isEmailValid("johndoe@@gmail.com") 	-> false
-isEmailValid("johndoe@gmail.com") 		-> true
+isEmailValid("johndoe@gmail.com") 	-> true
 
 */
+/*
 console.log ('\n--- TASK 14 ---'); 
 const isEmailValid = string => {
     let checkNoSpaces =  !(string.includes(' ')); 
@@ -378,19 +380,20 @@ const isEmailValid = string => {
 
     return  checkNoSpaces && checkOneAtSign && check2CharsEmail && check2CharsAfter && checkTopLevel;
 }
-console.log ('isEmailValid("  ")                 ->', isEmailValid("  ") 	);
-console.log ('isEmailValid("@gmail.com")         ->', isEmailValid("@gmail.com") 	);
-console.log ('isEmailValid("johndoe@yahoo")      ->', isEmailValid("johndoe@yahoo") 	);
-console.log ('isEmailValid("johndoe@.com")       ->', isEmailValid("johndoe@.com") 	);
-console.log ('isEmailValid("a@outlook.com")      ->', isEmailValid("a@outlook.com") 	);
-console.log ('isEmailValid("johndoe@a.com")      ->', isEmailValid("johndoe@a.com") 	);
-console.log ('isEmailValid("johndoe@@gmail.com") ->', isEmailValid("johndoe@@gmail.com") 	);
-console.log ('isEmailValid("johndoe@gmail.com")  ->', isEmailValid("johndoe@gmail.com") 	);
-
+console.log('isEmailValid("")                 ->', isEmailValid("") 	);
+console.log('isEmailValid("@gmail.com")         ->', isEmailValid("@gmail.com") 	);
+console.log('isEmailValid("johndoe@yahoo")      ->', isEmailValid("johndoe@yahoo") 	);
+console.log('isEmailValid("johndoe@.com")       ->', isEmailValid("johndoe@.com") 	);
+console.log('isEmailValid("a@outlook.com")      ->', isEmailValid("a@outlook.com") 	);
+console.log('isEmailValid("johndoe@a.com")      ->', isEmailValid("johndoe@a.com") 	);
+console.log('isEmailValid("johndoe@@gmail.com") ->', isEmailValid("johndoe@@gmail.com") 	);
+console.log('isEmailValid("johndoe@gmail.com")  ->', isEmailValid("johndoe@gmail.com") 	);
+*/
 
 /* TASK 15
 Requirement: 
-Write a function named as isPasswordValid() which takes a string email as an argument and returns true if the password is valid or returns false otherwise when invoked.
+Write a function named as isPasswordValid() which takes a string email as 
+an argument and returns true if the password is valid or returns false otherwise when invoked.
 
 NOTE: A VALID PASSWORD:
 should have length of 8 to 16 (both inclusive).
@@ -398,14 +401,35 @@ should have at least 1 digit, 1 uppercase, 1 lowercase and 1 special char.
 should NOT have any space.
 
 Examples:
-isPasswordValid("") 			-> false
-isPasswordValid("abcd") 			-> false
-isPasswordValid("abcd1234") 		-> false
-isPasswordValid("Abcd1234") 		-> false
-isPasswordValid("Chicago12345US!#$%") 	-> false
-isPasswordValid("Abcd1234$") 		-> true
-isPasswordValid("Chicago123$") 		-> true
-isPasswordValid("Test1234#") 		-> true
+isPasswordValid("") 			      -> false
+isPasswordValid("abcd") 			  -> false
+isPasswordValid("abcd1234") 		  -> false
+isPasswordValid("Abcd1234") 		  -> false
+isPasswordValid("Chicago12345US!#$%") -> false
+isPasswordValid("Abcd1234$") 		  -> true
+isPasswordValid("Chicago123$") 		  -> true
+isPasswordValid("Test1234#") 		  -> true
 
 */
 console.log ('\n--- TASK 15 ---'); 
+const isPasswordValid = (string) => {
+    let checkNoSpace = !(string.includes(' ')); 
+    let passCheckLength = string.length >= 8  && string.length <=16; 
+    let passCheckCapLetters = /[A-Z]/.test(string);
+    let passCheckSmallLetters = /[a-z]/.test(string);
+    let passCheckNum = /[0-9]/.test(string);
+    let passCheckSymbol = /[^0-9a-z]/i.test(string);
+
+    return checkNoSpace && passCheckLength && passCheckCapLetters &&  passCheckSmallLetters &&   passCheckNum &&  passCheckSymbol
+
+}
+
+console.log('isPasswordValid("")                   ->', isPasswordValid("")); 
+console.log('isPasswordValid("abcd")               ->', isPasswordValid("abcd") ); 
+console.log('isPasswordValid("abcd1234")           ->', isPasswordValid("abcd1234")); 
+console.log('isPasswordValid("Abcd1234")           ->', isPasswordValid("Abcd1234")); 
+console.log('isPasswordValid("Chicago12345US!#$%") ->', isPasswordValid("Chicago12345US!#$%")); 
+console.log('isPasswordValid("Abcd1234$")          ->', isPasswordValid("Abcd1234$") ); 
+console.log('isPasswordValid("Chicago123$")        ->', isPasswordValid("Chicago123$")); 
+console.log('isPasswordValid("Test1234#") )        ->', isPasswordValid("Test1234#") ); 
+
