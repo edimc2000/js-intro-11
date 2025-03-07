@@ -331,10 +331,9 @@ findClosestTo10([0, -1, -2])               -> 0
 console.log ('\n--- TASK 13 ---'); 
 const findClosestTo10 = (arr) => {
     let distanceFrom10 = arr.map(element => Math.abs(10 - element));
-    let distanceFrom10Filtered = [...distanceFrom10].filter( element => element > 0);
-    let shortestDistance = Math.min(...distanceFrom10Filtered);
-    let firstIndex = distanceFrom10.indexOf(shortestDistance)
-    let lastIndex =  distanceFrom10.lastIndexOf(shortestDistance)
+    let distanceFrom10Filtered = [...distanceFrom10].filter( element => element > 0).sort((a,b) => a-b);
+    let firstIndex = distanceFrom10.indexOf(distanceFrom10Filtered[0])
+    let lastIndex =  distanceFrom10.lastIndexOf(distanceFrom10Filtered[0])
 
     return arr[firstIndex] < arr[lastIndex] ? arr[firstIndex] :arr[lastIndex];
 }
