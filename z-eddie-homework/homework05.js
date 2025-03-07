@@ -169,7 +169,7 @@ console.log('isPalindrome("123454321")   -> ', isPalindrome("123454321") );
 console.log('isPalindrome("A")           -> ', isPalindrome("A") );
 console.log('isPalindrome("")            -> ', isPalindrome("") );
 */
-/* TASK 8
+/* TASK 8 array reduce method 
 Requirement: 
 Write a function named as countMultipleWords() which takes an array as an argument and 
 returns the count of the elements that has multiple words when invoked.
@@ -183,6 +183,7 @@ countMultipleWords([ ])                                                 -> 0
 
 
 */
+/*
 console.log ('\n--- TASK 8 ---'); 
 const countMultipleWords = (arr) => arr.reduce ((acc, curr) => curr.trim().split(' ').length > 1 ? acc + 1 : acc , 0);
 
@@ -190,54 +191,105 @@ console.log('countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])   
 console.log('countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])       -> ', countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ]));
 console.log('countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) -> ', countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
 console.log('countMultipleWords([ ]))                                               -> ', countMultipleWords([ ]));
-
+*/
 /* TASK 9
 Requirement: 
-Write a function named as count3OrLess() which takes a string word as an argument and returns the count of the words that has 3 characters or less when invoked.
+Write a function named as count3OrLess() which takes a string word as an argument and 
+returns the count of the words that has 3 characters or less when invoked.
 
 Examples:
-count3OrLess("Hello") 			-> 0
-count3OrLess("Hi John") 			-> 1
-count3OrLess("JavaScript is fun") 		-> 2
-count3OrLess("My name is John Doe") 	-> 3
-count3OrLess("") 			-> 0
+count3OrLess("Hello")               -> 0
+count3OrLess("Hi John")             -> 1
+count3OrLess("JavaScript is fun")   -> 2
+count3OrLess("My name is John Doe") -> 3
+count3OrLess("")                    -> 0
 
 */
+/*
 console.log ('\n--- TASK 9 ---'); 
+const count3OrLess = (string) => string.split(' ').reduce((acc,curr) => curr.length < 4 && curr.length !== 0 ? acc + 1 : acc, 0);
+
+console.log('count3OrLess("Hello")                -> ', count3OrLess("Hello") );
+console.log('count3OrLess("Hi John")              -> ', count3OrLess("Hi John") );
+console.log('count3OrLess("JavaScript is fun")    -> ', count3OrLess("JavaScript is fun") );
+console.log('count3OrLess("My name is John Doe")  -> ', count3OrLess("My name is John Doe") );
+console.log('count3OrLess("")                     -> ', count3OrLess("") );
+*/
 
 /* TASK 10
 Requirement:
-Write a function named as isPrime() which takes a number as an argument and returns true if the number is prime or returns false otherwise when invoked.
+Write a function named as isPrime() which takes a number as an argument and 
+returns true if the number is prime or returns false otherwise when invoked.
 
-NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. It cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even prime number.
+NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. 
+It cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even prime number.
 Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…
 NOTE: The smallest prime number is 2 and there is no negative prime numbers.
 
 Examples:
-isPrime(5) 		-> true
-isPrime(2) 		-> true
-isPrime(29) 		-> true
-isPrime(-5)		-> false
-isPrime(0)		-> false
-isPrime(1)		-> false
+isPrime(5)   -> true
+isPrime(2)   -> true
+isPrime(29)  -> true
+isPrime(-5)  -> false
+isPrime(0)   -> false
+isPrime(1)   -> false
 
 */
+/*
 console.log ('\n--- TASK 10 ---'); 
+const isPrime = (num) => {
+    if(num > 1) {
+        for (i = 2 ; i <= num; i++  ){    
+            return num % i === 0 && num !== i ? false : true;
+        }
+    } else {
+        return false;
+    }
+}
 
+console.log('isPrime(5)   -> ', isPrime(5) );
+console.log('isPrime(2)   -> ', isPrime(2) );
+console.log('isPrime(29)  -> ', isPrime(29) );
+console.log('isPrime(-5)  -> ', isPrime(-5) );
+console.log('isPrime(0)   -> ', isPrime(0) );
+console.log('isPrime(1)   -> ', isPrime(1) );
+*/
 
 /* TASK 11
 Requirement:
-Write a function named add() which takes two array of numbers as argument and returns a new array with sum of given arrays elements.
+Write a function named add() which takes two array of numbers as argument 
+and returns a new array with sum of given arrays elements.
 
 NOTE: Be careful about the array sizes as they could be different.
 Examples:
-add([3, 0, 0, 7, 5, 10], [6, 3, 2]​) 		-> [9, 3, 2, 7, 5, 10]
-add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) 	-> [16, 11, 9,  3, 2, 7, 5, 10, 34]​
-add([-5, 6, -3, 11], [5, -6, 3, -11]) 		-> [0, 0, 0, 0]
+add([3, 0, 0, 7, 5, 10], [6, 3, 2]​)                   -> [9, 3, 2, 7, 5, 10]
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])  -> [16, 11, 9,  3, 2, 7, 5, 10, 34]​
+add([-5, 6, -3, 11], [5, -6, 3, -11])                 -> [0, 0, 0, 0]
 
 */
 console.log ('\n--- TASK 11 ---'); 
 
+const add = (arr1, arr2) => {
+    let arrRef1, arrRef2; 
+    
+    if (arr1.length > arr2.length) {
+        arrRef1 = arr1; arrRef2 =arr2;
+    }else {
+        arrRef1 = arr2; arrRef2 = arr1;
+    }
+
+    return arrRef1.map((element, index) => {
+        if (arrRef2[index] === undefined) {arrRef2[index] = 0}
+        return element + arrRef2[index];
+    })
+}
+
+console.log ('add([3, 0, 0, 7, 5, 10], [6, 3, 2])                  -> ', `[ ${add([3, 0, 0, 7, 5, 10], [6, 3, 2]).join(', ')} ]`); // formatted to prevent array from wrapping to next line
+console.log ('add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) -> ', `[ ${add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]).join(', ')} ]`);
+console.log ('add([-5, 6, -3, 11], [5, -6, 3, -11])                -> ', `[ ${add([-5, 6, -3, 11], [5, -6, 3, -11]).join(', ')} ]` );
+
+
+ 
 /* TASK 12
 Requirement: 
 Write a function named as removeExtraSpaces() which takes a string word as an argument and returns the string back with all extra spaces removed when invoked.
