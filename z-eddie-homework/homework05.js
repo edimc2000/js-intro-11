@@ -92,14 +92,14 @@ countWords("Cypress is an UI automation tool.    ")     -> 6
 countWords("1 2 3 4")                                   -> 4
 
 */
+/*
 console.log ('\n--- TASK 5 ---'); 
 const countWords = (string) => string.trim().split(' ').length; 
 
 console.log('countWords("     Javascript is fun       ")             ->', countWords("     Javascript is fun       "));
 console.log('countWords("Cypress is an UI automation tool.    ")     ->', countWords("Cypress is an UI automation tool.    "));
 console.log('countWords("1 2 3 4")                                   ->', countWords("1 2 3 4"));
-
-
+*/
 
 /* TASK 6
 Requirement:
@@ -117,6 +117,17 @@ factorial(1)		-> 1
 
 */
 console.log ('\n--- TASK 6 ---'); 
+const factorial = (num) => {
+    let arr = [];
+    for (let i = num; i >= 1; i--) { arr.push(i) }
+    return arr.reduce((acc, curr) => acc * curr, 1); 
+}
+
+console.log('factorial(5) ->', factorial(5));
+console.log('factorial(4) ->', factorial(4));
+console.log('factorial(0) ->', factorial(0));
+console.log('factorial(1) ->', factorial(1));
+
 
 /* TASK 7
 Requirement: 
