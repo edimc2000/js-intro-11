@@ -267,6 +267,7 @@ add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])  -> [16, 11, 9,  3, 2, 7, 
 add([-5, 6, -3, 11], [5, -6, 3, -11])                 -> [0, 0, 0, 0]
 
 */
+/*
 console.log ('\n--- TASK 11 ---'); 
 
 const add = (arr1, arr2) => {
@@ -287,7 +288,7 @@ const add = (arr1, arr2) => {
 console.log ('add([3, 0, 0, 7, 5, 10], [6, 3, 2])                  -> ', `[ ${add([3, 0, 0, 7, 5, 10], [6, 3, 2]).join(', ')} ]`); // formatted to prevent array from wrapping to next line
 console.log ('add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) -> ', `[ ${add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]).join(', ')} ]`);
 console.log ('add([-5, 6, -3, 11], [5, -6, 3, -11])                -> ', `[ ${add([-5, 6, -3, 11], [5, -6, 3, -11]).join(', ')} ]` );
-
+*/
 
  
 /* TASK 12
@@ -295,13 +296,22 @@ Requirement:
 Write a function named as removeExtraSpaces() which takes a string word as an argument and returns the string back with all extra spaces removed when invoked.
 
 Examples:
-removeExtraSpaces("Hello") 		-> "Hello" 
-removeExtraSpaces("      Hello    World     ") 	-> "Hello World" 
+removeExtraSpaces("Hello")                              -> "Hello" 
+removeExtraSpaces("      Hello    World     ") 	        -> "Hello World" 
 removeExtraSpaces("     JavaScript is          fun") 	-> "JavaScript is fun”
-removeExtraSpaces("") 			-> "" 
+removeExtraSpaces("") 			                        -> "" 
 
 */
 console.log ('\n--- TASK 12 ---'); 
+
+const removeExtraSpaces = (string) => string.trim().split(' ').filter (element=> element.length > 0).join(' ')
+
+console.log('removeExtraSpaces("Hello")                            -> ', removeExtraSpaces("Hello") );
+console.log('removeExtraSpaces(""      Hello    World     "")      -> ', removeExtraSpaces("Hello    World") );
+console.log('removeExtraSpaces(("     JavaScript is          fun") -> ', removeExtraSpaces("     JavaScript is          fun") );
+console.log('removeExtraSpaces("")                                 -> ', removeExtraSpaces("") );
+
+
 
 /* TASK 13
 Requirement: 
