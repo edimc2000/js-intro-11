@@ -116,6 +116,7 @@ factorial(0)		-> 1
 factorial(1)		-> 1
 
 */
+/*
 console.log ('\n--- TASK 6 ---'); 
 const factorial = (num) => {
     let arr = [];
@@ -127,30 +128,45 @@ console.log('factorial(5) ->', factorial(5));
 console.log('factorial(4) ->', factorial(4));
 console.log('factorial(0) ->', factorial(0));
 console.log('factorial(1) ->', factorial(1));
+*/
 
-
-/* TASK 7
+/* TASK 7 - array method reverse, spread, join
 Requirement: 
-Write a function named as isPalindrome() which takes a string word as an argument and returns true if the word is palindrome or returns false otherwise when invoked.
+Write a function named as isPalindrome() which takes a string word as an argument and 
+returns true if the word is palindrome or returns false otherwise when invoked.
 
 NOTE: Palindrome: It is a word that is read the same backward as forward
 Examples: kayak, civic, madam
 
 NOTE: your function should ignore case sensitivity
 
-
 Examples:
-isPalindrome("Hello") 		-> false
-isPalindrome("Kayak") 		-> true 
-isPalindrome("civic") 		-> true
-isPalindrome("abba") 		-> true
-isPalindrome("ab  a") 		-> false
-isPalindrome("123454321") 	-> true
-isPalindrome("A") 		-> true
-isPalindrome("") 		-> true
+isPalindrome("Hello")       -> false
+isPalindrome("Kayak")       -> true 
+isPalindrome("civic")       -> true
+isPalindrome("abba")        -> true
+isPalindrome("ab  a")       -> false
+isPalindrome("123454321")   -> true
+isPalindrome("A")           -> true
+isPalindrome("")            -> true
 
 */
 console.log ('\n--- TASK 7 ---'); 
+
+const isPalindrome = (string) => {
+    let string1 = string.toLowerCase().split('').join(''); 
+    let string2 = [... string1].reverse().join('');
+    return string1 === string2 
+}
+
+console.log('isPalindrome("Hello")       -> ', isPalindrome("Hello") );
+console.log('isPalindrome("Kayak")       -> ', isPalindrome("Kayak") );
+console.log('isPalindrome("civic")       -> ', isPalindrome("civic") );
+console.log('isPalindrome("abba")        -> ', isPalindrome("abba") );
+console.log('isPalindrome("ab  a")       -> ', isPalindrome("ab  a") );
+console.log('isPalindrome("123454321")   -> ', isPalindrome("123454321") );
+console.log('isPalindrome("A")           -> ', isPalindrome("A") );
+console.log('isPalindrome("")            -> ', isPalindrome("") );
 
 /* TASK 8
 Requirement: 
