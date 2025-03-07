@@ -302,6 +302,7 @@ removeExtraSpaces("     JavaScript is          fun") 	-> "JavaScript is fun”
 removeExtraSpaces("") 			                        -> "" 
 
 */
+/*
 console.log ('\n--- TASK 12 ---'); 
 
 const removeExtraSpaces = (string) => string.trim().split(' ').filter (element=> element.length > 0).join(' ')
@@ -310,23 +311,38 @@ console.log('removeExtraSpaces("Hello")                            -> ', removeE
 console.log('removeExtraSpaces(""      Hello    World     "")      -> ', removeExtraSpaces("Hello    World") );
 console.log('removeExtraSpaces(("     JavaScript is          fun") -> ', removeExtraSpaces("     JavaScript is          fun") );
 console.log('removeExtraSpaces("")                                 -> ', removeExtraSpaces("") );
-
+*/
 
 
 /* TASK 13
 Requirement: 
-Write a function named findClosestTo10() which takes an array of numbers as argument and returns the closest element to 10 from the given array.
+Write a function named findClosestTo10() which takes an array of numbers as 
+argument and returns the closest element to 10 from the given array.
 
 NOTE: Assume that length of array is always more than zero.
 NOTE: Ignore the 10 itself.
 NOTE: If there are more than one numbers are close equally, return the smaller number.
 Examples:
-findClosestTo10([10, -13, 5, 70, 15, 57]​) 	-> 5
-findClosestTo10([10, -13, 8, 12, 15, -20]) 	-> 8
-findClosestTo10([0, -1, -2]) 		-> 0
+findClosestTo10([10, -13, 5, 70, 15, 57]​)  -> 5
+findClosestTo10([10, -13, 8, 12, 15, -20]) -> 8
+findClosestTo10([0, -1, -2])               -> 0
 
 */
 console.log ('\n--- TASK 13 ---'); 
+const findClosestTo10 = (arr) => {
+    let distanceFrom10 = arr.map(element => Math.abs(10 - element));
+    let distanceFrom10Filtered = [...distanceFrom10].filter( element => element > 0);
+    let shortestDistance = Math.min(...distanceFrom10Filtered);
+    let firstIndex = distanceFrom10.indexOf(shortestDistance)
+    let lastIndex =  distanceFrom10.lastIndexOf(shortestDistance)
+
+    return arr[firstIndex] < arr[lastIndex] ? arr[firstIndex] :arr[lastIndex];
+}
+
+console.log('findClosestTo10([10, -13, 5, 70, 15, 57])  -> ', findClosestTo10([10, -13, 5, 70, 15, 57]) ); 
+console.log('findClosestTo10([10, -13, 8, 12, 15, -20]) -> ', findClosestTo10([10, -13, 8, 12, 15, -20]) ); 
+console.log('findClosestTo10([0, -1, -2])               -> ', findClosestTo10([0, -1, -2])   ); 
+
 
 /* TASK 14
 Requirement: 
