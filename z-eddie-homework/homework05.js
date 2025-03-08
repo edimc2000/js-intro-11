@@ -8,14 +8,14 @@ Examples:
  countPos([0, -1, -2, -3]) 		        -> 0
 
 */
-/*
+
 console.log ('\n--- TASK 1 ---'); 
 const countPos = (arr) => arr.reduce( (acc, curr) => curr > 0 ? acc + 1 : acc, 0);
 
 console.log('countPos([-45, 0, 0, 34, 5, 67])       -> ', countPos([-45, 0, 0, 34, 5, 67]));
 console.log('countPos([-23, -4, 0, 2, 5, 90, 123])  -> ', countPos([-23, -4, 0, 2, 5, 90, 123]) );
 console.log('countPos([0, -1, -2, -3])              -> ', countPos([0, -1, -2, -3]));
-*/
+
 /* TASK 2  - array methods 
 Requirement:
  Write a function named countA() which takes a string argument and returns how many 'A' 
@@ -27,14 +27,14 @@ Examples:
  countA("QA stands for Quality Assurance") 	-> 5
  countA("Cypress") 			                -> 0
 */
-/*
+
 console.log ('\n--- TASK 2 ---'); 
 const countA = (string) => string.split('').reduce((acc, curr) => curr.toLowerCase() === 'a' ? acc + 1 : acc, 0);
 
 console.log('countA("TechGlobal is a QA bootcamp")     -> ', countA("TechGlobal is a QA bootcamp")); 
 console.log('countA("QA stands for Quality Assurance") -> ', countA("QA stands for Quality Assurance")); 
 console.log('countA("Cypress")                         -> ', countA("Cypress")); 
-*/
+
 
 
 /* TASK 3
@@ -49,7 +49,7 @@ countVowels("Hello World") 		 -> 3
 countVowels("JavaScript is fun") -> 5
 countVowels("")                  -> 0
 */
-/*
+
 console.log ('\n--- TASK 3 ---'); 
 const countVowels = (string) => string.split('').reduce ((acc, curr) => 'aeiou'.includes(curr.toLowerCase()) ? acc+1 : acc,0)
 
@@ -57,7 +57,7 @@ console.log('countVowels("Hello")             ->', countVowels("Hello")  );
 console.log('countVowels("Hello World")       ->', countVowels("Hello World") );
 console.log('countVowels("JavaScript is fun") ->', countVowels("JavaScript is fun"));
 console.log('countVowels("")                  ->', countVowels(""));
-*/
+
 
 /* TASK 4 array method - reduce 
 Requirement: 
@@ -70,7 +70,7 @@ countConsonants("Hello World") 		   -> 8 ??  it should be 7 if it's just the con
 countConsonants("JavaScript is fun")   -> 12 ??  it should be 10, not counting the space 
 countConsonants("")                    -> 0
 */
-/*
+
 console.log ('\n--- TASK 4 ---'); 
 const countConsonants = (string) => string.split('').reduce ((acc, curr) => 'qwrtypsdfghjklzxcvbnm'.includes(curr.toLowerCase()) ? acc+1 : acc,0)
 
@@ -78,7 +78,7 @@ console.log('countConsonants("Hello")             ->', countConsonants("Hello"))
 console.log('countConsonants("Hello World")       ->', countConsonants("Hello World"));
 console.log('countConsonants("JavaScript is fun") ->', countConsonants("JavaScript is fun"));
 console.log('countConsonants("")                  ->', countConsonants(""));
-*/
+
 
 /* TASK 5 - string method
 Requirement: 
@@ -92,14 +92,14 @@ countWords("Cypress is an UI automation tool.    ")     -> 6
 countWords("1 2 3 4")                                   -> 4
 
 */
-/*
+
 console.log ('\n--- TASK 5 ---'); 
 const countWords = (string) => string.trim().split(' ').length; 
 
 console.log('countWords("     Javascript is fun       ")             ->', countWords("     Javascript is fun       "));
 console.log('countWords("Cypress is an UI automation tool.    ")     ->', countWords("Cypress is an UI automation tool.    "));
 console.log('countWords("1 2 3 4")                                   ->', countWords("1 2 3 4"));
-*/
+
 
 /* TASK 6
 Requirement:
@@ -116,7 +116,7 @@ factorial(0)		-> 1
 factorial(1)		-> 1
 
 */
-/*
+
 console.log ('\n--- TASK 6 ---'); 
 const factorial = (num) => {
     let arr = [];
@@ -128,7 +128,7 @@ console.log('factorial(5) ->', factorial(5));
 console.log('factorial(4) ->', factorial(4));
 console.log('factorial(0) ->', factorial(0));
 console.log('factorial(1) ->', factorial(1));
-*/
+
 
 /* TASK 7 - array method reverse, spread, join
 Requirement: 
@@ -151,7 +151,7 @@ isPalindrome("A")           -> true
 isPalindrome("")            -> true
 
 */
-/*
+
 console.log ('\n--- TASK 7 ---'); 
 
 const isPalindrome = (string) => {
@@ -168,7 +168,7 @@ console.log('isPalindrome("ab  a")       -> ', isPalindrome("ab  a") );
 console.log('isPalindrome("123454321")   -> ', isPalindrome("123454321") );
 console.log('isPalindrome("A")           -> ', isPalindrome("A") );
 console.log('isPalindrome("")            -> ', isPalindrome("") );
-*/
+
 /* TASK 8 array reduce method 
 Requirement: 
 Write a function named as countMultipleWords() which takes an array as an argument and 
@@ -183,7 +183,7 @@ countMultipleWords([ ])                                                 -> 0
 
 
 */
-/*
+
 console.log ('\n--- TASK 8 ---'); 
 const countMultipleWords = (arr) => arr.reduce ((acc, curr) => curr.trim().split(' ').length > 1 ? acc + 1 : acc , 0);
 
@@ -191,7 +191,7 @@ console.log('countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])   
 console.log('countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])       -> ', countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ]));
 console.log('countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) -> ', countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
 console.log('countMultipleWords([ ]))                                               -> ', countMultipleWords([ ]));
-*/
+
 /* TASK 9
 Requirement: 
 Write a function named as count3OrLess() which takes a string word as an argument and 
@@ -205,7 +205,7 @@ count3OrLess("My name is John Doe") -> 3
 count3OrLess("")                    -> 0
 
 */
-/*
+
 console.log ('\n--- TASK 9 ---'); 
 const count3OrLess = (string) => string.split(' ').reduce((acc,curr) => curr.length < 4 && curr.length !== 0 ? acc + 1 : acc, 0);
 
@@ -214,7 +214,7 @@ console.log('count3OrLess("Hi John")              -> ', count3OrLess("Hi John") 
 console.log('count3OrLess("JavaScript is fun")    -> ', count3OrLess("JavaScript is fun") );
 console.log('count3OrLess("My name is John Doe")  -> ', count3OrLess("My name is John Doe") );
 console.log('count3OrLess("")                     -> ', count3OrLess("") );
-*/
+
 
 /* TASK 10
 Requirement:
@@ -235,7 +235,7 @@ isPrime(0)   -> false
 isPrime(1)   -> false
 
 */
-/*
+
 console.log ('\n--- TASK 10 ---'); 
 const isPrime = (num) => {
     if(num > 1) {
@@ -253,7 +253,7 @@ console.log('isPrime(29)  -> ', isPrime(29) );
 console.log('isPrime(-5)  -> ', isPrime(-5) );
 console.log('isPrime(0)   -> ', isPrime(0) );
 console.log('isPrime(1)   -> ', isPrime(1) );
-*/
+
 
 /* TASK 11
 Requirement:
@@ -267,7 +267,7 @@ add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])  -> [16, 11, 9,  3, 2, 7, 
 add([-5, 6, -3, 11], [5, -6, 3, -11])                 -> [0, 0, 0, 0]
 
 */
-/*
+
 console.log ('\n--- TASK 11 ---'); 
 
 const add = (arr1, arr2) => {
@@ -288,7 +288,7 @@ const add = (arr1, arr2) => {
 console.log ('add([3, 0, 0, 7, 5, 10], [6, 3, 2])                  -> ', `[ ${add([3, 0, 0, 7, 5, 10], [6, 3, 2]).join(', ')} ]`); // formatted to prevent array from wrapping to next line
 console.log ('add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) -> ', `[ ${add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]).join(', ')} ]`);
 console.log ('add([-5, 6, -3, 11], [5, -6, 3, -11])                -> ', `[ ${add([-5, 6, -3, 11], [5, -6, 3, -11]).join(', ')} ]` );
-*/
+
 
  
 /* TASK 12
@@ -302,7 +302,7 @@ removeExtraSpaces("     JavaScript is          fun") 	-> "JavaScript is fun”
 removeExtraSpaces("") 			                        -> "" 
 
 */
-/*
+
 console.log ('\n--- TASK 12 ---'); 
 
 const removeExtraSpaces = (string) => string.trim().split(' ').filter (element=> element.length > 0).join(' ')
@@ -311,7 +311,7 @@ console.log('removeExtraSpaces("Hello")                            -> ', removeE
 console.log('removeExtraSpaces(""      Hello    World     "")      -> ', removeExtraSpaces("Hello    World") );
 console.log('removeExtraSpaces(("     JavaScript is          fun") -> ', removeExtraSpaces("     JavaScript is          fun") );
 console.log('removeExtraSpaces("")                                 -> ', removeExtraSpaces("") );
-*/
+
 
 
 /* TASK 13
@@ -328,7 +328,7 @@ findClosestTo10([10, -13, 8, 12, 15, -20]) -> 8
 findClosestTo10([0, -1, -2])               -> 0
 
 */
-/*
+
 console.log ('\n--- TASK 13 ---'); 
 const findClosestTo10 = (arr) => {
     let distanceFrom10 = arr.map(element => Math.abs(10 - element));
@@ -342,7 +342,7 @@ const findClosestTo10 = (arr) => {
 console.log('findClosestTo10([10, -13, 5, 70, 15, 57])  -> ', findClosestTo10([10, -13, 5, 70, 15, 57]) ); 
 console.log('findClosestTo10([10, -13, 8, 12, 15, -20]) -> ', findClosestTo10([10, -13, 8, 12, 15, -20]) ); 
 console.log('findClosestTo10([0, -1, -2])               -> ', findClosestTo10([0, -1, -2])   ); 
-*/
+
 
 /* TASK 14
 Requirement: 
@@ -369,7 +369,7 @@ isEmailValid("johndoe@@gmail.com") 	-> false
 isEmailValid("johndoe@gmail.com") 	-> true
 
 */
-/*
+
 console.log ('\n--- TASK 14 ---'); 
 const isEmailValid = string => {
     let checkNoSpaces =  !(string.includes(' ')); 
@@ -380,7 +380,7 @@ const isEmailValid = string => {
 
     return  checkNoSpaces && checkOneAtSign && check2CharsEmail && check2CharsAfter && checkTopLevel;
 }
-console.log('isEmailValid("")                 ->', isEmailValid("") 	);
+console.log('isEmailValid("")                   ->', isEmailValid("") 	);
 console.log('isEmailValid("@gmail.com")         ->', isEmailValid("@gmail.com") 	);
 console.log('isEmailValid("johndoe@yahoo")      ->', isEmailValid("johndoe@yahoo") 	);
 console.log('isEmailValid("johndoe@.com")       ->', isEmailValid("johndoe@.com") 	);
@@ -388,7 +388,7 @@ console.log('isEmailValid("a@outlook.com")      ->', isEmailValid("a@outlook.com
 console.log('isEmailValid("johndoe@a.com")      ->', isEmailValid("johndoe@a.com") 	);
 console.log('isEmailValid("johndoe@@gmail.com") ->', isEmailValid("johndoe@@gmail.com") 	);
 console.log('isEmailValid("johndoe@gmail.com")  ->', isEmailValid("johndoe@gmail.com") 	);
-*/
+
 
 /* TASK 15
 Requirement: 
