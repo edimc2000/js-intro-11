@@ -245,6 +245,7 @@ console.log('isPrime(0)   -> ', isPrime(0) );
 console.log('isPrime(1)   -> ', isPrime(1) );
 
 
+
 /* TASK 11
 Requirement:
  Write a function named add() which takes two array of numbers as argument 
