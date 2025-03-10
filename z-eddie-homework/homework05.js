@@ -230,11 +230,11 @@ console.log ('\n--- TASK 10 ---');
 const isPrime = (num) => {
     if(num > 1) {
         for (i = 2 ; i <= num; i++  ){    
-            return num % i === 0 && num !== i ? false : true;
+            return !(num % i === 0 && num !== i );
         }
-    } else {
-        return false;
-    }
+    } 
+    return false;
+    
 }
 
 console.log('isPrime(5)   -> ', isPrime(5) );
