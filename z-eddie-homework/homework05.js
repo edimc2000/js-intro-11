@@ -23,7 +23,7 @@ NOTE:
  Ignore case sensitivity. 
 Examples:
  countA("TechGlobal is a QA bootcamp")      -> 4
- countA("QA stands for Quality Assurance") 	-> 5
+ countA("QA stands for Quality Assurance")  -> 5
  countA("Cypress")                          -> 0
 */
 
