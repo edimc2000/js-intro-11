@@ -22,9 +22,9 @@ Requirement:
 NOTE: 
  Ignore case sensitivity. 
 Examples:
- countA("TechGlobal is a QA bootcamp") 	    -> 4
+ countA("TechGlobal is a QA bootcamp")      -> 4
  countA("QA stands for Quality Assurance") 	-> 5
- countA("Cypress") 			                -> 0
+ countA("Cypress")                          -> 0
 */
 
 console.log ('\n--- TASK 2 ---'); 
@@ -44,7 +44,7 @@ NOTE:
  Vowel letters are A,E, O, U, I, a, e, o, u, i
 Examples:
  countVowels("Hello")             -> 2
- countVowels("Hello World") 		 -> 3
+ countVowels("Hello World")       -> 3
  countVowels("JavaScript is fun") -> 5
  countVowels("")                  -> 0
 */
@@ -65,8 +65,8 @@ Requirement:
 NOTE: 
  A letter that is not vowel is considered as a consonant letter.
 Examples:
- countConsonants("Hello") 		       -> 3
- countConsonants("Hello World") 		   -> 8 ??  it should be 7 if it's just the consonants 
+ countConsonants("Hello")               -> 3
+ countConsonants("Hello World")         -> 8 ??  it should be 7 if it's just the consonants 
  countConsonants("JavaScript is fun")   -> 12 ??  it should be 10, not counting the space 
  countConsonants("")                    -> 0
 */
@@ -172,7 +172,7 @@ NOTE:
 Examples:
  countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])        -> 1
  countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])        -> 0
- countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) 	-> 4
+ countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])  -> 4
  countMultipleWords([ ])                                                 -> 0
 */
 
@@ -284,9 +284,9 @@ Requirement:
  as an argument and returns the string back with all extra spaces removed when invoked.
 Examples:
  removeExtraSpaces("Hello")                              -> "Hello" 
- removeExtraSpaces("      Hello    World     ") 	        -> "Hello World" 
- removeExtraSpaces("     JavaScript is          fun") 	-> "JavaScript is fun”
- removeExtraSpaces("") 			                        -> "" 
+ removeExtraSpaces("      Hello    World     ")          -> "Hello World" 
+ removeExtraSpaces("     JavaScript is          fun")    -> "JavaScript is fun”
+ removeExtraSpaces("")                                   -> "" 
 */
 
 console.log ('\n--- TASK 12 ---'); 
@@ -341,14 +341,14 @@ NOTE:
  There should be at least 2 characters between @ and . Characters.
  There should be at least 2 characters after the . character.
 Examples:
- isEmailValid("") 			        -> false
- isEmailValid("@gmail.com") 		    -> false
- isEmailValid("johndoe@yahoo") 		-> false
- isEmailValid("johndoe@.com") 		-> false
- isEmailValid("a@outlook.com") 		-> false
- isEmailValid("johndoe@a.com") 		-> false
- isEmailValid("johndoe@@gmail.com") 	-> false
- isEmailValid("johndoe@gmail.com") 	-> true
+ isEmailValid("")                   -> false
+ isEmailValid("@gmail.com")         -> false
+ isEmailValid("johndoe@yahoo")      -> false
+ isEmailValid("johndoe@.com")       -> false
+ isEmailValid("a@outlook.com")      -> false
+ isEmailValid("johndoe@a.com")      -> false
+ isEmailValid("johndoe@@gmail.com") -> false
+ isEmailValid("johndoe@gmail.com")  -> true
 */
 
 console.log ('\n--- TASK 14 ---'); 
@@ -380,14 +380,14 @@ NOTE: A VALID PASSWORD:
  should have at least 1 digit, 1 uppercase, 1 lowercase and 1 special char.
  should NOT have any space.
 Examples:
- isPasswordValid("") 			      -> false
- isPasswordValid("abcd") 			  -> false
- isPasswordValid("abcd1234") 		  -> false
- isPasswordValid("Abcd1234") 		  -> false
- isPasswordValid("Chicago12345US!#$%") -> false
- isPasswordValid("Abcd1234$") 		  -> true
- isPasswordValid("Chicago123$") 		  -> true
- isPasswordValid("Test1234#") 		  -> true
+ isPasswordValid("")                  -> false
+ isPasswordValid("abcd")              -> false
+ isPasswordValid("abcd1234")          -> false
+ isPasswordValid("Abcd1234")          -> false
+ isPasswordValid("Chicago12345US!#$%")-> false
+ isPasswordValid("Abcd1234$")         -> true
+ isPasswordValid("Chicago123$")       -> true
+ isPasswordValid("Test1234#")         -> true
 */
 
 console.log ('\n--- TASK 15 ---'); 
