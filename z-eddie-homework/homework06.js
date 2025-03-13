@@ -179,23 +179,7 @@ const isPrime = num => {
 };
 const countPrimes = arr => arr.filter(element => isPrime(element)).length;
 
+console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
+console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17]) ); 
+console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
 
-
-
-// console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
-// console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17]) ); 
-// console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
-
-console.log(isPrime(1))
-console.log(isPrime(4))
-console.log(isPrime(6))
-console.log('*****')
-console.log(isPrime(2))
-console.log(isPrime(3))
-console.log(isPrime(5))
-console.log(isPrime(7))
-console.log('*****')
-console.log(isPrime(9))
-console.log(isPrime(12))
-console.log(isPrime(14))
-console.log(isPrime(18))
