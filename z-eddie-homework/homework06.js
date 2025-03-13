@@ -55,11 +55,43 @@ Examples:
  hasVowel("1234")         -> false
  hasVowel("ABC")          -> true
 */
-console.log('--- Task  ---'); 
-const hasVowel = string => /[aeiou]/i.test(string);
+// console.log('--- Task 3 ---'); 
+// const hasVowel = string => /[aeiou]/i.test(string);
 
-console.log('hasVowel("")            -> ', hasVowel("")); 
-console.log('hasVowel("Javascript")  -> ', hasVowel("Javascript")); 
-console.log('hasVowel("Tech Global") -> ', hasVowel("Tech Global")); 
-console.log('hasVowel("1234")        -> ', hasVowel("1234")); 
-console.log('hasVowel("ABC")         -> ', hasVowel("ABC")); 
+// console.log('hasVowel("")            -> ', hasVowel("")); 
+// console.log('hasVowel("Javascript")  -> ', hasVowel("Javascript")); 
+// console.log('hasVowel("Tech Global") -> ', hasVowel("Tech Global")); 
+// console.log('hasVowel("1234")        -> ', hasVowel("1234")); 
+// console.log('hasVowel("ABC")         -> ', hasVowel("ABC")); 
+
+/* Task 4
+Requirement:
+ Write a function named checkAge() which takes a number argument to be 
+ considered as the yearOfBirth and returns a message below based on the given year.
+ If the age is less than 16, then print "AGE IS NOT ALLOWED”"
+ If the age is 16 or more, then print "AGE IS ALLOWED"
+ If the age is more than 120 or a future year, print "AGE IS NOT VALID"
+ NOTE: Consider someone born in 2013 is 10 years old as of 2023.
+Examples:
+ checkAge(2015) -> "AGE IS NOT ALLOWED"
+ checkAge(2007) -> "AGE IS ALLOWED"
+ checkAge(2050) -> "AGE IS NOT VALID"
+ checkAge(1920) -> "AGE IS ALLOWED"
+ checkAge(1800) -> "AGE IS NOT VALID"
+*/
+console.log('--- Task 4 ---'); 
+
+const checkAge = yearOfBirth => {
+    const age = Number(new Date( Date.now()).toDateString().slice(-4)) - yearOfBirth;
+    return age < 0 ? 'AGE IS NOT VALID '
+     : age < 16 ? 'AGE IS NOT ALLOWED'
+     : age > 16 && age < 120 ? 'AGE IS ALLOWED'
+     : age > 120 ? 'AGE IS NOT VALID'
+     : null; 
+}
+
+console.log('checkAge(2015) -> ', checkAge(2015)); 
+console.log('checkAge(2007) -> ', checkAge(2007)); 
+console.log('checkAge(2050) -> ', checkAge(2050)); 
+console.log('checkAge(1920) -> ', checkAge(1920)); 
+console.log('checkAge(1800) -> ', checkAge(1800)); 
