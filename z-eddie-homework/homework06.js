@@ -9,14 +9,14 @@ Examples:
  noSpace(" Hello World   ")     -> "HelloWorld”
  noSpace("Tech Global")         -> "TechGlobal"
 */
-// console.log('--- Task 1 ---'); 
-// const noSpace = string => string.trim(); 
+console.log('--- Task 1 ---'); 
+const noSpace = string => string.trim(); 
 
-// console.log('noSpace("")                ->', noSpace(""));
-// console.log('noSpace("Javascript")      ->', noSpace("Javascript"));
-// console.log('noSpace("  Hello  ")       ->', noSpace("  Hello  "));
-// console.log('noSpace(" Hello World  ")  ->', noSpace(" Hello World  "));
-// console.log('noSpace("Tech Global")     ->', noSpace("Tech Global"));
+console.log('noSpace("")                ->', noSpace(""));
+console.log('noSpace("Javascript")      ->', noSpace("Javascript"));
+console.log('noSpace("  Hello  ")       ->', noSpace("  Hello  "));
+console.log('noSpace(" Hello World  ")  ->', noSpace(" Hello World  "));
+console.log('noSpace("Tech Global")     ->', noSpace("Tech Global"));
 
 /* Task 2 
 Requirement:
@@ -31,14 +31,14 @@ Examples:
  replaceFirstLast("A")           -> ""
  replaceFirstLast("    A      ") -> ""
 */
-// console.log('--- Task 2 ---'); 
-// const replaceFirstLast = string => string.trim().length < 2 ? '' : string.trim().at(-1) + string.trim().slice(1, string.trim().length-1) + string.trim().at(0);  
+console.log('--- Task 2 ---'); 
+const replaceFirstLast = string => string.trim().length < 2 ? '' : string.trim().at(-1) + string.trim().slice(1, string.trim().length-1) + string.trim().at(0);  
 
-// console.log('replaceFirstLast("")            -> ', replaceFirstLast("")); 
-// console.log('replaceFirstLast("Hello")       -> ', replaceFirstLast("Hello ")); 
-// console.log('replaceFirstLast("Tech Global") -> ', replaceFirstLast("Tech Global")); 
-// console.log('replaceFirstLast("A")           -> ', replaceFirstLast("A")); 
-// console.log('replaceFirstLast("   A  ")      -> ', replaceFirstLast("  A  ")); 
+console.log('replaceFirstLast("")            -> ', replaceFirstLast("")); 
+console.log('replaceFirstLast("Hello")       -> ', replaceFirstLast("Hello ")); 
+console.log('replaceFirstLast("Tech Global") -> ', replaceFirstLast("Tech Global")); 
+console.log('replaceFirstLast("A")           -> ', replaceFirstLast("A")); 
+console.log('replaceFirstLast("   A  ")      -> ', replaceFirstLast("  A  ")); 
 
 
 /* Task 3
@@ -55,14 +55,14 @@ Examples:
  hasVowel("1234")         -> false
  hasVowel("ABC")          -> true
 */
-// console.log('--- Task 3 ---'); 
-// const hasVowel = string => /[aeiou]/i.test(string);
+console.log('--- Task 3 ---'); 
+const hasVowel = string => /[aeiou]/i.test(string);
 
-// console.log('hasVowel("")            -> ', hasVowel("")); 
-// console.log('hasVowel("Javascript")  -> ', hasVowel("Javascript")); 
-// console.log('hasVowel("Tech Global") -> ', hasVowel("Tech Global")); 
-// console.log('hasVowel("1234")        -> ', hasVowel("1234")); 
-// console.log('hasVowel("ABC")         -> ', hasVowel("ABC")); 
+console.log('hasVowel("")            -> ', hasVowel("")); 
+console.log('hasVowel("Javascript")  -> ', hasVowel("Javascript")); 
+console.log('hasVowel("Tech Global") -> ', hasVowel("Tech Global")); 
+console.log('hasVowel("1234")        -> ', hasVowel("1234")); 
+console.log('hasVowel("ABC")         -> ', hasVowel("ABC")); 
 
 /* Task 4
 Requirement:
@@ -79,21 +79,21 @@ Examples:
  checkAge(1920) -> "AGE IS ALLOWED"
  checkAge(1800) -> "AGE IS NOT VALID"
 */
-// console.log('--- Task 4 ---'); 
-// const checkAge = yearOfBirth => {
-//     const age = Number(new Date( Date.now()).toDateString().slice(-4)) - yearOfBirth;
-//     return age < 0 ? 'AGE IS NOT VALID '
-//      : age < 16 ? 'AGE IS NOT ALLOWED'
-//      : age > 16 && age < 120 ? 'AGE IS ALLOWED'
-//      : age > 120 ? 'AGE IS NOT VALID'
-//      : null; 
-// }
+console.log('--- Task 4 ---'); 
+const checkAge = yearOfBirth => {
+    const age = Number(new Date( Date.now()).toDateString().slice(-4)) - yearOfBirth;
+    return age < 0 ? 'AGE IS NOT VALID '
+     : age < 16 ? 'AGE IS NOT ALLOWED'
+     : age > 16 && age < 120 ? 'AGE IS ALLOWED'
+     : age > 120 ? 'AGE IS NOT VALID'
+     : null; 
+}
 
-// console.log('checkAge(2015) -> ', checkAge(2015)); 
-// console.log('checkAge(2007) -> ', checkAge(2007)); 
-// console.log('checkAge(2050) -> ', checkAge(2050)); 
-// console.log('checkAge(1920) -> ', checkAge(1920)); 
-// console.log('checkAge(1800) -> ', checkAge(1800)); 
+console.log('checkAge(2015) -> ', checkAge(2015)); 
+console.log('checkAge(2007) -> ', checkAge(2007)); 
+console.log('checkAge(2050) -> ', checkAge(2050)); 
+console.log('checkAge(1920) -> ', checkAge(1920)); 
+console.log('checkAge(1800) -> ', checkAge(1800)); 
 
 
 /* Task 5
@@ -107,14 +107,14 @@ Examples:
  averageOfEdges(-3, 15, -3)  -> 6
  averageOfEdges(10, 13, 20)  -> 15
 */
-// console.log('--- Task 5 ---'); 
-// const averageOfEdges = (num1, num2, num3) => (Math.min(num1, num2, num3) + Math.max(num1, num2, num3)) / 2;
+console.log('--- Task 5 ---'); 
+const averageOfEdges = (num1, num2, num3) => (Math.min(num1, num2, num3) + Math.max(num1, num2, num3)) / 2;
 
-// console.log('averageOfEdges(0, 0, 0)    -> ', averageOfEdges(0, 0, 0)); 
-// console.log('averageOfEdges(0, 0, 6)    -> ', averageOfEdges(0, 0, 6)); 
-// console.log('averageOfEdges(-2, -2, 10) -> ', averageOfEdges(-2, -2, 10)); 
-// console.log('averageOfEdges(-3, 15, -3) -> ', averageOfEdges(-3, 15, -3)); 
-// console.log('averageOfEdges(10, 13, 20) -> ', averageOfEdges(10, 13, 20)); 
+console.log('averageOfEdges(0, 0, 0)    -> ', averageOfEdges(0, 0, 0)); 
+console.log('averageOfEdges(0, 0, 6)    -> ', averageOfEdges(0, 0, 6)); 
+console.log('averageOfEdges(-2, -2, 10) -> ', averageOfEdges(-2, -2, 10)); 
+console.log('averageOfEdges(-3, 15, -3) -> ', averageOfEdges(-3, 15, -3)); 
+console.log('averageOfEdges(10, 13, 20) -> ', averageOfEdges(10, 13, 20)); 
 
 
 
@@ -127,12 +127,12 @@ Examples:
  noA(["apple", "123", "ABC", "javascript"]) 	->  ["###", "123", "###", "javascript"]
  noA(["apple", "abc", "ABC", "Alex", "A"]) 	    -> ["###", "###", "###", "###", "###"]
 */
-// console.log('--- Task 6 ---'); 
-// const noA = arr => arr.map(element =>  element[0].toLowerCase() === 'a' ? '###' : element);
+console.log('--- Task 6 ---'); 
+const noA = arr => arr.map(element =>  element[0].toLowerCase() === 'a' ? '###' : element);
 
-// console.log('noA(["javascript", "hello", "123", "xyz"]) -> ', noA(["javascript", "hello", "123", "xyz"])); 
-// console.log('noA(["apple", "123", "ABC", "javascript"]) -> ', noA(["apple", "123", "ABC", "javascript"])); 
-// console.log('noA(["apple", "abc", "ABC", "Alex", "A"])  -> ', noA(["apple", "abc", "ABC", "Alex", "A"])); 
+console.log('noA(["javascript", "hello", "123", "xyz"]) -> ', noA(["javascript", "hello", "123", "xyz"])); 
+console.log('noA(["apple", "123", "ABC", "javascript"]) -> ', noA(["apple", "123", "ABC", "javascript"])); 
+console.log('noA(["apple", "abc", "ABC", "Alex", "A"])  -> ', noA(["apple", "abc", "ABC", "Alex", "A"])); 
 
 
 /* Task 7
@@ -148,12 +148,12 @@ Examples:
  no3and5([10, 11, 12, 13, 14, 15]) 	-> [99, 11, 100, 13, 14, 101]
 
 */
-// console.log('--- Task 7 ---'); 
-// const no3and5 = arr => arr.map(element => element % 3 === 0 && element % 5 === 0 ? 101 : element % 5 === 0 ? 99 : element % 3 === 0 ? 100 : element);
+console.log('--- Task 7 ---'); 
+const no3and5 = arr => arr.map(element => element % 3 === 0 && element % 5 === 0 ? 101 : element % 5 === 0 ? 99 : element % 3 === 0 ? 100 : element);
 
-// console.log('no3and5([7, 4, 11, 23, 17])         -> ', no3and5([7, 4, 11, 23, 17])); 
-// console.log('no3and5([3, 4, 5, 6])               -> ', no3and5([3, 4, 5, 6])); 
-// console.log('no3and5([10, 11, 12, 13, 14, 15]))  -> ', no3and5([10, 11, 12, 13, 14, 15])); 
+console.log('no3and5([7, 4, 11, 23, 17])         -> ', no3and5([7, 4, 11, 23, 17])); 
+console.log('no3and5([3, 4, 5, 6])               -> ', no3and5([3, 4, 5, 6])); 
+console.log('no3and5([10, 11, 12, 13, 14, 15]))  -> ', no3and5([10, 11, 12, 13, 14, 15])); 
 
 
 /* Task 8
@@ -169,19 +169,19 @@ Examples:
  countPrimes([7, 4, 11, 23, 17])   -> 4
  countPrimes([41, 53, 19, 47, 67]) -> 5
 */
-// console.log('--- Task 8 ---'); 
-// const isPrime = num => {
-//     if (num < 2) return false
-//     for (let i = 2; i <= Math.sqrt(num); i++) {
-//         if (num % i === 0) return false; 
-//     }
-//     return true;
-// };
-// const countPrimes = arr => arr.filter(element => isPrime(element)).length;
+console.log('--- Task 8 ---'); 
+const isPrime = num => {
+    if (num < 2) return false
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false; 
+    }
+    return true;
+};
+const countPrimes = arr => arr.filter(element => isPrime(element)).length;
 
-// console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
-// console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17])); 
-// console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
+console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
+console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17])); 
+console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
 
 
 /* Task 9
@@ -195,14 +195,14 @@ Examples:
  removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"]
  removeDuplicates(["1", "2", "3", "2", "3"])                 -> ["1", "2", "3"]
 */
-// console.log('--- Task 9 ---'); 
-// const removeDuplicates = arr => [...new Set(arr)]
+console.log('--- Task 9 ---'); 
+const removeDuplicates = arr => [...new Set(arr)]
 
-// console.log('removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])           -> ', removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); 
-// console.log('removeDuplicates([1, 2, 5, 2, 3])                            -> ', removeDuplicates([1, 2, 5, 2, 3])); 
-// console.log('removeDuplicates([0, -1, -2, -2, -1])                        -> ', removeDuplicates([0, -1, -2, -2, -1])); 
-// console.log('removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ', removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
-// console.log('removeDuplicates(["1", "2", "3", "2", "3"])                  -> ', removeDuplicates(["1", "2", "3", "2", "3"])); 
+console.log('removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])           -> ', removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); 
+console.log('removeDuplicates([1, 2, 5, 2, 3])                            -> ', removeDuplicates([1, 2, 5, 2, 3])); 
+console.log('removeDuplicates([0, -1, -2, -2, -1])                        -> ', removeDuplicates([0, -1, -2, -2, -1])); 
+console.log('removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ', removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
+console.log('removeDuplicates(["1", "2", "3", "2", "3"])                  -> ', removeDuplicates(["1", "2", "3", "2", "3"])); 
 
 
 
@@ -224,21 +224,21 @@ Examples:
  isDateFormatValid("10/02/2020 ")  -> true
 
 */
-// console.log('--- Task 10 ---'); 
+console.log('--- Task 10 ---'); 
 
-// const isDateFormatValid = string => {
-//     let strSplit = string.trim().split('/');
-//     return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
-// }
+const isDateFormatValid = string => {
+    let strSplit = string.trim().split('/');
+    return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
+}
 
-// console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
-// console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
-// console.log('isDateFormatValid("10-30-2020 ") -> ', isDateFormatValid("10-30-2020 ")); 
-// console.log('isDateFormatValid("10.30.2020")  -> ', isDateFormatValid("10.30.2020")); 
-// console.log('isDateFormatValid("5/30/2020")   -> ', isDateFormatValid("5/30/2020")); 
-// console.log('isDateFormatValid("05/30/2020 ") -> ', isDateFormatValid("05/30/2020 ")); 
-// console.log('isDateFormatValid("10/2/2020") ) -> ', isDateFormatValid("10/2/2020")); 
-// console.log('isDateFormatValid("10/02/2020 ") -> ', isDateFormatValid("10/02/2020 ")); 
+console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
+console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
+console.log('isDateFormatValid("10-30-2020 ") -> ', isDateFormatValid("10-30-2020 ")); 
+console.log('isDateFormatValid("10.30.2020")  -> ', isDateFormatValid("10.30.2020")); 
+console.log('isDateFormatValid("5/30/2020")   -> ', isDateFormatValid("5/30/2020")); 
+console.log('isDateFormatValid("05/30/2020 ") -> ', isDateFormatValid("05/30/2020 ")); 
+console.log('isDateFormatValid("10/2/2020") ) -> ', isDateFormatValid("10/2/2020")); 
+console.log('isDateFormatValid("10/02/2020 ") -> ', isDateFormatValid("10/02/2020 ")); 
 
 
 
@@ -252,15 +252,15 @@ Examples:
  secondMax([3, 4, 5, 6])             -> 5
  secondMax([10])                     -> 10
 */
-// console.log('--- Task 11 ---'); 
-// const secondMax = arr => {
-//     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
-//     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2) 
-// }
+console.log('--- Task 11 ---'); 
+const secondMax = arr => {
+    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
+    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2) 
+}
 
-// console.log('secondMax([7, 4, 4, 4, 23, 23, 23])  -> ', secondMax([7, 4, 4, 4, 23, 23, 23])); 
-// console.log('secondMax([3, 4, 5, 6])              -> ', secondMax([3, 4, 5, 6])); 
-// console.log('secondMax([10])                      -> ', secondMax([10])); 
+console.log('secondMax([7, 4, 4, 4, 23, 23, 23])  -> ', secondMax([7, 4, 4, 4, 23, 23, 23])); 
+console.log('secondMax([3, 4, 5, 6])              -> ', secondMax([3, 4, 5, 6])); 
+console.log('secondMax([10])                      -> ', secondMax([10])); 
 
 
 /* Task 12
@@ -274,15 +274,15 @@ Examples:
  secondMax([10])                     -> 10
 
 */
-// console.log('--- Task 12 ---'); 
-// const secondMin = arr => {
-//     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
-//     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1) 
-// }
+console.log('--- Task 12 ---'); 
+const secondMin = arr => {
+    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
+    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1) 
+}
 
-// console.log('secondMin([7, 4, 4, 4, 23, 23, 23])  -> ', secondMin([7, 4, 4, 4, 23, 23, 23])); 
-// console.log('secondMin([3, 4, 5, 6])              -> ', secondMin([3, 4, 5, 6])); 
-// console.log('secondMin([10])                      -> ', secondMin([10])); 
+console.log('secondMin([7, 4, 4, 4, 23, 23, 23])  -> ', secondMin([7, 4, 4, 4, 23, 23, 23])); 
+console.log('secondMin([3, 4, 5, 6])              -> ', secondMin([3, 4, 5, 6])); 
+console.log('secondMin([10])                      -> ', secondMin([10])); 
 
 
 /* Task 13
