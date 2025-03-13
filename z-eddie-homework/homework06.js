@@ -117,7 +117,6 @@ console.log('averageOfEdges(-3, 15, -3) -> ', averageOfEdges(-3, 15, -3));
 console.log('averageOfEdges(10, 13, 20) -> ', averageOfEdges(10, 13, 20)); 
 
 
-
 /* Task 6
 Requirement:
  Write a function named noA() which takes an array of strings as argument and 
@@ -146,7 +145,6 @@ Examples:
  no3and5([7, 4, 11, 23, 17])        -> [7, 4, 11, 23, 17]
  no3and5([3, 4, 5, 6])              -> [100, 4, 99, 100]
  no3and5([10, 11, 12, 13, 14, 15]) 	-> [99, 11, 100, 13, 14, 101]
-
 */
 console.log('--- Task 7 ---'); 
 const no3and5 = arr => arr.map(element => element % 3 === 0 && element % 5 === 0 ? 101 : element % 5 === 0 ? 99 : element % 3 === 0 ? 100 : element);
@@ -196,7 +194,7 @@ Examples:
  removeDuplicates(["1", "2", "3", "2", "3"])                 -> ["1", "2", "3"]
 */
 console.log('--- Task 9 ---'); 
-const removeDuplicates = arr => [...new Set(arr)]
+const removeDuplicates = arr => [...new Set(arr)];
 
 console.log('removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])           -> ', removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); 
 console.log('removeDuplicates([1, 2, 5, 2, 3])                            -> ', removeDuplicates([1, 2, 5, 2, 3])); 
@@ -229,7 +227,7 @@ console.log('--- Task 10 ---');
 const isDateFormatValid = string => {
     let strSplit = string.trim().split('/');
     return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
-}
+};
 
 console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
 console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
@@ -256,7 +254,7 @@ console.log('--- Task 11 ---');
 const secondMax = arr => {
     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2) 
-}
+};
 
 console.log('secondMax([7, 4, 4, 4, 23, 23, 23])  -> ', secondMax([7, 4, 4, 4, 23, 23, 23])); 
 console.log('secondMax([3, 4, 5, 6])              -> ', secondMax([3, 4, 5, 6])); 
@@ -278,7 +276,7 @@ console.log('--- Task 12 ---');
 const secondMin = arr => {
     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1) 
-}
+};
 
 console.log('secondMin([7, 4, 4, 4, 23, 23, 23])  -> ', secondMin([7, 4, 4, 4, 23, 23, 23])); 
 console.log('secondMin([3, 4, 5, 6])              -> ', secondMin([3, 4, 5, 6])); 
@@ -301,7 +299,7 @@ const mostRepeated = arr => {
     let uniqueArr = [... new Set(arr)]
     let uniqueArrCount = uniqueArr.map( element => arr.reduce((acc,curr) => element === curr ? acc + 1 : acc, 0))
     return uniqueArr.at(uniqueArrCount.indexOf(Math.max(... uniqueArrCount)))
-}
+};
 
 console.log('mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])                             -> ', mostRepeated([4, 7, 4, 4, 4, 23, 23, 23 ])); 
 console.log('mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]) -> ', mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"])); 
