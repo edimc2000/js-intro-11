@@ -169,17 +169,74 @@ Examples:
  countPrimes([7, 4, 11, 23, 17])   -> 4
  countPrimes([41, 53, 19, 47, 67]) -> 5
 */
-console.log('--- Task 8 ---'); 
-const isPrime = num => {
-    if (num < 2) return false
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) return false; 
-    }
-    return true;
-};
-const countPrimes = arr => arr.filter(element => isPrime(element)).length;
+// console.log('--- Task 8 ---'); 
+// const isPrime = num => {
+//     if (num < 2) return false
+//     for (let i = 2; i <= Math.sqrt(num); i++) {
+//         if (num % i === 0) return false; 
+//     }
+//     return true;
+// };
+// const countPrimes = arr => arr.filter(element => isPrime(element)).length;
 
-console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
-console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17]) ); 
-console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
+// console.log('countPrimes([-10, -3, 0, 1])      -> ', countPrimes([-10, -3, 0, 1]) ); 
+// console.log('countPrimes([7, 4, 11, 23, 17])   -> ', countPrimes([7, 4, 11, 23, 17])); 
+// console.log('countPrimes([41, 53, 19, 47, 67]) -> ', countPrimes([41, 53, 19, 47, 67])); 
+
+
+/* Task 9
+Requirement:
+ Write a function named removeDuplicates() which takes an array argument and 
+ returns a new array with all the duplicates removed.
+Examples:
+ removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])          -> [10, 20, 35, 60, 70]
+ removeDuplicates([1, 2, 5, 2, 3])                           -> [1, 2, 5, 3]
+ removeDuplicates([0, -1, -2, -2, -1])                       -> [0, -1, -2]
+ removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"]
+ removeDuplicates(["1", "2", "3", "2", "3"])                 -> ["1", "2", "3"]
+*/
+// console.log('--- Task 9 ---'); 
+// const removeDuplicates = arr => [...new Set(arr)]
+
+// console.log('removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])           -> ', removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); 
+// console.log('removeDuplicates([1, 2, 5, 2, 3])                            -> ', removeDuplicates([1, 2, 5, 2, 3])); 
+// console.log('removeDuplicates([0, -1, -2, -2, -1])                        -> ', removeDuplicates([0, -1, -2, -2, -1])); 
+// console.log('removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ', removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
+// console.log('removeDuplicates(["1", "2", "3", "2", "3"])                  -> ', removeDuplicates(["1", "2", "3", "2", "3"])); 
+
+
+
+
+/* Task 10
+Requirement: 
+ Write a method named isDateFormatValid() that takes a string as an argument and 
+ returns true if the given date is valid or returns false otherwise.
+ Expected Format: nn/nn/nnnn
+ So, it must be presented as <2digits>/<2digits>/<4digits>
+Examples:
+ isDateFormatValid("")             -> false
+ isDateFormatValid("15/30/2020")   -> false
+ isDateFormatValid("10-30-2020 ")  -> false
+ isDateFormatValid("10.30.2020")   -> false
+ isDateFormatValid("5/30/2020")    -> false
+ isDateFormatValid("05/30/2020 ")  -> true
+ isDateFormatValid("10/2/2020")    -> false
+ isDateFormatValid("10/02/2020 ")  -> true
+
+*/
+console.log('--- Task 9 ---'); 
+
+const isDateFormatValid = string => {
+    strSplit = string.trim().split('/');
+    return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
+}
+
+console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
+console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
+console.log('isDateFormatValid("10-30-2020 ") -> ', isDateFormatValid("10-30-2020 ")); 
+console.log('isDateFormatValid("10.30.2020")  -> ', isDateFormatValid("10.30.2020")); 
+console.log('isDateFormatValid("5/30/2020")   -> ', isDateFormatValid("5/30/2020")); 
+console.log('isDateFormatValid("05/30/2020 ") -> ', isDateFormatValid("05/30/2020 ")); 
+console.log('isDateFormatValid("10/2/2020") ) -> ', isDateFormatValid("10/2/2020")); 
+console.log('isDateFormatValid("10/02/2020 ") -> ', isDateFormatValid("10/02/2020 ")); 
 
