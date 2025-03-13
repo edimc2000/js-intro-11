@@ -227,16 +227,13 @@ Examples:
 */
 
 console.log ('\n--- TASK 10 ---'); 
-const isPrime = (num) => {
-    if(num > 1) {
-        for (i = 2 ; i <= num; i++  ){    
-            return !(num % i === 0 && num !== i );
-        }
-    } 
-    return false;
-    
-}
-
+const isPrime = num => {
+    if (num < 2) return false
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false; 
+    }
+    return true;
+};
 console.log('isPrime(5)   -> ', isPrime(5) );
 console.log('isPrime(2)   -> ', isPrime(2) );
 console.log('isPrime(29)  -> ', isPrime(29) );
