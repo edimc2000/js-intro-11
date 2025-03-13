@@ -2,11 +2,11 @@
 Requirement:
  Write a function named noSpace() which takes a string as argument and returns a new string with all the spaces removed.
 Examples:
- noSpace("") 			        -> ""
- noSpace("Javascript") 		    -> "Javascript"
- noSpace("    Hello   ") 		-> "Hello"
- noSpace(" Hello World   ") 	-> "HelloWorld”
- noSpace("Tech Global") 		-> "TechGlobal"
+ noSpace("")                    -> ""
+ noSpace("Javascript")          -> "Javascript"
+ noSpace("    Hello   ")        -> "Hello"
+ noSpace(" Hello World   ")     -> "HelloWorld”
+ noSpace("Tech Global")         -> "TechGlobal"
 */
 console.log('--- Task 1 ---'); 
 const noSpace = string => string.trim(); 
