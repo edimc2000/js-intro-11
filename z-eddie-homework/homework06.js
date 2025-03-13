@@ -127,9 +127,30 @@ Examples:
  noA(["apple", "123", "ABC", "javascript"]) 	->  ["###", "123", "###", "javascript"]
  noA(["apple", "abc", "ABC", "Alex", "A"]) 	    -> ["###", "###", "###", "###", "###"]
 */
-console.log('--- Task 5 ---'); 
-const noA = arr => arr.map(element =>  element[0].toLowerCase() === 'a' ? '###' : element);
+// console.log('--- Task 6 ---'); 
+// const noA = arr => arr.map(element =>  element[0].toLowerCase() === 'a' ? '###' : element);
 
-console.log('noA(["javascript", "hello", "123", "xyz"]) -> ', noA(["javascript", "hello", "123", "xyz"])); 
-console.log('noA(["apple", "123", "ABC", "javascript"]) -> ', noA(["apple", "123", "ABC", "javascript"])); 
-console.log('noA(["apple", "abc", "ABC", "Alex", "A"])  -> ', noA(["apple", "abc", "ABC", "Alex", "A"])); 
+// console.log('noA(["javascript", "hello", "123", "xyz"]) -> ', noA(["javascript", "hello", "123", "xyz"])); 
+// console.log('noA(["apple", "123", "ABC", "javascript"]) -> ', noA(["apple", "123", "ABC", "javascript"])); 
+// console.log('noA(["apple", "abc", "ABC", "Alex", "A"])  -> ', noA(["apple", "abc", "ABC", "Alex", "A"])); 
+
+
+/* Task 7
+Requirement:
+ Write a function named no3and5() which takes an array of integer numbers as argument and 
+ will return a new array with elements replaced by conditions below.
+ If element can be divided by 5, replace it with 99​
+ If element can be divided by 3, replace it with 100​
+ If element can be divided by both 3 and 5, replace it with 101
+Examples:
+ no3and5([7, 4, 11, 23, 17])        -> [7, 4, 11, 23, 17]
+ no3and5([3, 4, 5, 6])              -> [100, 4, 99, 100]
+ no3and5([10, 11, 12, 13, 14, 15]) 	-> [99, 11, 100, 13, 14, 101]
+
+*/
+console.log('--- Task 6 ---'); 
+const no3and5 = arr => arr.map(element => element % 3 === 0 && element % 5 === 0 ? 101 : element % 5 === 0 ? 99 : element % 3 === 0 ? 100 : element);
+
+console.log('no3and5([7, 4, 11, 23, 17])         -> ', no3and5([7, 4, 11, 23, 17])); 
+console.log('no3and5([3, 4, 5, 6])               -> ', no3and5([3, 4, 5, 6])); 
+console.log('no3and5([10, 11, 12, 13, 14, 15]))  -> ', no3and5([10, 11, 12, 13, 14, 15])); 
