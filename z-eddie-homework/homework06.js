@@ -224,7 +224,7 @@ Examples:
  isDateFormatValid("10/02/2020 ")  -> true
 
 */
-console.log('--- Task 9 ---'); 
+console.log('--- Task 10 ---'); 
 
 const isDateFormatValid = string => {
     strSplit = string.trim().split('/');
