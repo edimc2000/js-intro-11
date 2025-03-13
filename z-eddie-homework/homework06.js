@@ -224,19 +224,87 @@ Examples:
  isDateFormatValid("10/02/2020 ")  -> true
 
 */
-console.log('--- Task 10 ---'); 
+// console.log('--- Task 10 ---'); 
 
-const isDateFormatValid = string => {
-    strSplit = string.trim().split('/');
-    return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
+// const isDateFormatValid = string => {
+//     let strSplit = string.trim().split('/');
+//     return strSplit[0] < 13 && strSplit[1] < 32 && strSplit[0].length ===2 && strSplit[1].length === 2 && strSplit[2].length === 4; 
+// }
+
+// console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
+// console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
+// console.log('isDateFormatValid("10-30-2020 ") -> ', isDateFormatValid("10-30-2020 ")); 
+// console.log('isDateFormatValid("10.30.2020")  -> ', isDateFormatValid("10.30.2020")); 
+// console.log('isDateFormatValid("5/30/2020")   -> ', isDateFormatValid("5/30/2020")); 
+// console.log('isDateFormatValid("05/30/2020 ") -> ', isDateFormatValid("05/30/2020 ")); 
+// console.log('isDateFormatValid("10/2/2020") ) -> ', isDateFormatValid("10/2/2020")); 
+// console.log('isDateFormatValid("10/02/2020 ") -> ', isDateFormatValid("10/02/2020 ")); 
+
+
+
+/* Task 11
+Requirement: 
+ Write a method named secondMax() takes an array argument and returns the second max number from the array.
+ NOTE: Assume that you will not be given empty array and if the array has only 1 element, it will be returned as second max number.
+ NOTE: Be careful when there is multiple max numbers.
+Examples:
+ secondMax([7, 4, 4, 4, 23, 23, 23]) -> 7
+ secondMax([3, 4, 5, 6])             -> 5
+ secondMax([10])                     -> 10
+*/
+// console.log('--- Task 11 ---'); 
+// const secondMax = arr => {
+//     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
+//     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2) 
+// }
+
+// console.log('secondMax([7, 4, 4, 4, 23, 23, 23])  -> ', secondMax([7, 4, 4, 4, 23, 23, 23])); 
+// console.log('secondMax([3, 4, 5, 6])              -> ', secondMax([3, 4, 5, 6])); 
+// console.log('secondMax([10])                      -> ', secondMax([10])); 
+
+
+/* Task 12
+Requirement: 
+ Write a method named secondMin() takes an array argument and returns the second min number from the array.
+ NOTE: Assume that you will not be given empty array and if the array has only 1 element, it will be returned as second min number.
+ NOTE: Be careful when there is multiple min numbers.
+Examples:
+ secondMax([7, 4, 4, 4, 23, 23, 23]) -> 7
+ secondMax([3, 4, 5, 6])             -> 4
+ secondMax([10])                     -> 10
+
+*/
+// console.log('--- Task 12 ---'); 
+// const secondMin = arr => {
+//     let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
+//     return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1) 
+// }
+
+// console.log('secondMin([7, 4, 4, 4, 23, 23, 23])  -> ', secondMin([7, 4, 4, 4, 23, 23, 23])); 
+// console.log('secondMin([3, 4, 5, 6])              -> ', secondMin([3, 4, 5, 6])); 
+// console.log('secondMin([10])                      -> ', secondMin([10])); 
+
+
+/* Task 13
+Requirement: 
+ Write a method named mostRepeated() takes an array argument and returns the most counted element from the array.
+ NOTE: Assume that you will not be given empty array and the count of one element will always be more than the others.
+Examples:
+ mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])                             -> 4
+ mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]) -> "pen"
+ mostRepeated([10])                                                    -> 10
+ mostRepeated(["TechGlobal"])                                          -> "TechGlobal"
+
+*/
+console.log('--- Task 13 ---'); 
+const mostRepeated = arr => {
+    let uniqueArr = [... new Set(arr)]
+    let uniqueArrCount = uniqueArr.map( element => arr.reduce((acc,curr) => element === curr ? acc + 1 : acc, 0))
+    return uniqueArr.at(uniqueArrCount.indexOf(Math.max(... uniqueArrCount)))
 }
 
-console.log('isDateFormatValid("")            -> ', isDateFormatValid("")); 
-console.log('isDateFormatValid("15/30/2020")  -> ', isDateFormatValid("15/30/2020")); 
-console.log('isDateFormatValid("10-30-2020 ") -> ', isDateFormatValid("10-30-2020 ")); 
-console.log('isDateFormatValid("10.30.2020")  -> ', isDateFormatValid("10.30.2020")); 
-console.log('isDateFormatValid("5/30/2020")   -> ', isDateFormatValid("5/30/2020")); 
-console.log('isDateFormatValid("05/30/2020 ") -> ', isDateFormatValid("05/30/2020 ")); 
-console.log('isDateFormatValid("10/2/2020") ) -> ', isDateFormatValid("10/2/2020")); 
-console.log('isDateFormatValid("10/02/2020 ") -> ', isDateFormatValid("10/02/2020 ")); 
-
+console.log('mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])                             -> ', mostRepeated([4, 7, 4, 4, 4, 23, 23, 23 ])); 
+console.log('mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]) -> ', mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"])); 
+console.log('mostRepeated([10])                                                    -> ', mostRepeated([10])); 
+console.log('mostRepeated(["TechGlobal"])                                          -> ', mostRepeated(["TechGlobal"])); 
+console.log('mostRepeated([4, 7, 4, 4, 4, 23, 23, 23, 100, 100, 100, 100, 100])    -> ', mostRepeated([4, 7, 4, 4, 4, 23, 23, 23, 100, 100, 100, 100, 100])); 
