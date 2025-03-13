@@ -107,11 +107,29 @@ Examples:
  averageOfEdges(-3, 15, -3)  -> 6
  averageOfEdges(10, 13, 20)  -> 15
 */
-console.log('--- Task 5 ---'); 
-const averageOfEdges = (num1, num2, num3) => (Math.min(num1, num2, num3) + Math.max(num1, num2, num3)) / 2;
+// console.log('--- Task 5 ---'); 
+// const averageOfEdges = (num1, num2, num3) => (Math.min(num1, num2, num3) + Math.max(num1, num2, num3)) / 2;
 
-console.log('averageOfEdges(0, 0, 0)    -> ', averageOfEdges(0, 0, 0)); 
-console.log('averageOfEdges(0, 0, 6)    -> ', averageOfEdges(0, 0, 6)); 
-console.log('averageOfEdges(-2, -2, 10) -> ', averageOfEdges(-2, -2, 10)); 
-console.log('averageOfEdges(-3, 15, -3) -> ', averageOfEdges(-3, 15, -3)); 
-console.log('averageOfEdges(10, 13, 20) -> ', averageOfEdges(10, 13, 20)); 
+// console.log('averageOfEdges(0, 0, 0)    -> ', averageOfEdges(0, 0, 0)); 
+// console.log('averageOfEdges(0, 0, 6)    -> ', averageOfEdges(0, 0, 6)); 
+// console.log('averageOfEdges(-2, -2, 10) -> ', averageOfEdges(-2, -2, 10)); 
+// console.log('averageOfEdges(-3, 15, -3) -> ', averageOfEdges(-3, 15, -3)); 
+// console.log('averageOfEdges(10, 13, 20) -> ', averageOfEdges(10, 13, 20)); 
+
+
+
+/* Task 6
+Requirement:
+ Write a function named noA() which takes an array of strings as argument and 
+ will return a new array with all elements starting with "A" or "a" replaced with "###".
+Examples:
+ noA(["javascript", "hello", "123", "xyz"]) 	->  ["javascript", "hello", "123", "xyz"]
+ noA(["apple", "123", "ABC", "javascript"]) 	->  ["###", "123", "###", "javascript"]
+ noA(["apple", "abc", "ABC", "Alex", "A"]) 	    -> ["###", "###", "###", "###", "###"]
+*/
+console.log('--- Task 5 ---'); 
+const noA = arr => arr.map(element =>  element[0].toLowerCase() === 'a' ? '###' : element);
+
+console.log('noA(["javascript", "hello", "123", "xyz"]) -> ', noA(["javascript", "hello", "123", "xyz"])); 
+console.log('noA(["apple", "123", "ABC", "javascript"]) -> ', noA(["apple", "123", "ABC", "javascript"])); 
+console.log('noA(["apple", "abc", "ABC", "Alex", "A"])  -> ', noA(["apple", "abc", "ABC", "Alex", "A"])); 
