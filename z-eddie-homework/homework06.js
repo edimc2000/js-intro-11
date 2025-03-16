@@ -87,7 +87,7 @@ const checkAge = yearOfBirth => {
      : age > 16 && age < 120 ? 'AGE IS ALLOWED'
      : age > 120 ? 'AGE IS NOT VALID'
      : null; 
-}
+};
 
 console.log('checkAge(2015) -> ', checkAge(2015)); 
 console.log('checkAge(2007) -> ', checkAge(2007)); 
@@ -169,7 +169,7 @@ Examples:
 */
 console.log('--- Task 8 ---'); 
 const isPrime = num => {
-    if (num < 2) return false
+    if (num < 2) return false;
     for (let i = 2; i <= Math.sqrt(num); i++) {
         if (num % i === 0) return false; 
     }
@@ -252,8 +252,8 @@ Examples:
 */
 console.log('--- Task 11 ---'); 
 const secondMax = arr => {
-    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
-    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2) 
+    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b);
+    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(-2);
 };
 
 console.log('secondMax([7, 4, 4, 4, 23, 23, 23])  -> ', secondMax([7, 4, 4, 4, 23, 23, 23])); 
@@ -274,8 +274,8 @@ Examples:
 */
 console.log('--- Task 12 ---'); 
 const secondMin = arr => {
-    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b)
-    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1) 
+    let uniqueArr = [... new Set(arr)].sort((a,b) => a-b);
+    return uniqueArr.length < 2 ? uniqueArr[0] : uniqueArr.at(1);
 };
 
 console.log('secondMin([7, 4, 4, 4, 23, 23, 23])  -> ', secondMin([7, 4, 4, 4, 23, 23, 23])); 
@@ -296,9 +296,9 @@ Examples:
 */
 console.log('--- Task 13 ---'); 
 const mostRepeated = arr => {
-    let uniqueArr = [... new Set(arr)]
-    let uniqueArrCount = uniqueArr.map( element => arr.reduce((acc,curr) => element === curr ? acc + 1 : acc, 0))
-    return uniqueArr.at(uniqueArrCount.indexOf(Math.max(... uniqueArrCount)))
+    let uniqueArr = [... new Set(arr)];
+    let uniqueArrCount = uniqueArr.map( element => arr.reduce((acc,curr) => element === curr ? acc + 1 : acc, 0));
+    return uniqueArr.at(uniqueArrCount.indexOf(Math.max(... uniqueArrCount)));
 };
 
 console.log('mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])                             -> ', mostRepeated([4, 7, 4, 4, 4, 23, 23, 23 ])); 
