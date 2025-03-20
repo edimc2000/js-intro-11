@@ -157,5 +157,5 @@ const categorizeCharacters = string => {
 
 const arr8 = [ '1234', 'abc123$#%', '12ab$%3c%']; 
 for (let element of arr8){
-    console.log(`categorizeCharacters(${element}])`.padEnd(30,' '), '->' , categorizeCharacters(element)); 
+    console.log(`categorizeCharacters(${element}])`.padEnd(32,' '), '->' , categorizeCharacters(element)); 
 }
