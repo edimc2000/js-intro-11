@@ -8,7 +8,6 @@ Examples:
  hasUpperCase("$125.0")     -> false
  hasUpperCase("")           -> false
  */
-
 console.log ('--- Task 1 ---')
 const hasUpperCase = string => /[A-Z]/.test(string); 
 
@@ -122,7 +121,6 @@ Examples:
  arrFactorial([])              -> []
 */
 console.log ('\n--- Task 7 ---');
-
 const factorial  = num => {
     result = 1; 
     if (num < 2) return result; 
@@ -149,7 +147,6 @@ Examples:
 
 */
 console.log ('\n--- Task 8 ---');
-
 const categorizeCharacters = string => {
     return [
         string.trim().split('').filter(char => /[a-z]/gi.test(char)).join(''),
