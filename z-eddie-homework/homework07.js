@@ -12,8 +12,8 @@ Examples:
 console.log ('--- Task 1 ---')
 const hasUpperCase = string => /[A-Z]/.test(string); 
 
-const strings1 = [ 'javascript', 'John', '$125.0', '' ]; 
-for (let element of strings1){
+const arr1 = [ 'javascript', 'John', '$125.0', '' ]; 
+for (let element of arr1){
     console.log(`hasUpperCase('${element}')`.padEnd(30,' '), '->', hasUpperCase(element)); 
 }
 
@@ -31,8 +31,8 @@ Examples:
 console.log ('\n--- Task 2 ---');
 const noDigit = string => string.trim().split('').filter(char => /[^0-9]/.test(char)).join(''); 
 
-const strings2 = [ '', 'Javascript', 'Hello', 'Hello World', 'TechGlobal' ]; 
-for (let element of strings2){
+const arr2 = [ '', 'Javascript', '123Hello', '123Hello World149', '123Tech456Global149' ]; 
+for (let element of arr2){
     console.log(`noDigit('${element}')`.padEnd(30,' '), '->' , noDigit(element)); 
 }
 
@@ -50,8 +50,8 @@ Examples:
 console.log ('\n--- Task 3 ---');
 const noVowel = string => string.trim().split('').filter(char => /[^aeiou]/i.test(char)).join(''); 
 
-const strings3 = [ 'TechGlobal', 'AEOxyz', 'Javascript', '', '125$' ]; 
-for (let element of strings3){
+const arr3 = [ 'TechGlobal', 'AEOxyz', 'Javascript', '', '125$' ]; 
+for (let element of arr3){
     console.log(`noVowel('${element}')`.padEnd(30,' '), '->' , noVowel(element)); 
 }
 
