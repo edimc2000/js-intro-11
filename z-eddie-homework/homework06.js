@@ -10,7 +10,7 @@ Examples:
  noSpace("Tech Global")         -> "TechGlobal"
 */
 console.log('--- Task 1 ---'); 
-const noSpace = string => string.trim(); 
+const noSpace = string => string.split('').join(''); 
 
 console.log('noSpace("")                ->', noSpace(""));
 console.log('noSpace("Javascript")      ->', noSpace("Javascript"));
