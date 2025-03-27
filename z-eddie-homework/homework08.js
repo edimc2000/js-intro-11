@@ -54,12 +54,46 @@ const numberAndSquare = arr => arr.map (e=> ([e, e**2]))
 
 arrOfGivens = [ [1, 2, 3], [0, 3, -6], [1, 4], [0, 0, 0], [0, 1, -10] ]; 
 for (let element of arrOfGivens){
-     console.log(`numberAndSquare([ ${element.join(', ')} ])`.padEnd(30,' '), '->', numberAndSquare(element)); 
- }
+    console.log(`numberAndSquare([ ${element.join(', ')} ])`.padEnd(30,' '), '->', numberAndSquare(element));  
+}
  
 
  
 /* Task 4
+Requirement:
+ Write a function named containsValue() which takes a string array and a string as arguments and 
+ returns a boolean value. Search the string variable inside of the array and return true if it exists 
+ in the array. If it doesn’t exist, return false. ​
+ NOTE: Assume that array size is at least 1.​
+ NOTE: The method is case-sensitive.
+Examples:
+ containsValue(["abc", "foo", "javascript"], "hello")                -> false
+ containsValue(["abc", "def", "123"], "Abc")                         -> false
+ containsValue(["abc", "def", "123", "Javascript", "Hello"], "123")  -> true
 
 */
 console.log ('\n--- Task 4 ---')
+
+const containsValue = (arr, string) => arr.includes(string);
+
+
+
+arrOfGivens = [ [["abc", "foo", "javascript"], "hello"], [["abc", "def", "123"], "Abc"], [["abc", "def", "123", "Javascript", "Hello"], "123"] ]; 
+for (let element of arrOfGivens){
+    console.log(`containsValue([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(50,' '), '->', containsValue(element[0], element[1])); 
+}
+ 
+
+/* Task 5
+
+
+*/
+console.log ('\n--- Task 5 ---')
+
+
+
+/* Task 6
+
+
+*/
+console.log ('\n--- Task 6 ---')
