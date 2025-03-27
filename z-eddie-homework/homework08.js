@@ -38,8 +38,6 @@ for (let element of arrOfGivens){
  }
  
 
-
-
 /* Task 3
 Requirement:
  Write a function named numberAndSquare() which takes an array of numbers as argument
@@ -52,10 +50,11 @@ Examples:
  numberAndSquare([0, 1, -10])   -> [[0, 0], [1, 1], [-10, 100]]
 */
 console.log ('\n--- Task 3 ---')
+const numberAndSquare = arr => arr.map (e=> ([e, e**2]))
 
 arrOfGivens = [ [1, 2, 3], [0, 3, -6], [1, 4], [0, 0, 0], [0, 1, -10] ]; 
 for (let element of arrOfGivens){
-     console.log(`noZero([ ${element.join(', ')} ])`.padEnd(30,' '), '->', noZero(element)); 
+     console.log(`numberAndSquare([ ${element.join(', ')} ])`.padEnd(30,' '), '->', numberAndSquare(element)); 
  }
  
 
