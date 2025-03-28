@@ -129,9 +129,9 @@ Requirement:
  Write a function named removeArraySpecialsDigits() which takes a string array as argument and 
  return back without the special characters or digits.
 Examples:
- removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]) 	-> ["Javascript", "is", "fun"]
- removeArraySpecialsDigits(["Cypress", "123$%", "###"]) 	-> ["Cypress", "", ""]
- removeArraySpecialsDigits(["Automation", "123#$%tool"]) 	-> ["Automation", "tool"]
+ removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"])   -> ["Javascript", "is", "fun"]
+ removeArraySpecialsDigits(["Cypress", "123$%", "###"])         -> ["Cypress", "", ""]
+ removeArraySpecialsDigits(["Automation", "123#$%tool"])        -> ["Automation", "tool"]
 
 */
 console.log ('\n--- Task 7 ---')
@@ -144,6 +144,44 @@ for (let element of arrOfGivens){
 
 
 /* Task 8
- 
+Requirement:
+ Write a function named getCommons() which takes two string arrays as arguments and 
+ returns all the common words.
+Examples:
+ getCommons( ["Javascript", "is", "fun"], ["abc", "xyz", "123"] )           -> []
+ getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] )  -> ["Javascript"]
+ getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )          -> ["C#"]
 */
 console.log ('\n--- Task 8 ---')
+const getCommons = (arr1, arr2) => [...new Set(arr1.filter(e => arr2.includes(e)))]
+
+arrOfGivens = [ [["Javascript", "is", "fun"], ["abc", "xyz", "123"]], [["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]], [["Javascript", "C#", "C#"], ["Python", "C#", "C++"]] ]; 
+for (let element of arrOfGivens){
+    console.log(`getCommons([ '${element[0].join('\', \'')}' ], [ '${element[1].join('\', \'')}' ])`.padEnd(75,' '), '->', getCommons(element[0], element[1])); 
+}
+
+
+
+/* Task 9
+Requirement:
+ Write a function named noXInVariables() which takes an array as argument and return 
+ an array that all the x or X removed from the elements. 
+ NOTE: If the element is existing of x or X letters only, then completely remove 
+ the element.
+Examples:
+ noXInVariables(["abc", 123, "#$%"])        -> ["abc", 123, "#$%"]
+ noXInVariables(["xyz", 123, "#$%"])        -> ["yz", 123, "#$%"]
+ noXInVariables(["x", 123, "#$%"])          -> [123, "#$%"]
+ noXInVariables(["xyXyxy", "Xx", "ABC"])    -> ["yyy", "ABC"]
+
+*/
+console.log ('\n--- Task 9 ---')
+const noXInVariables = arr => {
+    let removeX = string => String(string).split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
+    return arr.map(e=> removeX(e)).filter(e=> e.length>0);
+}
+
+arrOfGivens = [ ["abc", 123, "#$%"], ["xyz", 123, "#$%"], ["x", 123, "#$%"], ["xyXyxy", "Xx", "ABC"]  ]; 
+for (let element of arrOfGivens){
+    console.log(`noXInVariables([ '${element.join('\', \'')}' ]`.padEnd(45,' '), '->', noXInVariables(element)); 
+}
