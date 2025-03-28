@@ -169,6 +169,5 @@ arrOfGivens = [ ["abc", 123, "#$%"], ["xyz", 123, "#$%"], ["x", 123, "#$%"], ["x
 const maxInputLength = Math.max(...arrOfGivens.map(arr => JSON.stringify(arr).length));
 for (let element of arrOfGivens) {
     const inputStr = `noXInVariables(${JSON.stringify(element)})`;
-    const outputStr = JSON.stringify(noXInVariables(element));
-    console.log(`${inputStr.padEnd(maxInputLength + 20)} -> ${outputStr}`);
+    console.log(`noXInVariables(${JSON.stringify(element)})`.padEnd(maxInputLength + 20), '->', noXInVariables(element));
 }
