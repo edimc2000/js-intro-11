@@ -73,27 +73,77 @@ Examples:
 
 */
 console.log ('\n--- Task 4 ---')
-
 const containsValue = (arr, string) => arr.includes(string);
-
-
 
 arrOfGivens = [ [["abc", "foo", "javascript"], "hello"], [["abc", "def", "123"], "Abc"], [["abc", "def", "123", "Javascript", "Hello"], "123"] ]; 
 for (let element of arrOfGivens){
-    console.log(`containsValue([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(50,' '), '->', containsValue(element[0], element[1])); 
+    console.log(`containsValue([ '${element[0].join('\', \'')}' ], '${element[1]}')`.padEnd(70,' '), '->', containsValue(element[0], element[1])); 
 }
  
 
 /* Task 5
+Requirement:
+ Write a function named reverseSentence() which takes a string as argument and returns 
+ the words in reverse order.​ If there is no enough words reverse, return "There is not enough words!".
+Examples:
+ reverseSentence("Hello")               -> "There is not enough words!"
+ reverseSentence("Javascript is fun")   -> "Fun is javascript"
+ reverseSentence("This is a sentence")  -> "Sentence a is this"
 
 
 */
 console.log ('\n--- Task 5 ---')
+const capFirstLetter = string => string.replace(/[^.]/, string[0].toUpperCase());
+const reverseSentence = string => string.trim().split(' ').length < 2 ? 'There is not enough words!' 
+ : capFirstLetter(string.trim().toLowerCase().split(' ').reverse().join(' '));
+
+arrOfGivens = [ 'Hello', 'Javascript is fun', 'This is a sentence' ]; 
+for (let element of arrOfGivens){
+    console.log(`reverseSentence('${element}')`.padEnd(40,' '), '->', reverseSentence(element)); 
+}
+
 
 
 
 /* Task 6
-
-
+Requirement:
+ Write a function named removeStringSpecialsDigits() which takes a string as argument 
+ and return a string without the special characters or digits.
+Examples:
+ removeStringSpecialsDigits("123Javascript #%$is fun")  -> "Javascript is fun" 
+ removeStringSpecialsDigits("Cypress")                  -> "Cypress"
+ removeStringSpecialsDigits("Automation123#$%")         -> "Automation"
 */
 console.log ('\n--- Task 6 ---')
+
+const removeStringSpecialsDigit = string => string.trim().split('').filter(e => /[\sa-z]/i.test(e)).join('')
+
+arrOfGivens = [ '123Javascript #%$is fun', 'Cypress', 'Automation123#$%' ]; 
+for (let element of arrOfGivens){
+    console.log(`removeStringSpecialsDigit('${(element)}')`.padEnd(55,' '), '->', removeStringSpecialsDigit(element)); 
+}
+
+
+/* Task 7
+Requirement:
+ Write a function named removeArraySpecialsDigits() which takes a string array as argument and 
+ return back without the special characters or digits.
+Examples:
+ removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]) 	-> ["Javascript", "is", "fun"]
+ removeArraySpecialsDigits(["Cypress", "123$%", "###"]) 	-> ["Cypress", "", ""]
+ removeArraySpecialsDigits(["Automation", "123#$%tool"]) 	-> ["Automation", "tool"]
+
+*/
+console.log ('\n--- Task 7 ---')
+const removeArraySpecialsDigits = arr => arr.map(e => e.split('').filter(e=>/[\sa-z]/i.test(e)).join('') )
+
+arrOfGivens = [ ["123Javascript", "#%$is", "fun"], ["Cypress", "123$%", "###"], ["Automation", "123#$%tool"] ]; 
+for (let element of arrOfGivens){
+    console.log(`removeArraySpecialsDigits([ ${element.join(', ')} ])`.padEnd(60,' '), '->', removeArraySpecialsDigits(element));  
+}
+
+
+/* Task 8
+ 
+*/
+console.log ('\n--- Task 8 ---')
