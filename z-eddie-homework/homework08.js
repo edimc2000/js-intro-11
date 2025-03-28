@@ -167,5 +167,5 @@ const noXInVariables = arr => {
 
 arrOfGivens = [ ["abc", 123, "#$%"], ["xyz", 123, "#$%"], ["x", 123, "#$%"], ["xyXyxy", "Xx", "ABC"]  ]; 
 for (let element of arrOfGivens){
-    console.log(`noXInVariables(`, element ,')', '->'.padStart(3,' '), noXInVariables(element)); 
+    console.log(`noXInVariables(`, element ,')', `}`, '->'.padStart((16 - String(element).length) ,' '), noXInVariables(element)); 
 }
