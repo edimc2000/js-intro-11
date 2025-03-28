@@ -9,14 +9,13 @@ Examples:
  hasLowerCase("125$")        -> false
  hasLowerCase("   a   ")     -> true
 */
-console.log ('--- Task 1 ---')
+console.log ('--- Task 1 ---');
 const hasLowerCase = string => /[a-z]/.test(string);
 
 let arrOfGivens = [ '', 'JAVASCRIPT', 'hello', '125$', '   a   ' ]; 
 for (let element of arrOfGivens){
     console.log(`hasLowerCase('${element}')`.padEnd(30,' '), '->', hasLowerCase(element)); 
 }
-
 
 /* Task 2
 Requirement:
@@ -29,7 +28,7 @@ Examples:
  noZero([0, 0, 0])     -> []
  noZero([10, 100, 0])  -> [10, 100]
 */
-console.log ('\n--- Task 2 ---')
+console.log ('\n--- Task 2 ---');
 const noZero = arr => arr.filter(e => e > 0); 
 
 arrOfGivens = [ [1], [1, 1, 10], [0, 1, 10], [0, 0, 0], [10, 100, 0] ]; 
@@ -37,7 +36,6 @@ for (let element of arrOfGivens){
      console.log(`noZero([ ${element.join(', ')} ])`.padEnd(30,' '), '->', noZero(element)); 
  }
  
-
 /* Task 3
 Requirement:
  Write a function named numberAndSquare() which takes an array of numbers as argument
@@ -49,15 +47,13 @@ Examples:
  numberAndSquare([0, 0, 0])     -> [[0, 0], [0, 0], [0, 0]]
  numberAndSquare([0, 1, -10])   -> [[0, 0], [1, 1], [-10, 100]]
 */
-console.log ('\n--- Task 3 ---')
-const numberAndSquare = arr => arr.map (e=> ([e, e**2]))
+console.log ('\n--- Task 3 ---');
+const numberAndSquare = arr => arr.map (e=> ([e, e ** 2]));
 
 arrOfGivens = [ [1, 2, 3], [0, 3, -6], [1, 4], [0, 0, 0], [0, 1, -10] ]; 
 for (let element of arrOfGivens){
     console.log(`numberAndSquare([ ${element.join(', ')} ])`.padEnd(30,' '), '->', numberAndSquare(element));  
 }
- 
-
  
 /* Task 4
 Requirement:
@@ -70,9 +66,8 @@ Examples:
  containsValue(["abc", "foo", "javascript"], "hello")                -> false
  containsValue(["abc", "def", "123"], "Abc")                         -> false
  containsValue(["abc", "def", "123", "Javascript", "Hello"], "123")  -> true
-
 */
-console.log ('\n--- Task 4 ---')
+console.log ('\n--- Task 4 ---');
 const containsValue = (arr, string) => arr.includes(string);
 
 arrOfGivens = [ [["abc", "foo", "javascript"], "hello"], [["abc", "def", "123"], "Abc"], [["abc", "def", "123", "Javascript", "Hello"], "123"] ]; 
@@ -80,7 +75,6 @@ for (let element of arrOfGivens){
     console.log(`containsValue([ '${element[0].join('\', \'')}' ], '${element[1]}')`.padEnd(70,' '), '->', containsValue(element[0], element[1])); 
 }
  
-
 /* Task 5
 Requirement:
  Write a function named reverseSentence() which takes a string as argument and returns 
@@ -89,10 +83,8 @@ Examples:
  reverseSentence("Hello")               -> "There is not enough words!"
  reverseSentence("Javascript is fun")   -> "Fun is javascript"
  reverseSentence("This is a sentence")  -> "Sentence a is this"
-
-
 */
-console.log ('\n--- Task 5 ---')
+console.log ('\n--- Task 5 ---');
 const capFirstLetter = string => string.replace(/[^.]/, string[0].toUpperCase());
 const reverseSentence = string => string.trim().split(' ').length < 2 ? 'There is not enough words!' 
  : capFirstLetter(string.trim().toLowerCase().split(' ').reverse().join(' '));
@@ -101,9 +93,6 @@ arrOfGivens = [ 'Hello', 'Javascript is fun', 'This is a sentence' ];
 for (let element of arrOfGivens){
     console.log(`reverseSentence('${element}')`.padEnd(40,' '), '->', reverseSentence(element)); 
 }
-
-
-
 
 /* Task 6
 Requirement:
@@ -114,15 +103,13 @@ Examples:
  removeStringSpecialsDigits("Cypress")                  -> "Cypress"
  removeStringSpecialsDigits("Automation123#$%")         -> "Automation"
 */
-console.log ('\n--- Task 6 ---')
-
-const removeStringSpecialsDigit = string => string.trim().split('').filter(e => /[\sa-z]/i.test(e)).join('')
+console.log ('\n--- Task 6 ---');
+const removeStringSpecialsDigit = string => string.trim().split('').filter(e => /[\sa-z]/i.test(e)).join('');
 
 arrOfGivens = [ '123Javascript #%$is fun', 'Cypress', 'Automation123#$%' ]; 
 for (let element of arrOfGivens){
     console.log(`removeStringSpecialsDigit('${(element)}')`.padEnd(55,' '), '->', removeStringSpecialsDigit(element)); 
 }
-
 
 /* Task 7
 Requirement:
@@ -134,14 +121,13 @@ Examples:
  removeArraySpecialsDigits(["Automation", "123#$%tool"])        -> ["Automation", "tool"]
 
 */
-console.log ('\n--- Task 7 ---')
-const removeArraySpecialsDigits = arr => arr.map(e => e.split('').filter(e=>/[\sa-z]/i.test(e)).join('') )
+console.log ('\n--- Task 7 ---');
+const removeArraySpecialsDigits = arr => arr.map(e => e.split('').filter(e => /[\sa-z]/i.test(e)).join(''));
 
 arrOfGivens = [ ["123Javascript", "#%$is", "fun"], ["Cypress", "123$%", "###"], ["Automation", "123#$%tool"] ]; 
 for (let element of arrOfGivens){
     console.log(`removeArraySpecialsDigits([ ${element.join(', ')} ])`.padEnd(60,' '), '->', removeArraySpecialsDigits(element));  
 }
-
 
 /* Task 8
 Requirement:
@@ -152,15 +138,13 @@ Examples:
  getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] )  -> ["Javascript"]
  getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )          -> ["C#"]
 */
-console.log ('\n--- Task 8 ---')
-const getCommons = (arr1, arr2) => [...new Set(arr1.filter(e => arr2.includes(e)))]
+console.log ('\n--- Task 8 ---');
+const getCommons = (arr1, arr2) => [...new Set(arr1.filter(e => arr2.includes(e)))];
 
 arrOfGivens = [ [["Javascript", "is", "fun"], ["abc", "xyz", "123"]], [["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]], [["Javascript", "C#", "C#"], ["Python", "C#", "C++"]] ]; 
 for (let element of arrOfGivens){
     console.log(`getCommons([ '${element[0].join('\', \'')}' ], [ '${element[1].join('\', \'')}' ])`.padEnd(75,' '), '->', getCommons(element[0], element[1])); 
 }
-
-
 
 /* Task 9
 Requirement:
@@ -175,18 +159,11 @@ Examples:
  noXInVariables(["xyXyxy", "Xx", "ABC"])    -> ["yyy", "ABC"]
 
 */
-
-
-
-console.log ('\n--- Task 9 ---')
+console.log ('\n--- Task 9 ---');
 const noXInVariables = arr => {
     let removeX = string => string.split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
-    return arr.map(e => typeof e ==='number' ? e  : removeX(e)).filter(e => e)
-       
+    return arr.map(e => typeof e ==='number' ? e  : removeX(e)).filter(e => e);  
 }
-
-
-
 
 arrOfGivens = [ ["abc", 123, "#$%"], ["xyz", 123, "#$%"], ["x", 123, "#$%"], ["xyXyxy", "Xx", "ABC"]  ]; 
 for (let element of arrOfGivens){
