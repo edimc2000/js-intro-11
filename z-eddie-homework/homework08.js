@@ -175,11 +175,18 @@ Examples:
  noXInVariables(["xyXyxy", "Xx", "ABC"])    -> ["yyy", "ABC"]
 
 */
+
+
+
 console.log ('\n--- Task 9 ---')
 const noXInVariables = arr => {
-    let removeX = string => String(string).split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
-    return arr.map(e=> removeX(e)).filter(e=> e.length>0);
+    let removeX = string => string.split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
+    return arr.map(e => typeof e ==='number' ? e  : removeX(e)).filter(e => e)
+       
 }
+
+
+
 
 arrOfGivens = [ ["abc", 123, "#$%"], ["xyz", 123, "#$%"], ["x", 123, "#$%"], ["xyXyxy", "Xx", "ABC"]  ]; 
 for (let element of arrOfGivens){
