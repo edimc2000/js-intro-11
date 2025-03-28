@@ -161,7 +161,7 @@ Examples:
 */
 console.log ('\n--- Task 9 ---');
 const noXInVariables = arr => {
-    let removeX = string => string.split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
+    const removeX = string => string.split('').filter(e => !'x'.includes(e.toLowerCase())).join('');
     return arr.map(e => typeof e ==='number' ? e  : removeX(e)).filter(e => e);  
 }
 
