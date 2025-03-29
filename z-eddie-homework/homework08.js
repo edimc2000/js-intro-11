@@ -29,7 +29,7 @@ Examples:
  noZero([10, 100, 0])  -> [10, 100]
 */
 console.log('\n--- Task 2 ---' + ('-'.repeat(100)));
-const noZero = arr => arr.filter(e => e > 0);
+const noZero = arr => arr.filter(e => e > 0 || e < 0);
 
 arrOfGivens = [[1], [1, 1, 10], [0, 1, 10], [0, 0, 0], [10, 100, 0]];
 for (let element of arrOfGivens) {
