@@ -1,4 +1,4 @@
-const reps = 100, pads = 40;
+const reps = 100, pads = 45;
 /* Task 1 
 Requirement:
  Write a function named fizzBuzz1() which takes a number argument and returns "Fizz" if 
@@ -165,7 +165,65 @@ const fibonacciSeries1 = num => {
 }
 
 arrOfGivens = [ 3, 5, 7, 8, 1, 2 ];
-// arrOfGivens = [ 3 ];
+
 for (let element of arrOfGivens) {
     console.log(`fibonacciSeries1('${element}')`.padEnd(pads, ' '), '->', fibonacciSeries1(element));
+}
+
+
+/* Task 7
+
+*/
+
+
+console.log('\n--- Task 7 ---' + ('-'.repeat(reps)));
+
+
+
+/* Task 8 
+Requirement:
+ Write a function named findUniques() which takes two array of number arguments and returns the array which has only the unique values from both given arrays.
+ NOTE: If both arrays are empty, then return an empty array.​
+ NOTE: If one of the array is empty, then return unique values from the other array.
+Examples:
+ findUniques([], [])                        -> []
+ findUniques([], [1, 2, 3, 2])              -> [1, 2, 3]
+ findUniques([1, 2, 3, 4], [3, 4, 5, 5])    -> [1, 2, 5]
+ findUniques([8, 9], [9, 8, 9])             -> []
+ findUniques([-1, -2], [1, 2])              -> [-1, -2, 1, 2]
+*/
+
+console.log('\n--- Task 8 ---' + ('-'.repeat(reps)));
+const findUniques = (arr1, arr2) => [... new Set(arr1)].concat([... new Set(arr2)]).filter((e, i, arr) => arr.indexOf(e) === arr.lastIndexOf(e)); 
+
+arrOfGivens = [ [[], []], [[], [1, 2, 3, 2]], [[1, 2, 3, 4], [3, 4, 5, 5]], [[8, 9], [9, 8, 9]], [[-1, -2], [1, 2]] ];
+for (let element of arrOfGivens) {
+    console.log(`findUniques([ ${element[0].join(', ')} ], [ ${element[1].join(', ')} ] )`.padEnd(pads, ' '), '->', findUniques(element[0], element[1]));
+}
+
+
+
+/* Task 9
+Requirement:
+ Write a function named isPowerOf3() which takes a number argument and returns true if given 
+ number is equal to 3 power of the X. Otherwise, return false.​
+ NOTE: Numbers that are power of 3 = 1, 3, 9, 27, 81, 243….
+ NOTE: Ignore negative scenarios.
+Examples:
+ isPowerOf3(1)   -> true 
+ isPowerOf3(2)   -> false
+ isPowerOf3(3)   -> true
+ isPowerOf3(27)  -> true
+ isPowerOf3(100) -> false
+ isPowerOf3(81)  -> true
+ isPowerOf3(9)   -> true
+
+*/
+
+console.log('\n--- Task 9 ---' + ('-'.repeat(reps)));
+const isPowerOf3 = num =>  num % 3 === 0; 
+
+arrOfGivens = [ 1, 2, 3, 27, 100, 81, 9];
+for (let element of arrOfGivens) {
+    console.log(`isPowerOf3('${element}')`.padEnd(pads, ' '), '->', isPowerOf3(element));
 }
