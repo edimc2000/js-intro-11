@@ -43,7 +43,6 @@ const fizzBuzz2 = num => {
     return arr.map(e => e % 5 === 0 &&  e % 3 === 0 ? `'FizzBuzz'` : e % 5 === 0 ? `'Buzz'` : e % 3 === 0  ? `'Fizz'` : e)
 }
 
-
 arrOfGivens = [ 3, 5, 10, 15, 2 ];
 for (let element of arrOfGivens) {
     console.log(`fizzBuzz2('${element}')`.padEnd(pads, ' '), '->', `[ ${fizzBuzz2(element).join(', ')} ]`);
@@ -60,7 +59,6 @@ Examples:
  findSumNumbers("ab110c045d")       -> 155
  findSumNumbers("525")              -> 525
  findSumNumbers("3 for 10 dollars") -> 13
-
 */
 
 console.log('\n--- Task 3 ---' + ('-'.repeat(reps)));
@@ -81,8 +79,6 @@ Examples:
  findBiggestNumber("ab110c045d")        -> 110
  findBiggestNumber("525")               -> 525
  findBiggestNumber("3 for 10 dollars")  -> 10
-
-
 */
 
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)));
@@ -109,7 +105,6 @@ Examples:
  countOccurrencesOfCharacters("abbcca")  -> "1a2b2c1a"
  countOccurrencesOfCharacters("aaAAa")   -> "2a2A1a”
  countOccurrencesOfCharacters("www" )    -> "3w"
-
 */
 
 console.log('\n--- Task 5 ---' + ('-'.repeat(reps)));
@@ -165,7 +160,6 @@ const fibonacciSeries1 = num => {
 }
 
 arrOfGivens = [ 3, 5, 7, 8, 1, 2 ];
-
 for (let element of arrOfGivens) {
     console.log(`fibonacciSeries1('${element}')`.padEnd(pads, ' '), '->', fibonacciSeries1(element));
 }
@@ -182,9 +176,7 @@ Examples:
  fibonacciSeries2(8) 	-> 13
  fibonacciSeries2(9) 	-> 21
  fibonacciSeries2(1) 	-> 0
-
 */
-
 
 console.log('\n--- Task 7 ---' + ('-'.repeat(reps)));
 const fibonacciSeries2 = num => {
@@ -198,7 +190,6 @@ const fibonacciSeries2 = num => {
 }
 
 arrOfGivens = [ 2, 4, 8, 9, 1 ];
-
 for (let element of arrOfGivens) {
     console.log(`fibonacciSeries2('${element}')`.padEnd(pads, ' '), '->', fibonacciSeries2(element));
 }
@@ -242,7 +233,6 @@ Examples:
  isPowerOf3(100) -> false
  isPowerOf3(81)  -> true
  isPowerOf3(9)   -> true
-
 */
 
 console.log('\n--- Task 9 ---' + ('-'.repeat(reps)));
