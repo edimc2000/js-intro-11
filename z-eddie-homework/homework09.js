@@ -1,4 +1,4 @@
-const reps = 100, pads = 35;
+const reps = 100, pads = 40;
 /* Task 1 
 Requirement:
  Write a function named fizzBuzz1() which takes a number argument and returns "Fizz" if 
@@ -64,9 +64,94 @@ Examples:
 */
 
 console.log('\n--- Task 3 ---' + ('-'.repeat(reps)));
-const findSumNumbers = str => str.split(/[\Wa-z]/i).reduce((sum, curr) => Number(sum) + Number(curr), 0); 
+const findSumNumbers = str => str.split(/[\Wa-z]/i).reduce((sum, curr) => sum + Number(curr), 0); 
 
-arrOfGivens = [ "abc$", "a1b4c  6#", "ab110c045d", "525", "3 for 10 dollars" ];
+arrOfGivens = [ "abc$", "a1b4c  6#", "ab110c045d", "525", "3 for 10 dollars" ];
 for (let element of arrOfGivens) {
     console.log(`findSumNumbers('${element}')`.padEnd(pads, ' '), '->', findSumNumbers(element));
 }
+
+/* Task 4 
+Requirement:
+ Write a function named findBiggestNumber() which takes a string argument and returns 
+ the biggest number appears in the string.
+Examples:
+ findBiggestNumber("abc$")              -> 0
+ findBiggestNumber("a1b4c  6#")         -> 6
+ findBiggestNumber("ab110c045d")        -> 110
+ findBiggestNumber("525")               -> 525
+ findBiggestNumber("3 for 10 dollars")  -> 10
+
+
+*/
+
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)));
+const findBiggestNumber = str => {
+    let arr = str.split(/[\Wa-z]/i).filter(e => e.length > 0 ).map(e => Number(e)).sort((a,b)=> a-b);
+    return arr.length > 0 ? arr.at(-1) : 0;
+}
+
+arrOfGivens = [ "abc$", "a1b4c  6#", "ab110c045d", "525", "3 for 10 dollars" ];
+for (let element of arrOfGivens) {
+    console.log(`findBiggestNumber('${element}')`.padEnd(pads, ' '), '->', findBiggestNumber(element));
+}
+
+
+/* Task 5 
+Requirement:
+ Write a function named countOccurrencesOfCharacters() which takes a string argument and 
+ returns the count of repeated characters in the String.​
+ NOTE: If given String is empty, then return empty String.​
+ NOTE: It is case sensitive.
+Examples:
+ countOccurrencesOfCharacters("")        -> ""
+ countOccurrencesOfCharacters("abc")     -> "1a1b1c"
+ countOccurrencesOfCharacters("abbcca")  -> "1a2b2c1a"
+ countOccurrencesOfCharacters("aaAAa")   -> "2a2A1a”
+ countOccurrencesOfCharacters("www" )    -> "3w"
+
+*/
+
+console.log('\n--- Task 5 ---' + ('-'.repeat(reps)));
+const countOccurrencesOfCharacters = str => {
+    let arr = str.split(''); 
+    let result = []; 
+    let testChar = arr[0]; 
+    let counter = 1; 
+    if (arr.length < 1) return ''; 
+
+    for (let i = 1; i < arr.length; i++) {
+        if (testChar === arr[i]) {
+            counter++;
+        } else { 
+            result.push(`${counter}${testChar}`)
+            testChar = arr[i];
+            counter = 1;
+        }  
+    }
+    result.push(`${counter}${testChar}`);
+    return result.join('');
+}
+
+arrOfGivens = [ "", "abc", "abbcca", "aaAAa", "www" ];
+for (let element of arrOfGivens) {
+    console.log(`countOccurrencesOfCharacters('${element}')`.padEnd(pads, ' '), '->', countOccurrencesOfCharacters(element));
+}
+
+
+/* Task 6 
+Requirement:
+ Write a function named fibonacciSeries1() which takes a number n argument and 
+ returns the n series of Fibonacci numbers as an array. ​
+ REMEMBER: Fibonacci series = 0, 1, 1, 2, 3, 5, 8, 13, 21
+Examples:
+ fibonacciSeries1(3) -> [0, 1, 1]
+ fibonacciSeries1(5) -> [0, 1, 1, 2, 3]
+ fibonacciSeries1(7) -> [0, 1, 1, 2, 3, 5, 8]
+ fibonacciSeries1(8) -> [0, 1, 1, 2, 3, 5, 8, 13]
+ fibonacciSeries1(1) -> [0]
+ fibonacciSeries1(2) -> [0, 1]
+
+*/
+
+console.log('\n--- Task 6 ---' + ('-'.repeat(reps)));
