@@ -172,11 +172,36 @@ for (let element of arrOfGivens) {
 
 
 /* Task 7
+Requirement:
+ Write a function named fibonacciSeries2() which takes a number n argument and returns 
+ the nth series of Fibonacci number as a number.
+ REMEMBER: Fibonacci series = 0, 1, 1, 2, 3, 5, 8, 13, 21
+Examples:
+ fibonacciSeries2(2) 	-> 1
+ fibonacciSeries2(4) 	-> 2
+ fibonacciSeries2(8) 	-> 13
+ fibonacciSeries2(9) 	-> 21
+ fibonacciSeries2(1) 	-> 0
 
 */
 
 
 console.log('\n--- Task 7 ---' + ('-'.repeat(reps)));
+const fibonacciSeries2 = num => {
+    if (num <= 0) return [];
+    if (num === 1) return 0;
+    const result = [0, 1];
+    for (let i = 2; i < num; i++) {
+        result.push(result[i - 1] + result[i - 2]);
+    }
+    return result.slice(0, num).at(-1);
+}
+
+arrOfGivens = [ 2, 4, 8, 9, 1 ];
+
+for (let element of arrOfGivens) {
+    console.log(`fibonacciSeries2('${element}')`.padEnd(pads, ' '), '->', fibonacciSeries2(element));
+}
 
 
 
