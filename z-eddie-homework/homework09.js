@@ -151,7 +151,21 @@ Examples:
  fibonacciSeries1(8) -> [0, 1, 1, 2, 3, 5, 8, 13]
  fibonacciSeries1(1) -> [0]
  fibonacciSeries1(2) -> [0, 1]
-
 */
 
 console.log('\n--- Task 6 ---' + ('-'.repeat(reps)));
+const fibonacciSeries1 = num => {
+    if (num <= 0) return [];
+    if (num === 1) return [0];
+    const result = [0, 1];
+    for (let i = 2; i < num; i++) {
+        result.push(result[i - 1] + result[i - 2]);
+    }
+    return `[ ${result.slice(0, num).join(', ')} ]`;
+}
+
+arrOfGivens = [ 3, 5, 7, 8, 1, 2 ];
+// arrOfGivens = [ 3 ];
+for (let element of arrOfGivens) {
+    console.log(`fibonacciSeries1('${element}')`.padEnd(pads, ' '), '->', fibonacciSeries1(element));
+}
