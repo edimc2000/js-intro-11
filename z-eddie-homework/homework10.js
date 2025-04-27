@@ -26,7 +26,6 @@ let arrOfGivens = [
     { apple: 0, mango: 0, orange: 0 },
     { apple: 1, pineapple: 1, orange: 0, mango: 1 }
 ]
-
 for (let element of arrOfGivens) {
     console.log(`calculateTotalPrice1( ${JSON.stringify(element)} )`.padEnd(pads, ' '), '-> $', calculateTotalPrice1(element))
 }
@@ -74,7 +73,6 @@ arrOfGivens = [
     { Apple: 0, Pineapple: 0, Orange: 0 },
     { Apple: 4, Pineapple: 1, Orange: 1, Mango: 3 }
 ]
-
 for (let element of arrOfGivens) {
     console.log(`calculateTotalPrice2( ${JSON.stringify(element)} )`.padEnd(pads, ' '), '-> $', calculateTotalPrice2(element))
 }
@@ -89,7 +87,6 @@ Examples:
  nthWord("Hello World", 3)                         -> ""
  nthWord("Javascript", 1)                          -> "Javascript”
  nthWord("", 1)                                    -> ""
-
 */
 console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
 const nthWord = (str, num) => `"${str.trim().split(' ')[num - 1] ?? ""}"`
@@ -101,7 +98,6 @@ arrOfGivens = [
     ["Javascript", 1],
     ["", 1]
 ]
-
 for (let element of arrOfGivens) {
     console.log(`nthWord( "${element[0]}", ${element[1]} )`.padEnd(pads, ' '), '->', nthWord(element[0], element[1]))
 }
@@ -112,27 +108,23 @@ Requirement:
  Write a function named isArmstrong() which takes a number argument and returns true if given number is armstrong, return false otherwise.​
  Note: An armstrong number is a number that is equal to the sum of its own digits raised to the power of the number of digits. In other 
  words, an n-digit number is an Armstrong number if the sum of its digits, each raised to the nth power, is equal to the number itself.
-
  Let's take an example to understand it better. Consider the number 153.​
  To determine if 153 is an armstrong number, we need to check if the sum of its digits, each raised to the power of the number of digits,
  equals the original number.​
  1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153​
  In this case, the sum of the individual digits raised to the power of 3 (the number of digits in 153) is equal to the original number, 
  which means 153 is an armstrong number.
-
 Examples:
  isArmstrong(153)   -> true
  isArmstrong(123)   -> false
  isArmstrong(1634)  -> true
  isArmstrong(153)   -> true
  isArmstrong(1111)  -> false
-
 */
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
 const isArmstrong = num => num.toString().split('').reduce((acc, e, i, arr) => acc + e ** arr.length, 0) === num
 
 arrOfGivens = [153, 123, 1634, 153, 1111]
-
 for (let element of arrOfGivens) {
     console.log(`isArmstrong( ${element} )`.padEnd(pads, ' '), '->', isArmstrong(element))
 }
@@ -152,7 +144,6 @@ Examples:
 console.log('\n--- Task 5---' + ('-'.repeat(reps)))
 function reverseNumber(num) {
     let reversed = 0
-
     while (num > 0) {
         const digit = num % 10
         num = Math.floor(num / 10)
@@ -177,7 +168,6 @@ Examples:
  doubleOrTriple([-1, -2], true)      -> [-2, -4]
  doubleOrTriple([0], false)          -> [0]
  doubleOrTriple([-1, 0, 1], true)    -> [-2, 0, 2]
-
 */
 console.log('\n--- Task 6---' + ('-'.repeat(reps)))
 const doubleOrTriple = (arr, bool) => bool === false ? arr.map(e => e * 3) : arr.map(e => e * 2)
@@ -198,8 +188,6 @@ Examples:
  splitString("Automation", 3)  -> ""
  splitString("Hello", 6)       -> ""
  splitString("12", 1)          -> "1 2"
-
-
 */
 console.log('\n--- Task 6---' + ('-'.repeat(reps)))
 const splitString = (str, num) => str.length < num || str.length % num !== 0 ? '""' : str.slice(0, num) + ' ' + str.slice(num)
