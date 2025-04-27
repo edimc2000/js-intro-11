@@ -13,7 +13,6 @@ Examples:
  calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 })                -> 0
  calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango:1 })   -> 12.24
 */
-
 console.log('\n--- Task 1 ---' + ('-'.repeat(reps)))
 const calculateTotalPrice1 = fruitObj => {
     const prices = { apple: 2.00, pineapple: 5.25, orange: 3.29, mango: 4.99 }
@@ -48,7 +47,6 @@ Examples:
  calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 })           -> 0
  calculateTotalPrice1({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 })  -> 29.51
 */
-
 console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
 const calculateTotalPrice2 = fruitObj => {
     const prices = { Apple: 2.00, Pineapple: 5.25, Orange: 3.29, Mango: 4.99 }
