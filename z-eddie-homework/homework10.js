@@ -105,3 +105,106 @@ arrOfGivens = [
 for (let element of arrOfGivens) {
     console.log(`nthWord( "${element[0]}", ${element[1]} )`.padEnd(pads, ' '), '->', nthWord(element[0], element[1]))
 }
+
+
+/* Task 4 
+Requirement:
+ Write a function named isArmstrong() which takes a number argument and returns true if given number is armstrong, return false otherwise.​
+ Note: An armstrong number is a number that is equal to the sum of its own digits raised to the power of the number of digits. In other 
+ words, an n-digit number is an Armstrong number if the sum of its digits, each raised to the nth power, is equal to the number itself.
+
+ Let's take an example to understand it better. Consider the number 153.​
+ To determine if 153 is an armstrong number, we need to check if the sum of its digits, each raised to the power of the number of digits,
+ equals the original number.​
+ 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153​
+ In this case, the sum of the individual digits raised to the power of 3 (the number of digits in 153) is equal to the original number, 
+ which means 153 is an armstrong number.
+
+Examples:
+ isArmstrong(153)   -> true
+ isArmstrong(123)   -> false
+ isArmstrong(1634)  -> true
+ isArmstrong(153)   -> true
+ isArmstrong(1111)  -> false
+
+*/
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
+const isArmstrong = num => num.toString().split('').reduce((acc, e, i, arr) => acc + e ** arr.length, 0) === num
+
+arrOfGivens = [ 153, 123, 1634, 153, 1111 ]
+
+for (let element of arrOfGivens) {
+    console.log(`isArmstrong( ${element} )`.padEnd(pads, ' '), '->', isArmstrong(element))
+}
+
+
+/* Task 5 
+Requirement:
+ Write a function named reverseNumber() which takes a number argument and returns it back reversed without converting it to a String.
+ Note: Do not convert number to string to complete the task.
+Examples:
+ reverseNumber(371)  -> 173
+ reverseNumber(123)  -> 321
+ reverseNumber(12)   -> 21
+ reverseNumber(0)    -> 0
+ reverseNumber(111)  -> 111
+*/
+console.log('\n--- Task 5---' + ('-'.repeat(reps)))
+function reverseNumber(num) {
+    let reversed = 0;
+
+    while (num > 0) {
+        const digit = num % 10;
+        num = Math.floor(num / 10);
+        reversed = reversed * 10 + digit;
+    }
+    return reversed;
+}
+
+arrOfGivens = [371, 123, 12, 0, 111, 1234]
+for (let element of arrOfGivens) {
+     console.log(`reverseNumber( ${element} )`.padEnd(pads, ' '), '->', reverseNumber(element))
+}
+
+
+/* Task 6
+Requirement:
+ Write a function named doubleOrTriple() which takes an array of numbers as argument and a boolean value. 
+ It will return the array elements doubled if true or tripled if the boolean value is false.​
+Examples:
+ doubleOrTriple([1, 5, 10], true)    -> [2, 10, 20]
+ doubleOrTriple([3, 7, 2], false)    -> [9, 21, 6]
+ doubleOrTriple([-1, -2], true)      -> [-2, -4]
+ doubleOrTriple([0], false)          -> [0]
+ doubleOrTriple([-1, 0, 1], true)    -> [-2, 0, 2]
+
+*/
+console.log('\n--- Task 6---' + ('-'.repeat(reps)))
+const doubleOrTriple = (arr, bool) => bool === false ? arr.map(e => e * 3) : arr.map(e => e * 2)
+
+arrOfGivens = [[[1, 5, 10], true], [[3, 7, 2], false], [[-1, -2], true], [[0], false], [[-1, 0, 1], true]]
+for (let element of arrOfGivens) {
+    console.log(`doubleOrTriple( [${element[0]}], ${element[1]} )`.padEnd(pads, ' '), '->', doubleOrTriple(element[0], element[1]))
+}
+
+
+/* Task 7
+Requirement:
+ Write a function named splitString() which takes a string and a number arguments and returns the string back split by the given number. 
+ Note: Return empty string if the string shorter than splitting number or the string length is not divisible by the given number.
+Examples:
+ splitString("JavaScript", 5)  -> "JavaS cript"
+ splitString("Java", 2)        -> "Ja va"
+ splitString("Automation", 3)  -> ""
+ splitString("Hello", 6)       -> ""
+ splitString("12", 1)          -> "1 2"
+
+
+*/
+console.log('\n--- Task 6---' + ('-'.repeat(reps)))
+const splitString = (str, num) => str.length < num || str.length % num !== 0 ? '""' : str.slice(0, num) + ' ' + str.slice(num)
+
+arrOfGivens = [["JavaScript", 5], ["Java", 2], ["Automation", 3], ["Hello", 6], ["12", 1]]
+for (let element of arrOfGivens) {
+    console.log(`splitString( "${element[0]}", ${element[1]} )`.padEnd(pads, ' '), '->', splitString(element[0], element[1]))
+}
