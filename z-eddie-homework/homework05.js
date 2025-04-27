@@ -50,7 +50,7 @@ Examples:
 */
 
 console.log ('\n--- TASK 3 ---'); 
-const countVowels = (string) => string.split('').reduce ((acc, curr) => 'aeiou'.includes(curr.toLowerCase()) ? acc+1 : acc,0)
+const countVowels = (string) => string.split('').reduce ((acc, curr) => 'aeiou'.includes(curr.toLowerCase()) ? acc + 1 : acc, 0)
 
 console.log('countVowels("Hello")             ->', countVowels("Hello")  );
 console.log('countVowels("Hello World")       ->', countVowels("Hello World") );
