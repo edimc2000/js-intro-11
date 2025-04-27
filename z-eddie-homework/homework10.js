@@ -131,7 +131,7 @@ Examples:
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
 const isArmstrong = num => num.toString().split('').reduce((acc, e, i, arr) => acc + e ** arr.length, 0) === num
 
-arrOfGivens = [ 153, 123, 1634, 153, 1111 ]
+arrOfGivens = [153, 123, 1634, 153, 1111]
 
 for (let element of arrOfGivens) {
     console.log(`isArmstrong( ${element} )`.padEnd(pads, ' '), '->', isArmstrong(element))
@@ -151,19 +151,19 @@ Examples:
 */
 console.log('\n--- Task 5---' + ('-'.repeat(reps)))
 function reverseNumber(num) {
-    let reversed = 0;
+    let reversed = 0
 
     while (num > 0) {
-        const digit = num % 10;
-        num = Math.floor(num / 10);
-        reversed = reversed * 10 + digit;
+        const digit = num % 10
+        num = Math.floor(num / 10)
+        reversed = reversed * 10 + digit
     }
-    return reversed;
+    return reversed
 }
 
 arrOfGivens = [371, 123, 12, 0, 111, 1234]
 for (let element of arrOfGivens) {
-     console.log(`reverseNumber( ${element} )`.padEnd(pads, ' '), '->', reverseNumber(element))
+    console.log(`reverseNumber( ${element} )`.padEnd(pads, ' '), '->', reverseNumber(element))
 }
 
 
