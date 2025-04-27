@@ -79,3 +79,29 @@ for (let element of arrOfGivens) {
     console.log(`calculateTotalPrice2( ${JSON.stringify(element)} )`.padEnd(pads, ' '), '-> $', calculateTotalPrice2(element))
 }
 
+/* Task 3 
+Requirement:
+ Write a function named nthWord() which takes a string and a number arguments and returns the nth word in the string. 
+ Note: Function should return empty string if the number argument is greater than the count of the words in the given string.
+Examples:
+ nthWord("I like programming languages", 2)        -> "like"
+ nthWord("QA stands for Quality Assurance", 4)​     -> "Quality"
+ nthWord("Hello World", 3)                         -> ""
+ nthWord("Javascript", 1)                          -> "Javascript”
+ nthWord("", 1)                                    -> ""
+
+*/
+console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
+const nthWord = (str, num) => `"${str.trim().split(' ')[num - 1] ?? ""}"`
+
+arrOfGivens = [
+    ["I like programming languages", 2],
+    ["QA stands for Quality Assurance", 4],
+    ["Hello World", 3],
+    ["Javascript", 1],
+    ["", 1]
+]
+
+for (let element of arrOfGivens) {
+    console.log(`nthWord( "${element[0]}", ${element[1]} )`.padEnd(pads, ' '), '->', nthWord(element[0], element[1]))
+}
