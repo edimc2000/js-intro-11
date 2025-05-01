@@ -25,3 +25,32 @@ let arrOfGivens = ['Mom and Dad', 'See you at noon', 'Kayak races attracts racec
 for (let element of arrOfGivens) {
     console.log(`countPalindrome('${element}')`.padEnd(pads, ' '), '-> ', countPalindrome(element))
 }
+
+/* Task 2
+Requirement:
+ Write a function named sum() which takes an array of numbers and a boolean value as arguments. It will return 
+ the sum of the numbers positioned at even indexes if true. And, return sum of numbers positioned at odd indexes if false.
+Examples:
+ sum([1, 5, 10], true)          -> 11
+ sum([3, 7, 2, 5, 10], false)   -> 12
+ sum([-1, 1, -2, 2], true)      -> -3
+ sum([0, -1, 15, 1], false)     -> 0
+ sum([1, 2, 3, 4, -4], true)    -> 0
+*/
+
+console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
+const sum = (arr, bool) => {
+  return bool ? arr.reduce((acc, e, i) => i % 2 === 0  ? acc + e : acc, 0)
+  : arr.reduce((acc, e, i) => i % 2 !== 0  ? acc + e : acc, 0)
+}
+
+arrOfGivens = [
+    [[1, 5, 10], true],
+    [[3, 7, 2, 5, 10], false],
+    [[-1, 1, -2, 2], true],
+    [[0, -1, 15, 1], false],
+    [[1, 2, 3, 4, -4], true]
+]    
+for (let element of arrOfGivens) {
+    console.log(`sum( [ ${element[0].join(', ')} ], ${element[1]} )`.padEnd(pads, ' '), '->', sum(element[0], element[1]))
+}
