@@ -16,7 +16,6 @@ const isPalindrome = str => {
     let str2 = [...str1].reverse().join('');
     return str1 === str2
 }
-
 const countPalindrome = str => {
     return str.trim().length < 1 ? 0 : str.split(' ').map(e => isPalindrome(e)).filter(e => e === true).length
 }
@@ -65,7 +64,7 @@ Examples:
  nthChars("Hi", 4)​             -> ""
  nthChars("0123456789", 2)     -> "13579" 
 */
-console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
+console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
 const nthChars = (str, num) => {
     return `'${str.split('').filter((e, i) => (i + 1) % num === 0 ? e : null).join('')}'`
 }
@@ -99,7 +98,6 @@ const canFormString = (str1, str2) => {
     let arr2 = str2.toLowerCase().split(' ').join('').split('')
     let arr2Unique = [... new Set(arr2)]
     let result = true
-
     let obj1 = {}
     let obj2 = {}
     arr2Unique.forEach(e => {
@@ -109,6 +107,7 @@ const canFormString = (str1, str2) => {
     })
     return result
 }
+
 arrOfGivens = [
     ["Hello", "Hi"],
     ["programming", "gaming"],
@@ -134,11 +133,9 @@ Examples:
  isAnagram("astronomer", "moon starer")​    -> true
  isAnagram("CINEMA", "iceman")​             -> true
  isAnagram("123", "1234")                  -> false
-
 */
 console.log('\n--- Task 5 ---' + ('-'.repeat(reps)))
 const isAnagram = (str1, str2) => str1.toLowerCase().split(' ').join('').split('').sort().join('') === str2.toLowerCase().split(' ').join('').split('').sort().join('')
-
 
 arrOfGivens = [
     ["Apple", "Peach"],
@@ -177,6 +174,35 @@ for (let element of arrOfGivens) {
     console.log(`count([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(pads, ' '), '->', count(element[0], element[1]))
 }
 
+/* Task 7
+Requirement:
+ Write a function named sumDigitsDouble() which takes a string and returns the sum of the digits in 
+ the given String multiplied by 2. Return -1 if the given string does not have any digits. 
+ Ignore negative numbers.
+Examples:
+ sumDigitsDouble("Javascript")     -> -1
+ sumDigitsDouble("23abc45")​        -> 28
+ sumDigitsDouble("Hi-23")          -> 10
+ sumDigitsDouble("ab12")           -> 6
+ sumDigitsDouble("n0numh3r3")      -> 12
+*/
+console.log('\n--- Task 7 ---' + ('-'.repeat(reps)))
+const sumDigitsDouble = str => {
+    result = str.split('').filter(e => /[0-9]/.test(e)).reduce((acc, e) => acc + Number(e), 0) * 2
+    return result ? result : -1
+}
+
+arrOfGivens = [
+    "Javascript",
+    "23abc45",
+    "Hi-23",
+    "ab12",
+    "n0numh3r3"
+]
+for (let element of arrOfGivens) {
+    console.log(`sumDigitsDouble('${element}')`.padEnd(pads, ' '), '-> ', sumDigitsDouble(element))
+}
+
 /* Task 8
 Requirement:
 Write a function named countOccurrence() which takes two string arguments and returns how many times
@@ -196,8 +222,8 @@ const countOccurrence = (str1, str2) => {
     let obj1 = {}
     let obj2 = {}
     arr2Unique.forEach(e => {
-        obj1[e] = arr1.reduce((acc , eArr1) => eArr1 === e ? acc + 1 : acc, 0)
-        obj2[e] = arr2.reduce((acc , eArr2) => eArr2 === e ? acc + 1 : acc, 0)
+        obj1[e] = arr1.reduce((acc, eArr1) => eArr1 === e ? acc + 1 : acc, 0)
+        obj2[e] = arr2.reduce((acc, eArr2) => eArr2 === e ? acc + 1 : acc, 0)
     })
     return Math.min(...Object.values(obj1))
 }
@@ -210,6 +236,6 @@ arrOfGivens = [
     ["IT conversations", "IT"]
 ]
 for (let element of arrOfGivens) {
-    console.log(`countOccurrence('${element[0]}', '${element[1]}')`.padEnd(pads, ' '), '-> ', countOccurrence(element[0], element[1] ))
+    console.log(`countOccurrence('${element[0]}', '${element[1]}')`.padEnd(pads, ' '), '-> ', countOccurrence(element[0], element[1]))
 }
 
