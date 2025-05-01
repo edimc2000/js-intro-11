@@ -37,11 +37,10 @@ Examples:
  sum([0, -1, 15, 1], false)     -> 0
  sum([1, 2, 3, 4, -4], true)    -> 0
 */
-
 console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
 const sum = (arr, bool) => {
-  return bool ? arr.reduce((acc, e, i) => i % 2 === 0  ? acc + e : acc, 0)
-  : arr.reduce((acc, e, i) => i % 2 !== 0  ? acc + e : acc, 0)
+    return bool ? arr.reduce((acc, e, i) => i % 2 === 0 ? acc + e : acc, 0)
+        : arr.reduce((acc, e, i) => i % 2 !== 0 ? acc + e : acc, 0)
 }
 
 arrOfGivens = [
@@ -50,7 +49,34 @@ arrOfGivens = [
     [[-1, 1, -2, 2], true],
     [[0, -1, 15, 1], false],
     [[1, 2, 3, 4, -4], true]
-]    
+]
 for (let element of arrOfGivens) {
-    console.log(`sum( [ ${element[0].join(', ')} ], ${element[1]} )`.padEnd(pads, ' '), '->', sum(element[0], element[1]))
+    console.log(`sum([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(pads, ' '), '->', sum(element[0], element[1]))
+}
+
+/* Task 3
+Requirement:
+ Write a function named nthChars() which takes a string and a number as arguments and returns the string 
+ back with every nth characters.​
+Examples:
+ nthChars("Java", 2)           -> "aa"
+ nthChars("JavaScript", 5)​     -> "St"
+ nthChars("Java", 3)​           -> "v"
+ nthChars("Hi", 4)​             -> ""
+ nthChars("0123456789", 2)     -> "13579" 
+*/
+console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
+const nthChars = (str, num) => {
+    return `'${str.split('').filter((e, i) => (i + 1) % num === 0 ? e : null).join('')}'`
+}
+
+arrOfGivens = [
+    ["Java", 2],
+    ["JavaScript", 5],
+    ["Java", 3],
+    ["Hi", 4],
+    ["0123456789", 2]
+]
+for (let element of arrOfGivens) {
+    console.log(`nthChars('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', nthChars(element[0], element[1]))
 }
