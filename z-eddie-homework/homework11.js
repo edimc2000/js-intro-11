@@ -94,34 +94,37 @@ Examples:
  canFormString("12", "123")                        -> false
 */
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
-// const canFormString = (str1, str2) => {
-//     let arr1 = str1.toLowerCase().split(' ').join('').split('')
-//     let arr2 = str2.toLowerCase().split(' ').join('').split('')
-//     console.log (arr1)
-//     console.log (arr2)
-//     console.log('fff', arr2.filter( e => e.trim().length > 0 && arr1.includes(e) ))
-//     let arr3 = arr2.filter( e => e.trim().length > 0 && arr1.includes(e))
-//     console.log (arr2)
-//     console.log (arr3)
+const canFormString = (str1, str2) => {
+    let arr1 = str1.toLowerCase().split(' ').join('').split('')
+    let arr2 = str2.toLowerCase().split(' ').join('').split('')
+    let arr2Unique = [... new Set(arr2)]
+    let result = true
 
-// }
-
-// arrOfGivens = [
-//     ["Hello", "Hi"],
-//     ["programming", "gaming"],
-//     ["halogen", "hello"],
-//     ["CONVERSATION", "voices rant on"],
-//     ["12", "123"]
-// ]
-// for (let element of arrOfGivens) {
-//     console.log(`canFormString('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', canFormString(element[0], element[1]))
-// }
+    let obj1 = {}
+    let obj2 = {}
+    arr2Unique.forEach(e => {
+        obj1[e] = arr1.reduce((acc, eArr1) => eArr1 === e ? acc + 1 : acc, 0)
+        obj2[e] = arr2.reduce((acc, eArr2) => eArr2 === e ? acc + 1 : acc, 0)
+        if (obj1[e] < obj2[e]) { result = false }
+    })
+    return result
+}
+arrOfGivens = [
+    ["Hello", "Hi"],
+    ["programming", "gaming"],
+    ["halogen", "hello"],
+    ["CONVERSATION", "voices rant on"],
+    ["12", "123"]
+]
+for (let element of arrOfGivens) {
+    console.log(`canFormString('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', canFormString(element[0], element[1]))
+}
 
 /* Task 5
 Requirement:
- Write a function named isAnagram() which takes two string arguments and returns true if the given strings 
+ Write a function named isAnagram() which takes two string arguments and returns true if the given strings
  are anagram. Return false otherwise.
- NOTE: An anagram is a word or phrase formed by rearranging the letters of another word or phrase. In the context 
+ NOTE: An anagram is a word or phrase formed by rearranging the letters of another word or phrase. In the context
  of strings, checking if two strings are anagrams of each other means verifying if they contain the same characters
  in the same quantities, regardless of the order of those characters.
 NOTE: This method is case-insensitive and ignore the white spaces.
@@ -133,8 +136,8 @@ Examples:
  isAnagram("123", "1234")                  -> false
 
 */
-console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
-const isAnagram = (str1, str2) => str1.toLowerCase().split(' ').join('').split('').sort().join('') === str2.toLowerCase().split(' ').join('').split('').sort().join('') 
+console.log('\n--- Task 5 ---' + ('-'.repeat(reps)))
+const isAnagram = (str1, str2) => str1.toLowerCase().split(' ').join('').split('').sort().join('') === str2.toLowerCase().split(' ').join('').split('').sort().join('')
 
 
 arrOfGivens = [
@@ -150,9 +153,9 @@ for (let element of arrOfGivens) {
 
 /* Task 6
 Requirement:
-Write a function named count() which takes an array of numbers and a boolean value as arguments. 
-It will return the total count of the even numbers if the boolean value is true. And return the 
-total count of the odd numbers if the boolean value is false. 
+Write a function named count() which takes an array of numbers and a boolean value as arguments.
+It will return the total count of the even numbers if the boolean value is true. And return the
+total count of the odd numbers if the boolean value is false.
 Examples:
  count([1, 5, 10], true)         -> 1
  count([3, 7, 2, 5, 10], false)  -> 3
@@ -176,7 +179,7 @@ for (let element of arrOfGivens) {
 
 /* Task 8
 Requirement:
-Write a function named countOccurrence() which takes two string arguments and returns how many times 
+Write a function named countOccurrence() which takes two string arguments and returns how many times
 that the first string can form the second string.
 Examples:
 countOccurrence("Javascript", "Java")      -> 1
