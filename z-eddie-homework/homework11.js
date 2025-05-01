@@ -1,4 +1,4 @@
-const reps = 100, pads = 75
+const reps = 100, pads = 55
 /* Task 1 
 Requirement:
  Write a function named countPalindrome() which takes a string and returns the number of  palindrome words.
@@ -80,3 +80,124 @@ arrOfGivens = [
 for (let element of arrOfGivens) {
     console.log(`nthChars('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', nthChars(element[0], element[1]))
 }
+
+/* Task 4
+Requirement:
+ Write a function named canFormString() which takes two string arguments and returns true if the second 
+ string can be formed by rearranging the characters of first string. Return false otherwise.
+ NOTE: This method is case-insensitive and ignore the white spaces.
+Examples:
+ canFormString("Hello", "Hi")​                      -> false
+ canFormString("programming", "gaming")​            -> true
+ canFormString("halogen", "hello")​                 -> false
+ canFormString("CONVERSATION", "voices rant on")​   -> true
+ canFormString("12", "123")                        -> false
+*/
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
+// const canFormString = (str1, str2) => {
+//     let arr1 = str1.toLowerCase().split(' ').join('').split('')
+//     let arr2 = str2.toLowerCase().split(' ').join('').split('')
+//     console.log (arr1)
+//     console.log (arr2)
+//     console.log('fff', arr2.filter( e => e.trim().length > 0 && arr1.includes(e) ))
+//     let arr3 = arr2.filter( e => e.trim().length > 0 && arr1.includes(e))
+//     console.log (arr2)
+//     console.log (arr3)
+
+// }
+
+// arrOfGivens = [
+//     ["Hello", "Hi"],
+//     ["programming", "gaming"],
+//     ["halogen", "hello"],
+//     ["CONVERSATION", "voices rant on"],
+//     ["12", "123"]
+// ]
+// for (let element of arrOfGivens) {
+//     console.log(`canFormString('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', canFormString(element[0], element[1]))
+// }
+
+/* Task 5
+Requirement:
+ Write a function named isAnagram() which takes two string arguments and returns true if the given strings 
+ are anagram. Return false otherwise.
+ NOTE: An anagram is a word or phrase formed by rearranging the letters of another word or phrase. In the context 
+ of strings, checking if two strings are anagrams of each other means verifying if they contain the same characters
+ in the same quantities, regardless of the order of those characters.
+NOTE: This method is case-insensitive and ignore the white spaces.
+Examples:
+ isAnagram("Apple", "Peach")​               -> false
+ isAnagram("listen", "silent")​             -> true
+ isAnagram("astronomer", "moon starer")​    -> true
+ isAnagram("CINEMA", "iceman")​             -> true
+ isAnagram("123", "1234")                  -> false
+
+*/
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
+const isAnagram = (str1, str2) => str1.toLowerCase().split(' ').join('').split('').sort().join('') === str2.toLowerCase().split(' ').join('').split('').sort().join('') 
+
+
+arrOfGivens = [
+    ["Apple", "Peach"],
+    ["listen", "silent"],
+    ["astronomer", "moon starer"],
+    ["CINEMA", "iceman"],
+    ["123", "1234"]
+]
+for (let element of arrOfGivens) {
+    console.log(`isAnagram('${element[0]}', ${element[1]})`.padEnd(pads, ' '), '->', isAnagram(element[0], element[1]))
+}
+
+/* Task 6
+Requirement:
+Write a function named count() which takes an array of numbers and a boolean value as arguments. 
+It will return the total count of the even numbers if the boolean value is true. And return the 
+total count of the odd numbers if the boolean value is false. 
+Examples:
+ count([1, 5, 10], true)         -> 1
+ count([3, 7, 2, 5, 10], false)  -> 3
+ count([-1, 1, -2, 2], true)     -> 2
+ count([0, -1, 15, 1], false)    -> 3
+ count([1, 2, 3, 4, -4], true)   -> 3
+*/
+console.log('\n--- Task 6 ---' + ('-'.repeat(reps)))
+const count = (arr, bool) => bool ? arr.reduce((acc, e) => e % 2 === 0 ? acc + 1 : acc, 0) : arr.reduce((acc, e) => e % 2 !== 0 ? acc + 1 : acc, 0)
+
+arrOfGivens = [
+    [[1, 5, 10], true],
+    [[3, 7, 2, 5, 10], false],
+    [[-1, 1, -2, 2], true],
+    [[0, -1, 15, 1], false],
+    [[1, 2, 3, 4, -4], true]
+]
+for (let element of arrOfGivens) {
+    console.log(`count([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(pads, ' '), '->', count(element[0], element[1]))
+}
+
+/* Task 7
+Requirement:
+ Write a function named sumDigitsDouble() which takes a string and returns the sum of the digits in 
+ the given String multiplied by 2. Return -1 if the given string does not have any digits. 
+ Ignore negative numbers.
+Examples:
+ sumDigitsDouble("Javascript")     -> -1
+ sumDigitsDouble("23abc45")​        -> 28
+ sumDigitsDouble("Hi-23")          -> 10
+ sumDigitsDouble("ab12")           -> 6
+ sumDigitsDouble("n0numh3r3")      -> 12
+
+*/
+console.log('\n--- Task 7 ---' + ('-'.repeat(reps)))
+const sumDigitsDouble = str => str.split('').filter( e => /[0-9]/.test(e)).reduce((acc, e) => acc + Number(e), 0) * 2 
+
+arrOfGivens = [
+    "Javascript",
+    "23abc45",
+    "Hi-23",
+    "ab12",
+    "n0numh3r3"
+]
+for (let element of arrOfGivens) {
+    console.log(`sumDigitsDouble('${element}')`.padEnd(pads, ' '), '-> ', sumDigitsDouble(element))
+}
+
