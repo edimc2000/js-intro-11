@@ -174,30 +174,39 @@ for (let element of arrOfGivens) {
     console.log(`count([ ${element[0].join(', ')} ], ${element[1]})`.padEnd(pads, ' '), '->', count(element[0], element[1]))
 }
 
-/* Task 7
+/* Task 8
 Requirement:
- Write a function named sumDigitsDouble() which takes a string and returns the sum of the digits in 
- the given String multiplied by 2. Return -1 if the given string does not have any digits. 
- Ignore negative numbers.
+Write a function named countOccurrence() which takes two string arguments and returns how many times 
+that the first string can form the second string.
 Examples:
- sumDigitsDouble("Javascript")     -> -1
- sumDigitsDouble("23abc45")​        -> 28
- sumDigitsDouble("Hi-23")          -> 10
- sumDigitsDouble("ab12")           -> 6
- sumDigitsDouble("n0numh3r3")      -> 12
-
+countOccurrence("Javascript", "Java")      -> 1
+countOccurrence("Hello", "World")          -> 0
+countOccurrence("Can I can a can", "anc")​  -> 3
+countOccurrence("Hello", "l")​              -> 2
+countOccurrence("IT conversations", "IT")​  -> 2
 */
-console.log('\n--- Task 7 ---' + ('-'.repeat(reps)))
-const sumDigitsDouble = str => str.split('').filter( e => /[0-9]/.test(e)).reduce((acc, e) => acc + Number(e), 0) * 2 
+console.log('\n--- Task 8 ---' + ('-'.repeat(reps)))
+const countOccurrence = (str1, str2) => {
+    let arr1 = str1.toLowerCase().split(' ').join('').split('')
+    let arr2 = str2.toLowerCase().split(' ').join('').split('')
+    let arr2Unique = [... new Set(arr2)]
+    let obj1 = {}
+    let obj2 = {}
+    arr2Unique.forEach(e => {
+        obj1[e] = arr1.reduce((acc , eArr1) => eArr1 === e ? acc + 1 : acc, 0)
+        obj2[e] = arr2.reduce((acc , eArr2) => eArr2 === e ? acc + 1 : acc, 0)
+    })
+    return Math.min(...Object.values(obj1))
+}
 
 arrOfGivens = [
-    "Javascript",
-    "23abc45",
-    "Hi-23",
-    "ab12",
-    "n0numh3r3"
+    ["Javascript", "Java"],
+    ["Hello", "World"],
+    ["Can I can a can", "anc"],
+    ["Hello", "l"],
+    ["IT conversations", "IT"]
 ]
 for (let element of arrOfGivens) {
-    console.log(`sumDigitsDouble('${element}')`.padEnd(pads, ' '), '-> ', sumDigitsDouble(element))
+    console.log(`countOccurrence('${element[0]}', '${element[1]}')`.padEnd(pads, ' '), '-> ', countOccurrence(element[0], element[1] ))
 }
 
