@@ -29,7 +29,7 @@ Examples:
 isSumEvenOrOdd(1, 1, 1)    -> "odd"
 */
 console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
-const isSumEvenOrOdd = (...args) => args.reduce((acc, e) => acc + e, 0) % 2 === 0 ? 'even' : 'odd'
+const isSumEvenOrOdd = (...args) => args.reduce((acc, e) => acc + e, 0) % 2 === 0 ? '"even"' : '"odd"'
 
 arrOfGivens = [[0, 1, 4], [0, -1, -5], [0, 0, 0], [7, 1, 9], [1, 1, 1]]
 for (let element of arrOfGivens) {
@@ -49,7 +49,8 @@ Examples:
  decimal2( [4.35623, 8.9742] )               -> [ 4.36, 8.97 ]
 */
 console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
-const decimal2 = arr => arr.map(e => Number(e.toFixed(2)))
+// const decimal2 = arr => arr.map(e => (e.toFixed(2)))
+const decimal2 = arr => arr.map(e => Math.round(e*100)/100)
 
 arrOfGivens = [[94.356, 8.9752], [76.62, 128.4, 84], [20987, 3.53245, 12.345, 32.9], [], [4.35623, 8.9742]]
 for (let element of arrOfGivens) {
