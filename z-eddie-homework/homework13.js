@@ -55,3 +55,5 @@ for (let element of arrOfGivens) {
     console.log(`countChars(${element})`.padEnd(pads, ' '), '-> ', countChars(element))
 }
 
+
+
