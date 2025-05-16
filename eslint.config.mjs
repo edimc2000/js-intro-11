@@ -8,7 +8,7 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: { ...globals.browser, ...globals.node } },
     rules: {
-      "prefer-const": "warn",
+      // "prefer-const": "warn",
       "no-constant-binary-expression": "error",
        "indent": ["warn", 2], 
        "quotes": ["warn", "single"]
