@@ -20,7 +20,6 @@ for (let element of arrOfGivens) {
     console.log(`repeatingX(${element})`.padEnd(pads, ' '), '-> ', repeatingX(element))
 }
 
-
 /* Task 2
 Requirement:
  Write a function named isPerfectSquare() which takes a number as an argument 
