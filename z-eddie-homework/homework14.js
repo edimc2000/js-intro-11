@@ -75,28 +75,31 @@ for (let element of arrOfGivens) {
 }
 
 
-/* Task 3
+/* Task 4
 Requirement:
- Write a function named convertTemperature() which takes a number and a string arguments 
- to be considered as a temperature value and a unit (either Celsius or Fahrenheit) as 
- arguments and converts the temperature to the other unit.
- NOTE: Use below formulas to convert temperature:
- Celsius to Fahrenheit: temp * 9/5) + 32
- Fahrenheit to Celsius: temp - 32) * 5/9
+ Write a function named sumOfEvenNumbers() which takes an array as an argument and 
+ returns the sum of all the even numbers in an array.
 Examples:
-convertTemperature(100, 'Celsius’)      -> 212
-convertTemperature(32, 'Fahrenheit’)    -> 0
-convertTemperature(0, 'Celsius’)        -> 32
-convertTemperature(212, 'Fahrenheit’)   -> 100
-convertTemperature(-40, 'Celsius’)      -> -40
-convertTemperature(-40, 'Fahrenheit’)   -> -40
+sumOfEvenNumbers( [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] )        -> 30
+sumOfEvenNumbers( [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ] )   -> 110
+sumOfEvenNumbers( [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ] )    -> 0
+sumOfEvenNumbers( [ ] )                                      -> 0
+sumOfEvenNumbers( [ 1, 2, 3, 4, 5 ] )                        -> 6
+sumOfEvenNumbers( [ 10, 20, 30, 40, 50 ] )                   -> 150
 
 */
 
-console.log('\n--- Task 3---' + ('-'.repeat(reps)))
-const convertTemperature = (num, str) => str === 'Celsius' ? num * 9 / 5 + 32 : (num - 32) * 5 / 9
+console.log('\n--- Task 4---' + ('-'.repeat(reps)))
+const sumOfEvenNumbers = arr => arr.length > 0 ? arr.reduce((acc, e) => e % 2 === 0 ? acc + e : acc, 0) : 0
 
-arrOfGivens = [[100, 'Celsius'], [32, 'Fahrenheit'], [0, 'Celsius'], [212, 'Fahrenheit'], [-40, 'Celsius'], [-40, 'Fahrenheit']]
+arrOfGivens = [
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],
+    [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],
+    [],
+    [1, 2, 3, 4, 5],
+    [10, 20, 30, 40, 50]
+]
 for (let element of arrOfGivens) {
-    console.log(`convertTemperature(${element[0]}, ${element[1]})`.padEnd(pads, ' '), '-> ', convertTemperature(element[0], element[1]))
+    console.log(`sumOfEvenNumbers(${element})`.padEnd(pads, ' '), '-> ', sumOfEvenNumbers(element))
 }
