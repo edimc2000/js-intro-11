@@ -11,7 +11,6 @@ Examples:
  repeatingX("")                 -> false
  repeatingX("xxxxx")            -> true
 */
-
 console.log('\n--- Task 1 ---' + ('-'.repeat(reps)))
 const repeatingX = str => str.toLowerCase().trim().split('').reduce((acc, e, i, arr) => (e === 'x' && arr[i + 1] === 'x') ? acc = true : acc, false)
 
@@ -38,7 +37,6 @@ isPerfectSquare(1)   -> true
 isPerfectSquare(-1)  -> false
 isPerfectSquare(144) -> true
 */
-
 console.log('\n--- Task 2---' + ('-'.repeat(reps)))
 const isPerfectSquare = num => num ? num % Math.sqrt(num) === 0 : true
 
@@ -46,7 +44,6 @@ arrOfGivens = [25, 24, 0, 1, -1, 144]
 for (let element of arrOfGivens) {
     console.log(`isPerfectSquare(${element})`.padEnd(pads, ' '), '-> ', isPerfectSquare(element))
 }
-
 
 /* Task 3
 Requirement:
@@ -63,9 +60,7 @@ convertTemperature(0, 'Celsius’)        -> 32
 convertTemperature(212, 'Fahrenheit’)   -> 100
 convertTemperature(-40, 'Celsius’)      -> -40
 convertTemperature(-40, 'Fahrenheit’)   -> -40
-
 */
-
 console.log('\n--- Task 3---' + ('-'.repeat(reps)))
 const convertTemperature = (num, str) => str === 'Celsius' ? num * 9 / 5 + 32 : (num - 32) * 5 / 9
 
@@ -73,7 +68,6 @@ arrOfGivens = [[100, 'Celsius'], [32, 'Fahrenheit'], [0, 'Celsius'], [212, 'Fahr
 for (let element of arrOfGivens) {
     console.log(`convertTemperature(${element[0]}, ${element[1]})`.padEnd(pads, ' '), '-> ', convertTemperature(element[0], element[1]))
 }
-
 
 /* Task 4
 Requirement:
@@ -86,9 +80,7 @@ sumOfEvenNumbers( [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ] )    -> 0
 sumOfEvenNumbers( [ ] )                                      -> 0
 sumOfEvenNumbers( [ 1, 2, 3, 4, 5 ] )                        -> 6
 sumOfEvenNumbers( [ 10, 20, 30, 40, 50 ] )                   -> 150
-
 */
-
 console.log('\n--- Task 4---' + ('-'.repeat(reps)))
 const sumOfEvenNumbers = arr => arr.length > 0 ? arr.reduce((acc, e) => e % 2 === 0 ? acc + e : acc, 0) : 0
 
@@ -102,4 +94,29 @@ arrOfGivens = [
 ]
 for (let element of arrOfGivens) {
     console.log(`sumOfEvenNumbers(${element})`.padEnd(pads, ' '), '-> ', sumOfEvenNumbers(element))
+}
+
+/* Task 5
+Requirement:
+ Write a function named capsOdds() which takes an array argument and returns the array 
+ with all the odd index elements capitalized (converted to uppercase).
+Examples:
+capsOdds(["Hello", "World"])                                  -> ["Hello", "WORLD"]
+capsOdds(["Jan", "Feb", "Mar", "Apr"])                        -> ["Jan", "FEB", "Mar", "APR"]
+capsOdds(["Apple", "Banana", "123", "456", "Peach", "Kiwi"])  -> ["Apple", "BANANA", "123", "456", "Peach", "KIWI"]
+capsOdds([ ])                                                 -> [ ]
+capsOdds(["John !@#$%", "^&*() Doe"])                         -> ["John !@#$%", "^&*() DOE"]
+*/
+console.log('\n--- Task 5---' + ('-'.repeat(reps)))
+const capsOdds = arr => arr.map((e, i) => i % 2 !== 0 ? e.toUpperCase() : e)
+
+arrOfGivens = [
+    ["Hello", "World"],
+    ["Jan", "Feb", "Mar", "Apr"],
+    ["Apple", "Banana", "123", "456", "Peach", "Kiwi"],
+    [],
+    ["John !@#$%", "^&*() Doe"]
+]
+for (let element of arrOfGivens) {
+    console.log(`capsOdds(${element})`.padEnd(pads, ' '), '-> ', capsOdds(element))
 }
