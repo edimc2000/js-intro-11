@@ -42,7 +42,61 @@ isPerfectSquare(144) -> true
 console.log('\n--- Task 2---' + ('-'.repeat(reps)))
 const isPerfectSquare = num => num ? num % Math.sqrt(num) === 0 : true
 
-arrOfGivens = [25 , 24, 0, 1, -1, 144]
+arrOfGivens = [25, 24, 0, 1, -1, 144]
 for (let element of arrOfGivens) {
     console.log(`isPerfectSquare(${element})`.padEnd(pads, ' '), '-> ', isPerfectSquare(element))
+}
+
+
+/* Task 3
+Requirement:
+ Write a function named convertTemperature() which takes a number and a string arguments 
+ to be considered as a temperature value and a unit (either Celsius or Fahrenheit) as 
+ arguments and converts the temperature to the other unit.
+ NOTE: Use below formulas to convert temperature:
+ Celsius to Fahrenheit: temp * 9/5) + 32
+ Fahrenheit to Celsius: temp - 32) * 5/9
+Examples:
+convertTemperature(100, 'Celsius’)      -> 212
+convertTemperature(32, 'Fahrenheit’)    -> 0
+convertTemperature(0, 'Celsius’)        -> 32
+convertTemperature(212, 'Fahrenheit’)   -> 100
+convertTemperature(-40, 'Celsius’)      -> -40
+convertTemperature(-40, 'Fahrenheit’)   -> -40
+
+*/
+
+console.log('\n--- Task 3---' + ('-'.repeat(reps)))
+const convertTemperature = (num, str) => str === 'Celsius' ? num * 9 / 5 + 32 : (num - 32) * 5 / 9
+
+arrOfGivens = [[100, 'Celsius'], [32, 'Fahrenheit'], [0, 'Celsius'], [212, 'Fahrenheit'], [-40, 'Celsius'], [-40, 'Fahrenheit']]
+for (let element of arrOfGivens) {
+    console.log(`convertTemperature(${element[0]}, ${element[1]})`.padEnd(pads, ' '), '-> ', convertTemperature(element[0], element[1]))
+}
+
+
+/* Task 3
+Requirement:
+ Write a function named convertTemperature() which takes a number and a string arguments 
+ to be considered as a temperature value and a unit (either Celsius or Fahrenheit) as 
+ arguments and converts the temperature to the other unit.
+ NOTE: Use below formulas to convert temperature:
+ Celsius to Fahrenheit: temp * 9/5) + 32
+ Fahrenheit to Celsius: temp - 32) * 5/9
+Examples:
+convertTemperature(100, 'Celsius’)      -> 212
+convertTemperature(32, 'Fahrenheit’)    -> 0
+convertTemperature(0, 'Celsius’)        -> 32
+convertTemperature(212, 'Fahrenheit’)   -> 100
+convertTemperature(-40, 'Celsius’)      -> -40
+convertTemperature(-40, 'Fahrenheit’)   -> -40
+
+*/
+
+console.log('\n--- Task 3---' + ('-'.repeat(reps)))
+const convertTemperature = (num, str) => str === 'Celsius' ? num * 9 / 5 + 32 : (num - 32) * 5 / 9
+
+arrOfGivens = [[100, 'Celsius'], [32, 'Fahrenheit'], [0, 'Celsius'], [212, 'Fahrenheit'], [-40, 'Celsius'], [-40, 'Fahrenheit']]
+for (let element of arrOfGivens) {
+    console.log(`convertTemperature(${element[0]}, ${element[1]})`.padEnd(pads, ' '), '-> ', convertTemperature(element[0], element[1]))
 }
