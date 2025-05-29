@@ -87,3 +87,26 @@ arrOfGivens = ['Hello', 'basketball', 'Tech Global', '', '123!@#aB']
 for (let element of arrOfGivens) {
     console.log(`alternatingCases(${element})`.padEnd(pads, ' '), '-> ', alternatingCases(element))
 }
+
+/* Task 4
+Requirement:
+ Write a function named isNeutral() that takes two strings comprised of + and -, and return a 
+ new string which shows how the two strings interact in the following way:
+ When positives and positives interact, they remain positive.
+ When negatives and negatives interact, they remain negative.
+ But when negatives and positives interact, they become neutral, and are shown as the number 0.
+ Note: The two strings will be the same length.
+Examples
+ isNeutral("-", "+")           -> "0"
+ isNeutral("-+", "-+")         -> "-+"
+ isNeutral("-++-", "-+-+")     -> "-+00"
+ isNeutral("--++--", "++--++") -> "000000"
+ isNeutral("+++", "+++")       -> "+++"
+*/
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
+const isNeutral = (str1, str2) => str1.split('').map((e, i, arr) => (e === str2.split('')[i]) ? e : '0').join('')
+
+arrOfGivens = [['-', '+'], ['-+', '-+'], ['-++-', '-+-+'], ['--++--', '++--++'], ['+++', '+++']]
+for (let element of arrOfGivens) {
+    console.log(`isNeutral('${element[0]}', '${element[1]}')`.padEnd(pads, ' '), '-> ', isNeutral(element[0], element[1]))
+}
