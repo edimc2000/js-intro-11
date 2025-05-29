@@ -13,16 +13,15 @@ Examples:
 console.log('\n--- Task 1 ---' + ('-'.repeat(reps)))
 const toCamelCase = str => {
     let strArr = str.trim().split(' ').filter(e => e.length > 0)
-    let result
-    strArr.length > 1
-        ? result = strArr.map((e, i) => i ? e[0].toUpperCase() + e.slice(1).toLowerCase() : e.toLowerCase())
-        : result = strArr
+    let result = strArr.length > 1
+        ? strArr.map((e, i) => i ? e[0].toUpperCase() + e.slice(1).toLowerCase() : e.toLowerCase())
+        : strArr
     return result.join('')
 }
 
 let arrOfGivens = ['first name', 'last     name', '   ZIP CODE', 'I Learn Java Script', 'helloWorld']
 for (let element of arrOfGivens) {
-    console.log(`toCamelCase(${element})`.padEnd(pads, ' '), '-> ', toCamelCase(element))
+    console.log(`toCamelCase('${element}')`.padEnd(pads, ' '), '-> ', toCamelCase(element))
 }
 
 
@@ -41,15 +40,14 @@ Examples:
 console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
 const toSnakeCase = str => {
     let strArr = str.trim().split(' ').filter(e => e.length > 0)
-    let result
-    strArr.length > 1
-        ? result = strArr.map(e => e.toLowerCase()) : result = strArr
+    let result = strArr.length > 1
+        ?  strArr.map(e => e.toLowerCase()) : strArr
     return result.join('_')
 }
 
 arrOfGivens = ['first name', 'last     name', ' I love Java Script', 'already_snake_case', 'hello']
 for (let element of arrOfGivens) {
-    console.log(`toSnakeCase(${element})`.padEnd(pads, ' '), '-> ', toSnakeCase(element))
+    console.log(`toSnakeCase('${element}')`.padEnd(pads, ' '), '-> ', toSnakeCase(element))
 }
 
 
@@ -68,8 +66,7 @@ console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
 
 const alternateCasesWord = arr => {
     let counter = 0
-    let resultWord
-    resultWord = arr.map((e, i) => {
+    let resultWord = arr.map((e, i) => {
         counter++
         return /[a-z]/i.test(e) && counter % 2 === 0 ? e.toLowerCase() : e.toUpperCase()
     })
@@ -85,7 +82,7 @@ const alternatingCases = str => {
 
 arrOfGivens = ['Hello', 'basketball', 'Tech Global', '', '123!@#aB']
 for (let element of arrOfGivens) {
-    console.log(`alternatingCases(${element})`.padEnd(pads, ' '), '-> ', alternatingCases(element))
+    console.log(`alternatingCases('${element}')`.padEnd(pads, ' '), '-> ', alternatingCases(element))
 }
 
 /* Task 4
@@ -109,4 +106,36 @@ const isNeutral = (str1, str2) => str1.split('').map((e, i, arr) => (e === str2.
 arrOfGivens = [['-', '+'], ['-+', '-+'], ['-++-', '-+-+'], ['--++--', '++--++'], ['+++', '+++']]
 for (let element of arrOfGivens) {
     console.log(`isNeutral('${element[0]}', '${element[1]}')`.padEnd(pads, ' '), '-> ', isNeutral(element[0], element[1]))
+}
+
+
+/* Task 5
+Requirement:
+ Write a function named isTrueOrFalse() which takes a string with sets of character/words 
+ separated by space. Looking at the first letter of each word (case insensitive-"A" and "a" 
+ should be treated the same), you need to determine whether it falls into the positive/first half 
+ of the alphabet ("a"-"m") or the negative/second half ("n"-"z"). Return true if there are more 
+ (or equal) positive words than negative words, false otherwise.
+ NOTE: alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ NOTE: Ignore all the digits, spaces and special characters.
+Examples
+ isTrueOrFalse("A big brown fox caught a bad rabbit") -> true
+ isTrueOrFalse("Xylophones can obtain Xenon.")        ->  false
+ isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK")       -> true
+ isTrueOrFalse("All FOoD tAsTEs NIcE for someONe")    -> true
+ isTrueOrFalse("Got stuck in the Traffic")            -> false
+*/
+console.log('\n--- Task 5 ---' + ('-'.repeat(reps)))
+const regexCounter = (arr, regex) => arr.reduce((counter, e) => regex.test(e) ? counter += 1 : counter, 0)
+const isTrueOrFalse = str => regexCounter(str.split(''), /[a-m]/i) >= regexCounter(str.split(''), /[n-z]/i)
+
+arrOfGivens = [
+    'A big brown fox caught a bad rabbit',
+    'Xylophones can obtain Xenon.',
+    'CHOCOLATE MAKES A GREAT SNACK',
+    'All FOoD tAsTEs NIcE for someONe',
+    'Got stuck in the Traffic',
+]
+for (let element of arrOfGivens) {
+    console.log(`isTrueOrFalse('${element}')`.padEnd(pads, ' '), '-> ', isTrueOrFalse(element))
 }
