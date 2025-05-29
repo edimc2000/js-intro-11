@@ -53,7 +53,7 @@ for (let element of arrOfGivens) {
 }
 
 
-/* Task 3
+/* Task 3 
 Requirement:
 Write a function named alternatingCases() which takes a string argument and returns the string with alternating capitalization.
 NOTE: The first letter should always be uppercase and non-letter characters are ignored.
@@ -65,18 +65,22 @@ alternatingCases("")               -> ""
 alternatingCases("123!@#aB")       -> "123!@#Ab"
 */
 console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
-const alternatingCases = str => {
-    let strArr = str.trim().split('')
+
+const alternateCasesWord = arr => {
     let counter = 0
-    let result
-    result = strArr.map((e, i) => {
+    let resultWord
+    resultWord = arr.map((e, i) => {
         counter++
         return /[a-z]/i.test(e) && counter % 2 === 0 ? e.toLowerCase() : e.toUpperCase()
+    })
+    return resultWord.join('')
+}
 
-    }
-    )
-    return result.join('')
-
+const alternatingCases = str => {
+    let strArr = str.trim().split(' ')
+    let result = []
+    strArr.forEach(e => result.push(alternateCasesWord(e.split(''))))
+    return result.join(' ')
 }
 
 arrOfGivens = ['Hello', 'basketball', 'Tech Global', '', '123!@#aB']
