@@ -126,8 +126,8 @@ Examples
  isTrueOrFalse("Got stuck in the Traffic")            -> false
 */
 console.log('\n--- Task 5 ---' + ('-'.repeat(reps)))
-const regexCounter = (arr, regex) => arr.reduce((counter, e) => regex.test(e) ? counter += 1 : counter, 0)
-const isTrueOrFalse = str => regexCounter(str.split(''), /[a-m]/i) >= regexCounter(str.split(''), /[n-z]/i)
+const regexCounter = (arr, regex) => arr.reduce((counter, e) => regex.test(e[0]) ? counter += 1 : counter, 0)
+const isTrueOrFalse = str => regexCounter(str.split(' '), /[a-m]/i) >= regexCounter(str.split(' '), /[n-z]/i)
 
 arrOfGivens = [
     'A big brown fox caught a bad rabbit',
