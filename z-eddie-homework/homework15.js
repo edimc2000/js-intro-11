@@ -37,9 +37,8 @@ Examples:
  toSnakeCase("    I love Java Script")  ->"i_love_java_script"
  toSnakeCase("already_snake_case")      -> "already_snake_case"
  toSnakeCase("hello")                   ​-> "hello"
-
 */
-console.log('\n--- Task 1 ---' + ('-'.repeat(reps)))
+console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
 const toSnakeCase = str => {
     let strArr = str.trim().split(' ').filter(e => e.length > 0)
     let result
@@ -51,4 +50,36 @@ const toSnakeCase = str => {
 arrOfGivens = ['first name', 'last     name', ' I love Java Script', 'already_snake_case', 'hello']
 for (let element of arrOfGivens) {
     console.log(`toSnakeCase(${element})`.padEnd(pads, ' '), '-> ', toSnakeCase(element))
+}
+
+
+/* Task 3
+Requirement:
+Write a function named alternatingCases() which takes a string argument and returns the string with alternating capitalization.
+NOTE: The first letter should always be uppercase and non-letter characters are ignored.
+ Examples:
+alternatingCases("Hello")          -> "HeLlO"
+alternatingCases("basketball")     -> "BaSkEtBaLl"
+alternatingCases("Tech Global")    -> "TeCh GlObAl"
+alternatingCases("")               -> ""
+alternatingCases("123!@#aB")       -> "123!@#Ab"
+*/
+console.log('\n--- Task 3 ---' + ('-'.repeat(reps)))
+const alternatingCases = str => {
+    let strArr = str.trim().split('')
+    let counter = 0
+    let result
+    result = strArr.map((e, i) => {
+        counter++
+        return /[a-z]/i.test(e) && counter % 2 === 0 ? e.toLowerCase() : e.toUpperCase()
+
+    }
+    )
+    return result.join('')
+
+}
+
+arrOfGivens = ['Hello', 'basketball', 'Tech Global', '', '123!@#aB']
+for (let element of arrOfGivens) {
+    console.log(`alternatingCases(${element})`.padEnd(pads, ' '), '-> ', alternatingCases(element))
 }
