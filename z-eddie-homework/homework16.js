@@ -1,11 +1,10 @@
 const reps = 100, pads = 65
 /* Task 1 
 Requirement:
-Write a function named toInitials() which takes a string argument considered to be 
-full name and returns initials of the given full name.
-
-NOTE: Initials should be separated with a space and followed with a period.
-Assume you will always be given first name and last name only. 
+ Write a function named toInitials() which takes a string argument considered to be 
+ full name and returns initials of the given full name.
+ NOTE: Initials should be separated with a space and followed with a period.
+ Assume you will always be given first name and last name only. 
 Examples
  toInitials( "Joe Doe")      -> "J. D."
  toInitials( "Alex Reyes")   -> "A. R."
@@ -23,8 +22,8 @@ for (let element of arrOfGivens) {
 
 /* Task 2
 Requirement:
-Write a function named hasNumbers() which takes a string argument and returns true 
-if there is a number and false if there isn’t. 
+ Write a function named hasNumbers() which takes a string argument and returns true 
+ if there is a number and false if there isn’t. 
 Examples:
  hasNumbers("")                     -> false
  hasNumbers("John is 34 years old") -> true
@@ -41,8 +40,6 @@ arrOfGivens = ['', 'John is 34 years old', 'Hello 3', '125$', '   a   ', '  �
 for (let element of arrOfGivens) {
     console.log(`hasNumbers('${element}')`.padEnd(pads, ' '), '-> ', hasNumbers(element))
 }
-
-
 
 /* Task 3
 Requirement:
@@ -80,8 +77,6 @@ Examples:
  isArraySumEvenOrOdd( [ 7,1, 8,1 ] )   ->  "odd”
  isArraySumEvenOrOdd( [ 0,0 ] )        ->  "even"
  isArraySumEvenOrOdd( [ 1,1,1,1,1 ] )  ->  "odd” 
-
-
 */
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
 const isArraySumEvenOrOdd = arr => arr.length ? arr.reduce((sum, e) => sum + e, 0) % 2 === 0 ? 'even' : 'odd' : 'even'
@@ -100,7 +95,7 @@ for (let element of arrOfGivens) {
 
 /* Task 5
 Requirement:
-Write a function named reverse() which takes a string argument and returns the given string reversed. 
+ Write a function named reverse() which takes a string argument and returns the given string reversed. 
 Examples:
  reverse("Hello World")       -> "dlroW olleH"
  reverse("TechGlobal")        -> "labolGhceT"
@@ -125,14 +120,13 @@ for (let element of arrOfGivens) {
 
 /* Task 5
 Requirement:
-Write a function named reverseWords() which takes a string argument and returns a string with each word within that string reversed but still in the same order as the initial string. 
+ Write a function named reverseWords() which takes a string argument and returns a string with each word within that string reversed but still in the same order as the initial string. 
 Examples:
  reverseWords("Hello World")       -> "olleH dlroW"
  reverseWords("TechGlobal")        -> "labolGhceT"
  reverseWords("Basketball is fun") -> "llabteksaB si nuf"
  reverseWords("")                  -> ""
  reverseWords("Apples 456")        -> "selppA 654"
-
 */
 console.log('\n--- Task 6---' + ('-'.repeat(reps)))
 const reverseWords = str => str.split(' ').map(e => reverse(e)).join(' ')
