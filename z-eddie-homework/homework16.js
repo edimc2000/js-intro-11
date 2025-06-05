@@ -84,7 +84,7 @@ Examples:
 
 */
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
-const isArraySumEvenOrOdd = arr => arr.length ? arr.reduce((sum, e) => sum + e, 0) % 2 === 0 ? 'even' : 'odd' : 'odd'
+const isArraySumEvenOrOdd = arr => arr.length ? arr.reduce((sum, e) => sum + e, 0) % 2 === 0 ? 'even' : 'odd' : 'even'
 
 arrOfGivens = [
     [],
