@@ -69,3 +69,82 @@ for (let element of arrOfGivens) {
     console.log(`elementLength([ ${element.map(e => `'${e}'`).join(', ')} ])`.padEnd(pads, ' '), '-> ', elementLength(element))
 }
 
+/* Task 4
+Requirement:
+ Write a function named isArraySumEvenOrOdd() which takes an array of numbers and 
+ calculates if the sum of its elements is even or odd.
+ Note: If the array is empty return even.
+Examples:
+ isArraySumEvenOrOdd( [ ] )            -> "even"
+ isArraySumEvenOrOdd( [ 0,-1,-5 ] )    -> "even"
+ isArraySumEvenOrOdd( [ 7,1, 8,1 ] )   ->  "odd”
+ isArraySumEvenOrOdd( [ 0,0 ] )        ->  "even"
+ isArraySumEvenOrOdd( [ 1,1,1,1,1 ] )  ->  "odd” 
+
+
+*/
+console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
+const isArraySumEvenOrOdd = arr => arr.length ? arr.reduce((sum, e) => sum + e, 0) % 2 === 0 ? 'even' : 'odd' : 'odd'
+
+arrOfGivens = [
+    [],
+    [0, -1, -5],
+    [7, 1, 8, 1],
+    [0, 0],
+    [1, 1, 1, 1, 1]
+]
+
+for (let element of arrOfGivens) {
+    console.log(`isArraySumEvenOrOdd([ ${element.map(e => `${e}`).join(', ')} ])`.padEnd(pads, ' '), '-> ', isArraySumEvenOrOdd(element))
+}
+
+/* Task 5
+Requirement:
+Write a function named reverse() which takes a string argument and returns the given string reversed. 
+Examples:
+ reverse("Hello World")       -> "dlroW olleH"
+ reverse("TechGlobal")        -> "labolGhceT"
+ reverse("Basketball is fun") -> "nuf si llabteksaB"
+ reverse("")                  -> ""
+ reverse("Apples 456")        -> "654 selppA"
+*/
+console.log('\n--- Task 5 ---' + ('-'.repeat(reps)))
+const reverse = str => str.split('').reverse().join('')
+
+arrOfGivens = [
+    'Hello World',
+    'TechGlobal',
+    'Basketball is fun',
+    '',
+    'Apples 45'
+]
+
+for (let element of arrOfGivens) {
+    console.log(`reverse('${element}')`.padEnd(pads, ' '), '-> ', reverse(element))
+}
+
+/* Task 5
+Requirement:
+Write a function named reverseWords() which takes a string argument and returns a string with each word within that string reversed but still in the same order as the initial string. 
+Examples:
+ reverseWords("Hello World")       -> "olleH dlroW"
+ reverseWords("TechGlobal")        -> "labolGhceT"
+ reverseWords("Basketball is fun") -> "llabteksaB si nuf"
+ reverseWords("")                  -> ""
+ reverseWords("Apples 456")        -> "selppA 654"
+
+*/
+console.log('\n--- Task 6---' + ('-'.repeat(reps)))
+const reverseWords = str => str.split(' ').map(e => reverse(e)).join(' ')
+
+arrOfGivens = [
+    'Hello World',
+    'TechGlobal',
+    'Basketball is fun',
+    '',
+    'Apples 45'
+]
+
+for (let element of arrOfGivens) {
+    console.log(`reverseWords('${element}')`.padEnd(pads, ' '), '-> ', reverseWords(element))
+}
