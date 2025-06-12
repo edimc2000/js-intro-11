@@ -1,4 +1,4 @@
-const reps = 100, pads = 65
+const reps = 100, pads = 35
 /* Task 1 
 Requirement:
  Write a function named findMedian() which takes two arrays of numbers as its arguments 
@@ -11,23 +11,21 @@ Examples
  findMedian([4], [3])          -> 3.5
  findMedian([4], [])           -> 4
  findMedian([0], [0,1])        ​-> 0
-
 */
 console.log('\n--- Task 1 ---' + ('-'.repeat(reps)))
 const findMedian = (arr1, arr2) => {
     const arr3 = arr1.concat(arr2).sort((a, b) => a - b)
     const middleIndex = ((arr3.length) / 2)
-    const test = arr3.length % 2 === 0 && arr3.length !== 2 ? (arr3[middleIndex - 1] + arr3[middleIndex]) / 2
+    const median = arr3.length % 2 === 0 && arr3.length !== 2 ? (arr3[middleIndex - 1] + arr3[middleIndex]) / 2
         : arr3.length === 2 ? arr3.reduce((sum, e) => sum + e, 0) / 2
             : arr3[Math.round((arr3.length - 1) / 2)]
-    return test
+    return median
 }
 
 let arrOfGivens = [[[1, 3], [2]], [[1, 2], [3, 4]], [[4], [3]], [[4], []], [[0], [0, 1]]]
 for (let element of arrOfGivens) {
     console.log(`findMedian( [ ${element[0].join(', ')} ], [ ${element[1].join(', ')} ] )`.padEnd(pads, ' '), '-> ', findMedian(element[0], element[1]))
 }
-
 
 /* TASK 2
 Requirement:
@@ -44,7 +42,6 @@ Examples:
  calculateFactorial(6)  -> 720
  calculateFactorial(10) -> 3628800
  calculateFactorial(4)  -> 24
-
 */
 console.log('\n--- Task 2 ---' + ('-'.repeat(reps)))
 const factorial = num => {
@@ -61,7 +58,6 @@ arrOfGivens = [0, 1, 5, 6, 10, 4]
 for (let element of arrOfGivens) {
     console.log(`calculateFactorial('${element}')`.padEnd(pads, ' '), '-> ', calculateFactorial(element))
 }
-
 
 /* TASK 3
 Requirement:
@@ -89,16 +85,14 @@ const denominators = num => {
 
 const calculateGCD = (num1, num2) => {
     const numArr = [num1, num2].sort((a, b) => a - b)
-    const denonimatorsIndex1 = denominators(numArr[0])
-    const denonimatorsIndex2 = denominators(numArr[1])
-    return numArr.includes(0) ? numArr[1] : denonimatorsIndex2.filter((e, i) => denonimatorsIndex1.includes(e)).slice(-1)[0]
+    const denonimatorsArr = [denominators(numArr[0]), denominators(numArr[1])]
+    return numArr.includes(0) ? numArr[1] : denonimatorsArr[1].filter((e, i) => denonimatorsArr[0].includes(e)).pop()
 }
 
 arrOfGivens = [[8, 12], [17, 5], [48, 18], [0, 5], [21, 14], [60, 48]]
 for (let element of arrOfGivens) {
     console.log(`calculateGCD( ${element[0]}, ${element[1]} )`.padEnd(pads, ' '), '-> ', calculateGCD(element[0], element[1]))
 }
-
 
 /* TASK 4
 Requirement:
@@ -118,7 +112,7 @@ Examples:
 console.log('\n--- Task 4 ---' + ('-'.repeat(reps)))
 const calculateLCM = (num1, num2) => {
     const numArr = [num1, num2].sort((a, b) => a - b)
-    return numArr.includes(0) ? numArr[0] : (num1 * num2) / calculateGCD (num1 , num2)
+    return numArr.includes(0) ? numArr[0] : (num1 * num2) / calculateGCD(num1, num2)
 }
 
 arrOfGivens = [[8, 12], [17, 5], [48, 18], [0, 5], [21, 14], [60, 48]]
